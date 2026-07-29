@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serate & Eventi — Hedoné Vimodrone</title>
+<meta name="description" content="Compleanni, anniversari, matrimoni, serate karaoke e feste private da Hedoné a Vimodrone. Ogni occasione diventa un ricordo indimenticabile.">
+<meta name="theme-color" content="#080502">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Serate & Eventi — Hedoné Vimodrone">
+<meta property="og:description" content="Compleanni, anniversari, matrimoni, serate karaoke e feste private. Ogni occasione diventa un ricordo indimenticabile.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Hedoné">
+<meta property="og:image" content="assets/img/sala-clienti-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/logo-hedone-emblema.png">
+<link rel="apple-touch-icon" href="assets/img/logo-hedone-emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* ── SERATE PAGE ── */
+  .serate-hero {
+    position: relative;
+    min-height: 72vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow: hidden;
+    background: #080502;
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+    padding-left: clamp(2rem, 6vw, 5rem);
+  }
+  .serate-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(8,5,2,0.92) 0%, rgba(8,5,2,0.72) 42%, rgba(8,5,2,0.18) 78%, rgba(8,5,2,0.08) 100%),
+      linear-gradient(to bottom, rgba(8,5,2,0.25) 0%, transparent 35%, rgba(8,5,2,0.78) 82%, #080502 100%),
+      url('assets/img/sala-clienti-01.jpg');
+    background-size: cover;
+    background-position: center 56%;
+  }
+  .serate-hero-body {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    padding: 0;
+    max-width: clamp(300px, 46vw, 580px);
+    margin: 0;
+  }
+  .serate-hero-body .section-kicker { margin-bottom: 1rem; }
+  .serate-hero-body h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+    color: var(--ink);
+    line-height: 1.08;
+    margin: 0 0 1.2rem;
+  }
+  .serate-hero-body p {
+    color: var(--ink-dim);
+    font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+    line-height: 1.75;
+    margin: 0 0 2rem;
+    max-width: 480px;
+  }
+
+  /* ── GALLERY SCROLL ── */
+  .serate-gallery {
+    position: relative;
+    background: #080502;
+    padding: clamp(0.75rem, 1.5vw, 1.25rem) 0 clamp(1rem, 2vw, 1.75rem);
+  }
+  .serate-gallery-wrap {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    cursor: grab;
+    padding: 0.4rem 0 1.2rem;
+  }
+  .serate-gallery-wrap::-webkit-scrollbar { display: none; }
+  .serate-gallery-wrap:active { cursor: grabbing; }
+  .serate-gallery-track {
+    display: flex;
+    gap: 0.7rem;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+    width: max-content;
+    align-items: flex-start;
+  }
+  .sg {
+    flex: 0 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    height: clamp(260px, 32vw, 380px);
+  }
+  .sg img {
+    height: 100%;
+    width: auto;
+    display: block;
+    transition: transform 0.55s ease;
+  }
+  .sg:hover img { transform: scale(1.04); }
+  .serate-gallery::before,
+  .serate-gallery::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: clamp(2rem, 5vw, 4rem);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .serate-gallery::before {
+    left: 0;
+    background: linear-gradient(to right, #080502, transparent);
+  }
+  .serate-gallery::after {
+    right: 0;
+    background: linear-gradient(to left, #080502, transparent);
+  }
+
+  /* ── INFO SECTION ── */
+  .serate-info {
+    position: relative;
+    background: #080502;
+    padding: clamp(2.5rem, 4.5vw, 4.5rem) 0 clamp(3rem, 5vw, 5rem);
+    overflow: hidden;
+  }
+  .serate-info::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 0;
+    width: 600px; height: 600px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .serate-info-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .serate-info-text .section-kicker { margin-bottom: 1rem; }
+  .serate-info-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.08;
+    margin: 0 0 1.8rem;
+  }
+  .serate-info-text p {
+    color: var(--ink-dim);
+    font-size: clamp(0.95rem, 1.4vw, 1.06rem);
+    line-height: 1.85;
+    margin: 0 0 1rem;
+  }
+  .serate-info-text p:last-of-type { margin-bottom: 2.5rem; }
+  .serate-info-divider {
+    width: 48px; height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin: 1.6rem 0;
+    opacity: 0.6;
+  }
+  .serate-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .serate-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255,235,200,0.06) 0%, rgba(201,168,76,0.03) 100%);
+    border: 1px solid rgba(212,175,106,0.2);
+    border-top: 2px solid rgba(212,175,106,0.5);
+    border-radius: 16px;
+    padding: 1.6rem 1.8rem 1.6rem 5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    overflow: hidden;
+  }
+  .serate-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  .serate-card:hover {
+    border-color: rgba(212,175,106,0.45);
+    border-top-color: rgba(212,175,106,0.85);
+    box-shadow: 0 8px 40px rgba(201,168,76,0.1), 0 0 0 1px rgba(201,168,76,0.08);
+    background: linear-gradient(135deg, rgba(255,235,200,0.09) 0%, rgba(201,168,76,0.05) 100%);
+  }
+  .serate-card:hover::after { opacity: 1; }
+  .serate-card-icon {
+    position: absolute;
+    left: 1.6rem;
+    top: 1.55rem;
+    color: var(--gold);
+    opacity: 0.85;
+    width: 28px; height: 28px;
+  }
+  .serate-card-kicker {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 0.45rem;
+    opacity: 0.75;
+  }
+  .serate-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 0.65rem;
+    letter-spacing: 0.01em;
+  }
+  .serate-card p {
+    color: var(--ink-dim);
+    font-size: 0.88rem;
+    line-height: 1.72;
+    margin: 0;
+    opacity: 0.78;
+  }
+
+  /* ── CONTATTI STRIP ── */
+  .serate-contatti {
+    background: #080502;
+    padding: clamp(2rem, 3.5vw, 3rem) 0 clamp(2.5rem, 4vw, 3.5rem);
+    border-top: 1px solid rgba(212,175,106,0.1);
+  }
+  .serate-contatti-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+  }
+  .serate-contatti-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 2rem);
+    position: relative;
+    text-decoration: none;
+    transition: background 0.25s ease;
+    border-radius: 12px;
+  }
+  .serate-contatti-item:hover { background: rgba(201,168,76,0.04); }
+  .serate-contatti-item + .serate-contatti-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 20%; bottom: 20%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(212,175,106,0.2), transparent);
+  }
+  .serate-contatti-icon {
+    width: 32px; height: 32px;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-bottom: 0.9rem;
+  }
+  .serate-contatti-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    opacity: 0.6;
+    margin-bottom: 0.4rem;
+  }
+  .serate-contatti-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+  .serate-contatti-sub {
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+    opacity: 0.5;
+    line-height: 1.5;
+  }
+  @media (max-width: 640px) {
+    .serate-contatti-inner { grid-template-columns: 1fr; gap: 0; }
+    .serate-contatti-item + .serate-contatti-item::before { top: 0; bottom: auto; left: 20%; right: 20%; width: auto; height: 1px; background: linear-gradient(to right, transparent, rgba(212,175,106,0.2), transparent); }
+  }
+
+  @media (max-width: 820px) {
+    .serate-info-inner { grid-template-columns: 1fr; }
+    .sg { height: clamp(200px, 55vw, 300px); }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<a class="call-fab" href="tel:+393336476506" aria-label="Chiamaci ora — +39 333 6476506">
+  <span class="call-fab-icon">
+    <span class="call-fab-ring"></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.16 7.66a16 16 0 006.18 6.18l1.02-1.05a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+  </span>
+  <span class="call-fab-label">Chiamaci ora</span>
+</a>
+
+<div class="nav-float" id="navFloat">
+  <button class="nav-trigger" id="navTrigger" aria-label="Apri il menu" aria-expanded="false" aria-controls="navPanel">
+    <span class="nav-trigger-icon" aria-hidden="true"></span>
+    <span class="nav-trigger-label">Menu</span>
+  </button>
+  <nav class="nav-panel" id="navPanel" aria-label="Navigazione principale">
+    <div class="nav-panel-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#chi-siamo">Chi siamo</a>
+      <a href="index.html#piatti">Cucina</a>
+      <a href="menu.html">Menù</a>
+      <a href="index.html#frutti-realistici">Frutti Realistici</a>
+      <a href="sommelier.html">Sommelier AI</a>
+      <a href="serate.html" aria-current="page">Serate &amp; Eventi</a>
+      <a href="index.html#location">Dove siamo</a>
+      <a href="index.html#prenota" class="nav-cta">Prenota</a>
+    </div>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="serate-hero">
+    <div class="serate-hero-bg" aria-hidden="true"></div>
+    <div class="serate-hero-body" data-reveal>
+      <span class="section-kicker">Serate & Eventi</span>
+      <h1>Ogni occasione,<br>da Hedoné.</h1>
+      <p>Compleanni, anniversari, matrimoni, serate karaoke, feste private. Hedoné si trasforma per accogliere il tuo momento speciale.</p>
+      <a href="index.html#prenota" class="btn btn-primary">Organizza il tuo evento</a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="serate-gallery" aria-label="Foto serate ed eventi">
+    <div class="serate-gallery-wrap" id="serateGalleryWrap">
+      <div class="serate-gallery-track">
+        <div class="sg"><img src="assets/img/amb-arredo-01.jpg" alt="Sala Hedoné" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/clienti-karaoke-1.jpg" alt="Serata karaoke" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-sala-sera.jpg" alt="Sala serale Hedoné" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/sala-clienti-01.jpg" alt="Compleanno in sala" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-sera-01.jpg" alt="Atmosfera serale" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-arredo-03.jpg" alt="Arredamento Hedoné" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-sala-01.jpg" alt="Sala Hedoné" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-sala-03.jpg" alt="Sala Hedoné" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-dehors-01.jpg" alt="Dehors Hedoné" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-arredo-02.jpg" alt="Arredamento Hedoné" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/sala-clienti-02.jpg" alt="Ospiti in sala" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-dehors-02.jpg" alt="Dehors serale" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-dehors-03.jpg" alt="Dehors Hedoné" loading="lazy"></div>
+        <div class="sg"><img src="assets/img/amb-bancone.jpg" alt="Bancone bar Hedoné" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="serate-info">
+    <div class="serate-info-inner">
+      <div class="serate-info-text" data-reveal>
+        <span class="section-kicker">Come possiamo aiutarti</span>
+        <h2>Cosa vuoi<br>organizzare?</h2>
+        <div class="serate-info-divider"></div>
+        <p>Da Hedoné ogni occasione diventa speciale. Che si tratti di una serata tra amici, un compleanno da ricordare o una cerimonia importante — adattiamo lo spazio, il menu e l'atmosfera alle tue esigenze.</p>
+        <p>Contattaci per un preventivo personalizzato o prenota direttamente il tuo tavolo.</p>
+        <a href="index.html#prenota" class="btn btn-primary">Organizza il tuo evento</a>
+      </div>
+      <div class="serate-cards" data-reveal>
+        <div class="serate-card">
+          <svg class="serate-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="serate-card-kicker">Feste & Ricorrenze</span>
+          <h3>Compleanni &amp; Anniversari</h3>
+          <p>Un tavolo riservato, un menu dedicato, decorazioni su misura. Rendiamo il tuo giorno speciale ancora più indimenticabile, nei minimi dettagli.</p>
+        </div>
+        <div class="serate-card">
+          <svg class="serate-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span class="serate-card-kicker">Cerimonie</span>
+          <h3>Matrimoni &amp; Cerimonie</h3>
+          <p>Sala riservata, menu concordato, atmosfera curata. Hedoné accoglie i tuoi ospiti con la stessa attenzione che riserviamo a ogni dettaglio della cucina.</p>
+        </div>
+        <div class="serate-card">
+          <svg class="serate-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/>
+          </svg>
+          <span class="serate-card-kicker">Ogni settimana</span>
+          <h3>Serate Karaoke</h3>
+          <p>Il palco è tuo. Classici italiani e internazionali, un impianto professionale e la compagnia giusta. Nessuna esperienza richiesta — solo voglia di stare bene.</p>
+        </div>
+        <div class="serate-card">
+          <svg class="serate-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <span class="serate-card-kicker">Su richiesta</span>
+          <h3>Aperitivi &amp; Feste Private</h3>
+          <p>Team building, addio al celibato, cena aziendale o semplice serata tra amici. Contattateci e progettiamo insieme la serata perfetta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section class="serate-contatti">
+    <div class="serate-contatti-inner" data-reveal>
+      <a href="https://www.instagram.com/hedone.vimodrone" target="_blank" rel="noopener" class="serate-contatti-item">
+        <svg class="serate-contatti-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="serate-contatti-label">Instagram</span>
+        <span class="serate-contatti-value">@hedone.vimodrone</span>
+        <span class="serate-contatti-sub">Serate, eventi e novità dal locale</span>
+      </a>
+      <a href="tel:+393336476506" class="serate-contatti-item">
+        <svg class="serate-contatti-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        <span class="serate-contatti-label">Telefono</span>
+        <span class="serate-contatti-value">+39 333 647 6506</span>
+        <span class="serate-contatti-sub">Per informazioni ed eventi privati</span>
+      </a>
+      <a href="mailto:hedone.ristorante@gmail.com" class="serate-contatti-item">
+        <svg class="serate-contatti-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span class="serate-contatti-label">Email</span>
+        <span class="serate-contatti-value">hedone.ristorante@gmail.com</span>
+        <span class="serate-contatti-sub">Richieste, preventivi e prenotazioni</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <div class="footer-brand">Hedoné</div>
+      <p class="footer-tagline">Cucina italiana, passione autentica.<br>Vimodrone, sul Naviglio Martesana.</p>
+      <div class="footer-social-icons">
+        <a href="https://www.instagram.com/hedone.vimodrone" target="_blank" rel="noopener" aria-label="Instagram di Hedoné">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61587043508623" target="_blank" rel="noopener" aria-label="Facebook di Hedoné">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+    <div class="footer-links-col">
+      <p class="footer-col-title">Esplora</p>
+      <nav class="footer-nav">
+        <a href="index.html#chi-siamo">Il ristorante</a>
+        <a href="menu.html">Il menù</a>
+        <a href="menu.html#mn-vini">I vini</a>
+        <a href="index.html#recensioni">Recensioni</a>
+        <a href="serate.html">Serate &amp; Karaoke</a>
+        <a href="index.html#prenota">Prenota un tavolo</a>
+      </nav>
+    </div>
+    <div class="footer-contact-col">
+      <p class="footer-col-title">Dove siamo</p>
+      <address class="footer-address">
+        Via Angelo Cazzaniga 129<br>
+        20055 Vimodrone (MI)<br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Angelo+Cazzaniga+129+Vimodrone+MI" target="_blank" rel="noopener">Apri in Google Maps →</a>
+      </address>
+      <p class="footer-contact-line"><a href="tel:+393336476506">+39 333 6476506</a></p>
+      <p class="footer-contact-line"><a href="mailto:hedone.ristorante@gmail.com">hedone.ristorante@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <span>© 2025 Hedoné — Ristorante &amp; Lounge Bar · P.IVA 13584130963</span>
+  </div>
+</footer>
+
+<script>
+/* ── NAV FLOAT ── */
+(function () {
+  var trigger = document.getElementById('navTrigger');
+  var panel   = document.getElementById('navPanel');
+  var float   = trigger ? trigger.closest('.nav-float') : null;
+  if (!trigger || !panel || !float) return;
+  trigger.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var open = float.classList.toggle('is-open');
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('click', function (e) {
+    if (!float.contains(e.target)) {
+      float.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && float.classList.contains('is-open')) {
+      float.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.focus();
+    }
+  });
+
+  /* scroll reveal */
+  var reveals = document.querySelectorAll('[data-reveal]');
+  if (reveals.length && 'IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { obs.observe(el); });
+  }
+
+  /* gallery drag-to-scroll */
+  var gw = document.getElementById('serateGalleryWrap');
+  if (gw) {
+    var _drag = false, _sx = 0, _sl = 0;
+    gw.addEventListener('mousedown', function (e) { _drag = true; _sx = e.pageX - gw.offsetLeft; _sl = gw.scrollLeft; gw.style.cursor = 'grabbing'; });
+    gw.addEventListener('mouseleave', function () { _drag = false; gw.style.cursor = 'grab'; });
+    gw.addEventListener('mouseup',   function () { _drag = false; gw.style.cursor = 'grab'; });
+    gw.addEventListener('mousemove', function (e) { if (!_drag) return; e.preventDefault(); gw.scrollLeft = _sl - (e.pageX - gw.offsetLeft - _sx); });
+  }
+}());
+</script>
+</body>
+</html>

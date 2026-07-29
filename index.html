@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hedoné — Ristorante & Lounge Bar a Vimodrone | Naviglio Martesana</title>
+<meta name="description" content="Hedoné, ristorante e lounge bar a Vimodrone sul Naviglio Martesana. Cucina italiana curata, carta vini selezionata, atmosfera che cambia dal giorno alla sera. Pet friendly.">
+<meta name="theme-color" content="#080502">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Hedoné — Ristorante & Lounge Bar a Vimodrone">
+<meta property="og:description" content="Cucina italiana curata, carta vini selezionata, atmosfera che cambia dal giorno alla sera. Sul Naviglio Martesana.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Hedoné">
+<meta property="og:image" content="assets/img/hero-dea-banchetto.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/logo-hedone-emblema.png">
+<link rel="apple-touch-icon" href="assets/img/logo-hedone-emblema.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Hedoné",
+  "description": "Ristorante e lounge bar a Vimodrone sul Naviglio Martesana. Cucina italiana, carne alla griglia, cocktail bar e serate karaoke.",
+  "servesCuisine": "Italiana",
+  "priceRange": "€€",
+  "telephone": "+39 333 6476506",
+  "email": "info@hedonevimodrone.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Angelo Cazzaniga 129",
+    "addressLocality": "Vimodrone",
+    "addressRegion": "MI",
+    "postalCode": "20055",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.5188,
+    "longitude": 9.2960
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Sunday"], "opens": "10:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "10:00", "closes": "02:00" }
+  ],
+  "acceptsReservations": "True",
+  "sameAs": [
+    "https://www.instagram.com/hedone.vimodrone",
+    "https://www.facebook.com/profile.php?id=61587043508623",
+    "https://www.thefork.it/ristorante/hedone-r858105"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<a class="call-fab" href="tel:+393336476506" aria-label="Chiamaci ora — +39 333 6476506">
+  <span class="call-fab-icon">
+    <span class="call-fab-ring"></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.16 7.66a16 16 0 006.18 6.18l1.02-1.05a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+  </span>
+  <span class="call-fab-label">Chiamaci ora</span>
+</a>
+
+<div class="nav-float" id="navFloat">
+  <button class="nav-trigger" id="navTrigger" aria-label="Apri il menu" aria-expanded="false" aria-controls="navPanel">
+    <span class="nav-trigger-icon" aria-hidden="true"></span>
+    <span class="nav-trigger-label">Menu</span>
+  </button>
+  <nav class="nav-panel" id="navPanel" aria-label="Navigazione principale">
+    <div class="nav-panel-links">
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#piatti">Cucina</a>
+      <a href="menu.html">Menù</a>
+      <a href="#frutti-realistici">Frutti Realistici</a>
+      <a href="sommelier.html">Sommelier AI</a>
+      <a href="serate.html">Serate & Eventi</a>
+      <a href="#location">Dove siamo</a>
+      <a href="#prenota" class="nav-cta">Prenota</a>
+    </div>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <video class="hero-bg" id="heroBg" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-dea-banchetto.jpg">
+      <source src="assets/video/hero-loop-web.mp4" type="video/mp4">
+    </video>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-copy">
+        <h1 class="hero-logo-wrap" data-reveal>
+          <img class="hero-logo" src="assets/img/logo-hedone-ufficiale.png" alt="Hedoné — Lounge Bar &amp; Restaurant">
+        </h1>
+        <p class="eyebrow" data-reveal>Vimodrone · Naviglio Martesana</p>
+        <span class="hero-divider" aria-hidden="true"></span>
+        <p class="hero-tagline" data-reveal>Anche una dea si sporca le mani.<br>Vieni a scoprire il sapore vero della brace.</p>
+        <div class="hero-actions" data-reveal>
+          <a href="#prenota" class="btn btn-primary">Prenota un tavolo</a>
+          <a href="#piatti" class="btn btn-ghost">Scopri la cucina</a>
+        </div>
+      </div>
+    </div>
+    <a href="#chi-siamo" class="scroll-cue" aria-label="Scorri per scoprire di più">
+      <span></span>
+      <small>scorri</small>
+    </a>
+  </section>
+
+  <!-- CHI È HEDONÉ -->
+  <section class="about" id="chi-siamo">
+    <div class="about-bgvideo" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="auto" poster="assets/img/chi-siamo-tramonto-tempio.jpg" id="aboutBgVideoA" class="about-bgvideo-layer">
+        <source src="assets/video/chi-siamo-tramonto-tempio.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="auto" id="aboutBgVideoB" class="about-bgvideo-layer">
+        <source src="assets/video/chi-siamo-tramonto-tempio.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="about-seam" aria-hidden="true"></div>
+    <span class="about-spotlight" aria-hidden="true"></span>
+    <div class="about-inner">
+      <div class="myth-epigraph" data-reveal tabindex="0" role="button" aria-expanded="false" aria-label="Mostra la citazione">
+        <span class="myth-roller" aria-hidden="true"></span>
+        <div class="myth-paper">
+          <span class="myth-hint">Un pensiero sul cibo — sfiora per leggere</span>
+          <div class="myth-body">
+            <span class="myth-rule" aria-hidden="true"></span>
+            «Il mangiare è uno dei piaceri della vita, e il mangiare bene è un'arte.»
+            <span class="myth-cite">— Pellegrino Artusi, <em>La scienza in cucina e l'arte di mangiar bene</em></span>
+            <span class="myth-rule" aria-hidden="true"></span>
+          </div>
+        </div>
+        <span class="myth-roller" aria-hidden="true"></span>
+      </div>
+
+      <div class="section-head about-intro about-panel" id="aboutIntroPanel">
+        <span class="section-kicker">Chi siamo</span>
+        <h2>
+          <img class="about-emblem" src="assets/img/logo-hedone-emblema.png" alt="">
+          <span class="about-wordmark">Hedoné</span>
+        </h2>
+        <p>Nasce da una scelta precisa: un luogo in cui mangiare e bere bene significhi davvero stare bene. Condividere un tavolo, prendersi il proprio tempo, riconoscere la cura dietro ogni piatto e ogni cocktail servito nel momento giusto.</p>
+        <p>Hedoné è a <strong>conduzione familiare</strong>: cucina, servizio e atmosfera seguiti di persona. Di giorno tranquillo e luminoso, di sera <strong>lounge cocktail bar</strong> con le luci basse, drink di carattere e carni selezionate.</p>
+        <p>Che tu stia cercando un ristorante romantico, un posto dove cenare con amici o il tuo lounge bar sul Naviglio Martesana — Hedoné è uno spazio pensato per accogliere. Tra gli appuntamenti più attesi, le <strong>serate karaoke</strong>: il locale diventa il tuo palco, e certe serate si ricordano.</p>
+      </div>
+
+      <div class="about-features about-panel" data-reveal>
+        <div class="about-feat about-feat-cucina">
+          <span class="about-feat-photo" aria-hidden="true"></span>
+          <span class="about-feat-kicker">Cucina</span>
+          <p>Tartare di Fassona, Fiorentina, picanha, filetto e grigliata mista. Materia prima selezionata, tradizione italiana, ogni piatto costruito per essere ricordato.</p>
+        </div>
+        <div class="about-feat about-feat-bar">
+          <span class="about-feat-photo" aria-hidden="true"></span>
+          <span class="about-feat-kicker">Cocktail Bar</span>
+          <p>Classici eseguiti bene, cocktail contemporanei e una selezione di vini dai grandi nomi italiani alle bollicine più ricercate. Il bancone di Hedoné è il posto giusto per un aperitivo curato o per prolungare la serata.</p>
+        </div>
+        <div class="about-feat about-feat-karaoke">
+          <span class="about-feat-photo" aria-hidden="true"></span>
+          <span class="about-feat-kicker">Karaoke</span>
+          <p>Il tuo palco, ogni settimana. Tra amici, risate e qualcosa di buono da bere. Serate karaoke, eventi a tema e appuntamenti musicali: una serata da Hedoné non finisce mai troppo presto.</p>
+        </div>
+      </div>
+
+      <!-- TEAM -->
+      <div class="about-team" data-reveal>
+        <div class="about-team-frame">
+          <img class="about-team-img is-active" src="assets/img/team-barman.png" alt="Il team di Hedoné al bancone" loading="eager" style="object-position: center 22%;">
+          <img class="about-team-img" src="assets/img/arredo-sala-notte.png" alt="La sala di Hedoné la sera" loading="lazy" style="object-position: center 40%;">
+          <img class="about-team-img" src="assets/img/clienti-serata-2.jpg" alt="Serata al karaoke da Hedoné" loading="lazy" style="object-position: center 25%;">
+          <img class="about-team-img" src="assets/img/arredo-bancone-bar.jpg" alt="Il bancone cocktail di Hedoné" loading="lazy" style="object-position: center 50%;">
+          <img class="about-team-img" src="assets/img/staff-bar-action1.jpg" alt="Il team al lavoro" loading="lazy" style="object-position: center 28%;">
+          <img class="about-team-img" src="assets/img/arredo-dehor-sera.png" alt="Il dehor serale di Hedoné" loading="lazy" style="object-position: center 50%;">
+          <img class="about-team-img" src="assets/img/clienti-karaoke-1.jpg" alt="Una serata karaoke da Hedoné" loading="lazy" style="object-position: center 25%;">
+          <img class="about-team-img" src="assets/img/arredo-tavolo-finestra.jpg" alt="Tavolo apparecchiato da Hedoné" loading="lazy" style="object-position: center 50%;">
+          <img class="about-team-img" src="assets/img/clienti-serata-1.jpg" alt="Clienti in serata" loading="lazy" style="object-position: center 30%;">
+          <img class="about-team-img" src="assets/img/arredo-dehor-giorno.png" alt="Il dehor di giorno di Hedoné" loading="lazy" style="object-position: center 50%;">
+          <img class="about-team-img" src="assets/img/staff-gin-bar.jpg" alt="Barman con la selezione gin" loading="lazy" style="object-position: center 12%;">
+          <img class="about-team-img" src="assets/img/clienti-sala-karaoke.jpg" alt="L'atmosfera serale da Hedoné" loading="lazy" style="object-position: center 40%;">
+          <img class="about-team-img" src="assets/img/arredo-mise-en-place.jpg" alt="Mise en place da Hedoné" loading="lazy" style="object-position: center 40%;">
+          <img class="about-team-img" src="assets/img/staff-bar-action2.jpg" alt="Preparazione cocktail" loading="lazy" style="object-position: center 28%;">
+          <img class="about-team-img" src="assets/img/clienti-serata-3.jpg" alt="Una serata speciale da Hedoné" loading="lazy" style="object-position: center 20%;">
+          <img class="about-team-img" src="assets/img/clienti-staff-abbraccio.jpg" alt="Cliente e staff di Hedoné" loading="lazy" style="object-position: center 20%;">
+          <img class="about-team-img" src="assets/img/clienti-karaoke-2.jpg" alt="Karaoke serale" loading="lazy" style="object-position: center 20%;">
+          <img class="about-team-img" src="assets/img/clienti-serata-4.jpg" alt="Momenti di serata" loading="lazy" style="object-position: center 25%;">
+          <div class="about-team-dots" aria-hidden="true">
+            <span class="about-team-dot is-active"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+            <span class="about-team-dot"></span>
+          </div>
+        </div>
+        <div class="about-team-copy about-panel">
+          <span class="about-team-kicker">Il team</span>
+          <p class="about-team-quote">"La serata giusta non si ordina dal menù. La costruiamo insieme."</p>
+          <p>Al bancone e tra i tavoli trovi le stesse persone da anni. Non semplice personale: volti che ricordano il tuo vino preferito, che capiscono quando proporre un cocktail in più e quando lasciare che la serata si allunghi da sola.</p>
+          <p class="about-team-accent">Vieni una sera. Capire perché si torna è più facile quando ci sei.</p>
+          <a href="serate.html" class="btn btn-primary about-team-cta">Scopri Serate &amp; Eventi</a>
+        </div>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar" data-reveal="pop">
+          <span class="pillar-photo-wrap">
+            <img class="pillar-photo" src="assets/img/piatto-ravioli-fiori.jpg" alt="Ravioli con fiori edibili, cucina curata di Hedoné" loading="lazy" style="object-position: center 60%;">
+          </span>
+          <span class="pillar-mark" aria-hidden="true">Α</span>
+          <h3>Piacere</h3>
+          <p>Non fretta né ostentazione, ma il risultato di una cucina curata, di un drink ben fatto, di un'atmosfera che invita a restare.</p>
+        </div>
+        <div class="pillar" data-reveal="pop">
+          <span class="pillar-photo-wrap">
+            <img class="pillar-photo" src="assets/img/pillar-tempo.jpg" alt="Il dehors di Hedoné la sera, tavoli con luci calde per restare senza fretta" loading="lazy">
+          </span>
+          <span class="pillar-mark" aria-hidden="true">Β</span>
+          <h3>Tempo</h3>
+          <p>Un valore da rispettare: a tavola, nelle conversazioni, in tutta l'esperienza — mai qualcosa da consumare in fretta.</p>
+        </div>
+        <div class="pillar" data-reveal="pop">
+          <span class="pillar-photo-wrap">
+            <img class="pillar-photo" src="assets/img/piatto-tartare.png" alt="Tartare con foglia oro, identità della cucina di Hedoné" loading="lazy" style="object-position: center 45%;">
+          </span>
+          <span class="pillar-mark" aria-hidden="true">Γ</span>
+          <h3>Identità</h3>
+          <p>Cucina che parte dalla tradizione italiana, materie prime scelte con cura, cocktail pensati per il momento giusto.</p>
+        </div>
+      </div>
+
+      <div class="about-daynight">
+        <div class="about-time about-time-day" data-reveal="pop">
+          <span class="about-time-photo" aria-hidden="true"></span>
+          <span class="about-time-kicker">
+            <svg class="about-time-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.4"/>
+              <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                <path d="M12 2.4v2.6"/>
+                <path d="M12 19v2.6"/>
+                <path d="M21.6 12h-2.6"/>
+                <path d="M5 12H2.4"/>
+                <path d="M18.6 5.4l-1.8 1.8"/>
+                <path d="M7.2 16.8l-1.8 1.8"/>
+                <path d="M18.6 18.6l-1.8-1.8"/>
+                <path d="M7.2 7.2L5.4 5.4"/>
+              </g>
+            </svg>
+            Di giorno
+          </span>
+          <p>Luminoso e tranquillo: lo spazio ideale per un pranzo rilassato, con vista sulla Martesana.</p>
+        </div>
+        <div class="about-time about-time-night" data-reveal="pop">
+          <span class="about-time-photo" aria-hidden="true"></span>
+          <span class="about-time-kicker">
+            <svg class="about-time-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+            Di sera
+          </span>
+          <p>L'atmosfera si accende: luci più calde, serate a tema, karaoke e appuntamenti musicali — mai gridati, sempre curati. La musica accompagna senza invadere, il cocktail giusto completa la serata.</p>
+        </div>
+      </div>
+
+      <div class="about-tags" data-reveal>
+        <span>Conduzione familiare</span>
+        <span>Pet friendly</span>
+        <span>Serate karaoke</span>
+        <span>Cantina con etichette italiane e bollicine ricercate</span>
+      </div>
+
+      <p class="about-closing" data-reveal>Qui il piacere è semplice. Ed è fatto per durare.</p>
+    </div>
+  </section>
+
+  <!-- PIATTI FIRMA + MENU -->
+  <section class="dishes" id="piatti">
+    <div class="dishes-glow" aria-hidden="true">
+      <span class="greek-pattern" id="dishesPattern"></span>
+    </div>
+    <div class="dishes-seam" aria-hidden="true"></div>
+
+  <div class="dishes-ornament" aria-hidden="true">
+    <span class="dishes-orn-line"></span>
+    <span class="dishes-orn-gem">✦</span>
+    <svg class="dishes-orn-steak" viewBox="0 0 54 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Forchetta -->
+      <line x1="10" y1="4" x2="10" y2="22" stroke="#c9a84c" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="17" y1="4" x2="17" y2="24" stroke="#c9a84c" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="24" y1="4" x2="24" y2="22" stroke="#c9a84c" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M10,22 C9,28 9,32 17,34 C25,32 25,28 24,22" stroke="#c9a84c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="17" y1="34" x2="17" y2="70" stroke="#c9a84c" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Coltello -->
+      <line x1="40" y1="4" x2="40" y2="70" stroke="#c9a84c" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M40,4 C44,5 46,10 46,18 C46,26 44,28 40,28" stroke="#c9a84c" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="dishes-orn-gem">✦</span>
+    <span class="dishes-orn-line"></span>
+  </div>
+
+    <div class="dishes-hero">
+      <video class="dishes-hero-video" autoplay loop muted playsinline>
+        <source src="assets/video/grigliata-mista.mp4" type="video/mp4">
+      </video>
+      <div class="dishes-hero-overlay" aria-hidden="true"></div>
+      <div class="dishes-hero-body">
+        <span class="dishes-chapter-eyebrow">
+          <span class="dishes-chapter-rule"></span>
+          <span class="dishes-chapter-label">Cucina</span>
+          <span class="dishes-chapter-rule"></span>
+        </span>
+        <h2 class="dishes-chapter-title">Solo un assaggio</h2>
+        <p class="dishes-intro-sub">La nostra cucina parte dalla tradizione italiana e si prende il tempo giusto per farsi ricordare. Ogni piatto è costruito per essere riconoscibile, sincero, appagante.</p>
+        <a href="#dishStrip" class="btn btn-primary dishes-chapter-cta">Scopri i piatti ↓</a>
+      </div>
+    </div>
+
+    <div class="dishes-inner">
+    <div class="dish-strip" id="dishStrip">
+      <button type="button" class="dish-card" data-dish="tagliere" data-reveal="pop" aria-haspopup="dialog">
+        <span class="dish-card-inner">
+          <span class="dish-glare" aria-hidden="true"></span>
+          <img src="assets/img/piatto-tagliere-affettati.jpg" alt="Tagliere di salumi selezionati con gnocco fritto" loading="lazy">
+          <span class="dish-info">
+            <span class="dish-expand" aria-hidden="true">+</span>
+            <span class="dish-name">Tagliere di salumi</span>
+            <span class="dish-desc">Crudo di Parma, Pancetta, Salame Felino IGP — con gnocco fritto.</span>
+          </span>
+        </span>
+      </button>
+      <button type="button" class="dish-card" data-dish="tartare" data-reveal="pop" aria-haspopup="dialog">
+        <span class="dish-card-inner">
+          <span class="dish-glare" aria-hidden="true"></span>
+          <img src="assets/img/piatto-tartare-manzo.jpg" alt="Tartare di Fassona piemontese battuta al coltello" loading="lazy">
+          <span class="dish-info">
+            <span class="dish-expand" aria-hidden="true">+</span>
+            <span class="dish-name">La Tartare</span>
+            <span class="dish-desc">Fassona piemontese, capperi di Pantelleria, senape in grani.</span>
+          </span>
+        </span>
+      </button>
+      <button type="button" class="dish-card" data-dish="trofiette" data-reveal="pop" aria-haspopup="dialog">
+        <span class="dish-card-inner">
+          <span class="dish-glare" aria-hidden="true"></span>
+          <img src="assets/img/piatto-trofie-pesto-burrata.jpg" alt="Trofiette verdi al pesto con stracciatella e pistacchio" loading="lazy">
+          <span class="dish-info">
+            <span class="dish-expand" aria-hidden="true">+</span>
+            <span class="dish-name">Trofiette Verdi</span>
+            <span class="dish-desc">Pesto genovese, stracciatella, granella di pistacchio.</span>
+          </span>
+        </span>
+      </button>
+      <button type="button" class="dish-card" data-dish="mezzelune" data-reveal="pop" aria-haspopup="dialog">
+        <span class="dish-card-inner">
+          <span class="dish-glare" aria-hidden="true"></span>
+          <img src="assets/img/piatto-ravioli-fiori.jpg" alt="Mezzelune di ricotta e rucola al burro alle erbe" loading="lazy">
+          <span class="dish-info">
+            <span class="dish-expand" aria-hidden="true">+</span>
+            <span class="dish-name">Mezzelune di Ricotta</span>
+            <span class="dish-desc">Ripiene di ricotta e rucola, burro alle erbe e salvia croccante.</span>
+          </span>
+        </span>
+      </button>
+      <button type="button" class="dish-card" data-dish="costata" data-reveal="pop" aria-haspopup="dialog">
+        <span class="dish-card-inner">
+          <span class="dish-glare" aria-hidden="true"></span>
+          <img src="assets/img/piatto-costata-manzo.jpg" alt="Costata di manzo alla griglia" loading="lazy">
+          <span class="dish-info">
+            <span class="dish-expand" aria-hidden="true">+</span>
+            <span class="dish-name">Costata</span>
+            <span class="dish-desc">Alla griglia, taglio nobile da condividere.</span>
+          </span>
+        </span>
+      </button>
+      <button type="button" class="dish-card" data-dish="grigliata" data-reveal="pop" aria-haspopup="dialog">
+        <span class="dish-card-inner">
+          <span class="dish-glare" aria-hidden="true"></span>
+          <img src="assets/img/piatto-grigliata-mista.jpg" alt="Grigliata mista con agnello, picanha, salsiccia e costine" loading="lazy">
+          <span class="dish-info">
+            <span class="dish-expand" aria-hidden="true">+</span>
+            <span class="dish-name">Grigliata Mista</span>
+            <span class="dish-desc">Agnello, picanha, salsiccia, pollo e costine di maiale.</span>
+          </span>
+        </span>
+      </button>
+    </div>
+
+    <!-- Food photo gallery -->
+    <div class="food-gallery">
+      <div class="food-gallery-head" data-reveal>
+        <span class="food-gallery-eyebrow">Arte &amp; Sapori</span>
+        <h3 class="food-gallery-title">Quando l'arte incontra la cucina</h3>
+      </div>
+      <div class="food-gallery-strip">
+      <div class="food-gallery-wrap">
+        <div class="food-gallery-track">
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-01.png" alt="Ravioli con pistacchi e fiori eduli" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-18.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-02.png" alt="Trofie al pesto con burrata" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-19.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-20.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-03.png" alt="Bruschetta con mozzarella e pomodoro" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-22.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-07.png" alt="Dessert alla fragola con fiori" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-23.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-05.png" alt="Martini dry con olive" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-24.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-25.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-11.png" alt="Cocktail nella sala Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-26.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-04.png" alt="Old fashioned cocktail" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-28.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-29.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-08.png" alt="Dessert all'arancia con fiori" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-30.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-06.png" alt="Dessert ai lamponi" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-32.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-34.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-35.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-38.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-jac-40.png" alt="Piatto Hedoné" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-10.jpg" alt="Costata di manzo alla griglia" loading="lazy"></figure>
+          <figure class="food-gallery-tile"><img src="assets/img/food-gal-09.jpg" alt="Risotto agli asparagi e prosciutto" loading="lazy"></figure>
+        </div>
+      </div>
+      </div>
+      <div class="food-gallery-cta" data-reveal="pop">
+        <p class="food-gallery-cta-invite">Tartare di Fassona, Fiorentina, picanha, cotoletta milanese XXL, trofiette al pesto — e molto altro ancora. Tutto nel menù completo.</p>
+        <div class="food-gallery-cta-btns">
+          <a href="assets/docs/menu-hedone.pdf" class="btn btn-ghost fgc-pdf" target="_blank" rel="noopener" download>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Menù estivo
+          </a>
+          <a href="assets/docs/drinks-list.pdf" class="btn btn-ghost fgc-pdf" target="_blank" rel="noopener" download>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h8M12 11v11M5 3l2 7h10l2-7z"/><path d="M5 3h14"/></svg>
+            Drinks list
+          </a>
+          <a href="#prenota" class="btn btn-primary">Prenota il tuo tavolo</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- FRUTTI REALISTICI -->
+  <section class="fruit-illusion" id="frutti-realistici">
+    <div class="fruit-illusion-bg" aria-hidden="true">
+      <div class="fruit-illusion-bg-photo"></div>
+    </div>
+    <div class="fruit-illusion-inner">
+      <div class="fruit-illusion-body" data-reveal>
+        <span class="section-kicker">Un dettaglio che sorprende sempre</span>
+        <h2>Sembra frutta.<br>Non lo è.</h2>
+        <p>È il dolce più richiesto del menù: quasi ogni tavolo lo ordina, e alcune settimane finisce prima di sera. Un lampone, una mela, un'arancia — sembrano appena colti, ma sono semifreddi modellati a mano, uno per uno.</p>
+        <p>La sorpresa è tutta nel primo morso. Vieni a scoprirla, finché ce n'è.</p>
+        <div class="fruit-illusion-btns">
+          <a href="#prenota" class="btn btn-primary">Prenota un tavolo</a>
+          <a href="menu.html#mn-frutti-realistici" class="btn btn-ghost">Scopri i dolci</a>
+        </div>
+        <p class="fruit-illusion-note">Sicuro di trovarli? <a href="tel:+393336476506">Chiamaci ora</a>.</p>
+        <div class="fruit-illusion-gallery-wrap" id="fruitGalleryWrap">
+          <div class="fruit-illusion-gallery">
+            <a href="menu.html#mn-frutti-realistici" aria-label="Lampone realistico in tavola" data-preview="assets/img/frutti-lampone-tavolo.jpg"><img src="assets/img/frutti-lampone-tavolo.jpg" alt="Semifreddo a forma di lampone in tavola" loading="lazy" style="object-position: center 65%;"></a>
+            <a href="menu.html#mn-frutti-realistici" aria-label="Mela realistica" data-preview="assets/img/frutti-mela.jpg"><img src="assets/img/frutti-mela.jpg" alt="Semifreddo a forma di mela" loading="lazy" style="object-position: 38% 32%;"></a>
+            <a href="menu.html#mn-frutti-realistici" aria-label="Arancia realistica" data-preview="assets/img/frutti-arancia.jpg"><img src="assets/img/frutti-arancia.jpg" alt="Semifreddo a forma di arancia" loading="lazy"></a>
+            <a href="menu.html#mn-frutti-realistici" aria-label="Due semifreddi in tavola" data-preview="assets/img/frutti-coppia.png"><img src="assets/img/frutti-coppia.png" alt="Semifreddi a forma di lampone e arachide in tavola" loading="lazy" style="object-position: center 55%;"></a>
+            <a href="menu.html#mn-frutti-realistici" aria-label="Un cliente assaggia il semifreddo" data-preview="assets/img/frutti-cliente.png"><img src="assets/img/frutti-cliente.png" alt="Cliente Hedoné assaggia il semifreddo a forma di lampone" loading="lazy" style="object-position: center 65%;"></a>
+            <a href="menu.html#mn-frutti-realistici" aria-label="Vetrina dei frutti realistici" data-preview="assets/img/frutti-vetrina.png"><img src="assets/img/frutti-vetrina.png" alt="Vetrina con i semifreddi a forma di frutta" loading="lazy" style="object-position: center 60%;"></a>
+          </div>
+        </div>
+      </div>
+      <div class="fruit-preview" id="fruitPreview" aria-hidden="true"><img alt=""></div>
+    </div>
+  </section>
+
+  <!-- RECENSIONI -->
+  <!-- NOTA: sostituire i testi tra virgolette con le recensioni reali da Google Maps -->
+  <section class="reviews" id="recensioni">
+    <div class="section-head" data-reveal>
+      <span class="section-kicker">Cosa dicono di noi</span>
+      <h2>Le loro parole</h2>
+      <div class="reviews-stats" data-reveal>
+        <div class="reviews-stat-item">
+          <div class="reviews-stat-score">
+            <span class="reviews-stat-num" data-count="4.9" data-decimals="1">4,9</span>
+            <span class="reviews-stat-denom">/5</span>
+          </div>
+          <div class="reviews-stat-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <div class="reviews-stat-source">
+            <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <span>Google · <strong>108 recensioni</strong></span>
+          </div>
+        </div>
+        <div class="reviews-stat-sep" aria-hidden="true"></div>
+        <a href="https://www.thefork.it/ristorante/hedone-r858105" target="_blank" rel="noopener" class="reviews-stat-item reviews-stat-link">
+          <div class="reviews-stat-score">
+            <span class="reviews-stat-num" data-count="9.5" data-decimals="1">9,5</span>
+            <span class="reviews-stat-denom">/10</span>
+          </div>
+          <div class="reviews-stat-source">
+            <span>TheFork · <strong>67 recensioni</strong> ↗</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="reviews-track-wrap" id="reviewsTrackWrap">
+      <div class="reviews-track" id="reviewsTrack">
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 stelle">★★★★★</div>
+          <p class="review-text">«Che dire, sono stata entusiasta fin da subito, ci hanno accolto con gentilezza e un sorriso che fa la differenza, nel cibo ho trovato freschezza e ottimo sapore, lo consiglio? Lo straconsiglio!!!»</p>
+          <span class="review-author">mara pappadá <span class="review-source review-source--google">Google</span></span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 stelle">★★★★★</div>
+          <p class="review-text">«Risotto perfetto, arrosticini deliziosi ad un ottimo prezzo, personale gentile ed educato. Torneremo per il compleanno di mia sorella! Super consigliato!»</p>
+          <span class="review-author">Silvana C. <span class="review-source review-source--thefork">TheFork</span></span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 stelle">★★★★★</div>
+          <p class="review-text">«Già prima di arrivare siamo rimasti colpiti dalla disponibilità del proprietario: a causa del forte nubifragio si è gentilmente offerto di venirci a prendere. Il risotto, cotto alla perfezione, era ben equilibrato nei sapori, con piacevoli note di zafferano, taleggio e speck. Un plauso al personale di sala: giovani, professionali, attenti e precisi, sempre presenti, mai invadenti. In definitiva, Hedoné è stata una piacevolissima sorpresa. Torneremo sicuramente.»</p>
+          <span class="review-author">Michela Grossi <span class="review-source review-source--google">Google</span></span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 stelle">★★★★★</div>
+          <p class="review-text">«Locale bello e curato. Il cibo è tradizionale e a base di carne. Piatti curati e sapori equilibrati, si vede che c'è attenzione dietro ogni cosa. Servizio gentile e disponibile. Prezzi coerenti con l'esperienza. Nel complesso ci tornerei volentieri.»</p>
+          <span class="review-author">Davide C. <span class="review-source review-source--thefork">TheFork</span></span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 stelle">★★★★★</div>
+          <p class="review-text">«Locale scoperto per caso su TheFork per il compleanno di mia mamma, ed è stata davvero una bellissima sorpresa. Entrando si percepisce subito un ambiente molto curato, elegante e pulito. Le portate erano di ottima qualità, ben presentate e con ingredienti ricercati. Il proprietario si è dimostrato molto ospitale e gentilissimo, passando anche al tavolo per assicurarsi che fosse tutto di nostro gradimento. Sicuramente un posto in cui tornare. Consigliato!»</p>
+          <span class="review-author">Kikka76 <span class="review-source review-source--google">Google</span></span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 stelle">★★★★★</div>
+          <p class="review-text">«Piatti squisiti e di qualità, il punto forte è la carne! Abbiamo mangiato benissimo. Il personale è gentile e molto cordiale, attenti a tutto. Si trova a Vimodrone, vicino la martesana, zona tranquilla e fornita di parcheggio. Ci torneremo sicuramente!»</p>
+          <span class="review-author">Aurora ferrito <span class="review-source review-source--google">Google</span></span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 stelle">★★★★★</div>
+          <p class="review-text">«Ottima esperienza per un'apericena vegetariano. Abbiamo ordinato il tagliere di formaggi con confetture, accompagnato da gnocco fritto, verdure grigliate e bruschette: tutto molto buono e con materie prime di qualità. Porzioni decisamente generose e ottimo rapporto qualità-prezzo. Buona la selezione di birre artigianali. Personale gentile e professionale. Consigliato.»</p>
+          <span class="review-author">Caterina Castellini <span class="review-source review-source--google">Google</span></span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 stelle">★★★★★</div>
+          <p class="review-text">«Locale pulito ed accogliente, personale disponibile e cibo ottimo. Location davanti al naviglio, ottima vista sul fiume. Sono rimasta molto soddisfatta, tornerò!»</p>
+          <span class="review-author">Addolorata Bombino <span class="review-source review-source--google">Google</span></span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 stelle">★★★★★</div>
+          <p class="review-text">«Siamo stati benissimo, locale accogliente con dehors meraviglioso, servizio impeccabile e cibo delizioso, consiglio la tartare. Consigliatissimo.»</p>
+          <span class="review-author">Marzia Marzia <span class="review-source review-source--google">Google</span></span>
+        </article>
+
+      </div>
+    </div>
+    <div class="reviews-fade-left" aria-hidden="true"></div>
+    <div class="reviews-fade-right" aria-hidden="true"></div>
+  </section>
+
+
+  <!-- LOCATION -->
+  <section class="location" id="location">
+    <div class="location-glow" aria-hidden="true"></div>
+    <div class="location-pattern" aria-hidden="true"></div>
+    <div class="location-inner">
+      <div class="location-bottom" data-reveal>
+        <div class="location-info">
+          <span class="section-kicker">Dove siamo</span>
+          <h2>Non sai come raggiungerci?<br>Ci pensiamo noi.</h2>
+          <p>Via Angelo Cazzaniga 129 · Vimodrone (MI)<br><span class="location-detail">Sul Naviglio Martesana, a due passi da Milano.</span></p>
+          <p class="location-note">Pet friendly · Luminoso di giorno, lounge la sera.</p>
+          <a class="link-arrow" href="https://www.google.com/maps/dir/?api=1&destination=Via+Angelo+Cazzaniga+129+Vimodrone+MI" target="_blank" rel="noopener">Apri in Google Maps →</a>
+        </div>
+        <div class="distance-calc">
+          <p class="distance-title">Quanto sei lontano?</p>
+          <p class="distance-subtitle">Inserisci il tuo indirizzo e scopri quanto dista Hedoné.</p>
+          <button class="distance-gps-btn" id="gpsBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8" opacity=".3"/></svg>
+            Usa la mia posizione
+          </button>
+          <div class="distance-divider"><span>oppure</span></div>
+          <div class="distance-input-row">
+            <input type="text" id="userAddress" class="distance-input" placeholder="Es. Via Roma 1, Milano…" autocomplete="off">
+            <button class="distance-btn" id="distanceBtn">Calcola</button>
+          </div>
+          <div class="distance-result" id="distanceResult" aria-live="polite"></div>
+        </div>
+        <div class="location-map-wrap">
+          <div id="hedone-map" class="location-map"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRENOTA / CONTATTI -->
+  <section class="booking" id="prenota">
+    <div class="booking-bg-word" aria-hidden="true">PRENOTA</div>
+    <div class="booking-inner" data-reveal>
+      <span class="section-kicker">Prenota</span>
+      <h2>Riservaci il tuo tempo</h2>
+      <p class="booking-lead">Prenota il tuo tavolo direttamente, o scrivici per qualsiasi informazione. Risponderemo entro poche ore.</p>
+
+      <!-- Toggle Prenota / Contatta -->
+      <div class="booking-mode-toggle" role="group" aria-label="Tipo di richiesta">
+        <button class="bmt-btn is-active" data-mode="reservation" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Prenota un tavolo
+        </button>
+        <button class="bmt-btn" data-mode="contact" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Scrivi al locale
+        </button>
+      </div>
+
+      <!-- Form Prenotazione -->
+      <form class="booking-form is-active" id="formReservation" novalidate>
+        <div class="booking-form-grid">
+          <div class="form-group">
+            <label for="resName">Nome e cognome *</label>
+            <input type="text" id="resName" name="nome" required placeholder="Mario Rossi" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="resPhone">Telefono *</label>
+            <input type="tel" id="resPhone" name="telefono" required placeholder="+39 333 0000000" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="resDate">Data *</label>
+            <input type="date" id="resDate" name="data" required>
+          </div>
+          <div class="form-group">
+            <label for="resTime">Orario preferito *</label>
+            <select id="resTime" name="ora" required>
+              <option value="">Seleziona orario</option>
+              <optgroup label="Pranzo">
+                <option value="12:00">12:00</option>
+                <option value="12:30">12:30</option>
+                <option value="13:00">13:00</option>
+                <option value="13:30">13:30</option>
+                <option value="14:00">14:00</option>
+                <option value="14:30">14:30</option>
+              </optgroup>
+              <optgroup label="Cena">
+                <option value="19:00">19:00</option>
+                <option value="19:30">19:30</option>
+                <option value="20:00">20:00</option>
+                <option value="20:30">20:30</option>
+                <option value="21:00">21:00</option>
+                <option value="21:30">21:30</option>
+                <option value="22:00">22:00</option>
+                <option value="22:30">22:30</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="resPeople">Numero persone *</label>
+            <select id="resPeople" name="persone" required>
+              <option value="">Quante persone?</option>
+              <option value="1">1 persona</option>
+              <option value="2">2 persone</option>
+              <option value="3">3 persone</option>
+              <option value="4">4 persone</option>
+              <option value="5">5 persone</option>
+              <option value="6">6 persone</option>
+              <option value="7+">7 o più persone</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="resOccasion">Occasione speciale</label>
+            <select id="resOccasion" name="occasione">
+              <option value="Nessuna">Nessuna in particolare</option>
+              <option value="Compleanno">Compleanno</option>
+              <option value="Anniversario">Anniversario</option>
+              <option value="Proposta di matrimonio">Proposta di matrimonio</option>
+              <option value="Festa o evento speciale">Festa o evento speciale</option>
+              <option value="Addio al celibato/nubilato">Addio al celibato/nubilato</option>
+              <option value="Cena di lavoro">Cena di lavoro</option>
+              <option value="Altro">Altro (specificare nelle note)</option>
+            </select>
+          </div>
+          <div class="form-group form-group-full">
+            <label for="resNotes">Note (allergie, richieste speciali...)</label>
+            <textarea id="resNotes" name="note" placeholder="Allergie, richieste particolari, dettagli sull'occasione..." rows="3"></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary form-submit-btn">Invia richiesta di prenotazione →</button>
+          <p class="form-note">Risponderemo entro poche ore per confermare il tuo tavolo.</p>
+        </div>
+        <div class="form-feedback" id="resFeedback" aria-live="polite"></div>
+        <div class="booking-alt">
+          <span class="booking-alt-divider">oppure</span>
+          <a href="https://www.thefork.it/ristorante/hedone-r858105" target="_blank" rel="noopener" class="booking-alt-link">
+            Prenota su TheFork — conferma immediata
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </form>
+
+      <!-- Form Contatto -->
+      <form class="booking-form" id="formContact" novalidate>
+        <div class="booking-form-grid">
+          <div class="form-group">
+            <label for="ctName">Nome *</label>
+            <input type="text" id="ctName" name="nome" required placeholder="Mario Rossi" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="ctEmail">Email *</label>
+            <input type="email" id="ctEmail" name="email" required placeholder="mario@esempio.com" autocomplete="email">
+          </div>
+          <div class="form-group form-group-full">
+            <label for="ctMessage">Messaggio *</label>
+            <textarea id="ctMessage" name="messaggio" required placeholder="Come possiamo aiutarti?" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary form-submit-btn">Invia messaggio →</button>
+        </div>
+        <div class="form-feedback" id="ctFeedback" aria-live="polite"></div>
+      </form>
+
+      <!-- Card contatti -->
+      <div class="booking-grid">
+        <a class="booking-card" href="tel:+393336476506">
+          <div class="booking-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.16 7.66a16 16 0 006.18 6.18l1.02-1.05a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          </div>
+          <span class="booking-label">Chiamaci</span>
+          <span class="booking-value">+39 333 6476506</span>
+          <span class="booking-card-sub">Risposta rapida</span>
+        </a>
+        <a class="booking-card" href="mailto:info@hedonevimodrone.com">
+          <div class="booking-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+          </div>
+          <span class="booking-label">Scrivici</span>
+          <span class="booking-value">info@hedone<wbr>vimodrone.com</span>
+          <span class="booking-card-sub">Rispondiamo presto</span>
+        </a>
+        <a class="booking-card" href="https://www.instagram.com/hedone.vimodrone" target="_blank" rel="noopener">
+          <div class="booking-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <span class="booking-label">Instagram</span>
+          <span class="booking-value">@hedone.vimodrone</span>
+          <span class="booking-card-sub">Seguici per novità e storie</span>
+        </a>
+        <div class="booking-card booking-card-hours">
+          <div class="booking-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <span class="booking-label">Siamo aperti</span>
+          <span class="booking-value booking-hours-table">
+            <span>Mar–Gio</span><span>10:00–23:00</span>
+            <span>Ven–Sab</span><span>10:00–02:00</span>
+            <span>Dom</span><span>10:00–23:00</span>
+            <span class="hours-closed">Lunedì</span><span class="hours-closed">chiuso</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="dish-modal" id="dishModal" aria-hidden="true">
+  <div class="dish-modal-backdrop" id="dishModalBackdrop"></div>
+  <div class="dish-modal-panel" role="dialog" aria-modal="true" aria-labelledby="dishModalTitle">
+    <button type="button" class="dish-modal-close" id="dishModalClose" aria-label="Chiudi dettaglio piatto">×</button>
+    <div class="dish-modal-media">
+      <div class="dish-gallery" id="dishGallery">
+        <div class="dish-gallery-track" id="dishGalleryTrack"></div>
+        <button class="dish-gallery-btn dish-gallery-prev" id="dishGalleryPrev" type="button" aria-label="Foto precedente">&#8249;</button>
+        <button class="dish-gallery-btn dish-gallery-next" id="dishGalleryNext" type="button" aria-label="Foto successiva">&#8250;</button>
+        <div class="dish-gallery-dots" id="dishGalleryDots"></div>
+      </div>
+    </div>
+    <div class="dish-modal-body">
+      <p class="dish-modal-kicker" id="dishModalKicker"></p>
+      <h3 id="dishModalTitle"></h3>
+      <p class="dish-modal-desc" id="dishModalDesc"></p>
+      <h4>Ingredienti</h4>
+      <ul class="dish-modal-ingredients" id="dishModalIngredients"></ul>
+      <h4>Abbinamento consigliato</h4>
+      <div class="dish-modal-pairing" id="dishModalPairing"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SOMMELIER FLOAT CTA -->
+<a class="sommelier-float-cta" href="sommelier.html" id="sommelierFloat" aria-label="Il Sommelier AI di Hedoné, presto disponibile al tavolo">
+  <span class="sfc-badge">Presto</span>
+  <span class="sfc-icon-wrap">
+    <svg class="sfc-icon" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20 28 C13 52 22 98 50 112 C78 98 87 52 80 28" stroke="#d4af6a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="50" cy="28" rx="30" ry="7" stroke="#d4af6a" stroke-width="1.8" fill="none"/>
+      <path d="M27 66 C23 90 34 108 50 112 C66 108 77 90 73 66 Z" fill="rgba(140,35,35,0.42)"/>
+      <ellipse cx="50" cy="66" rx="23" ry="5.5" fill="rgba(160,40,40,0.52)"/>
+      <line x1="50" y1="112" x2="50" y2="164" stroke="#d4af6a" stroke-width="1.8" stroke-linecap="round"/>
+      <ellipse cx="50" cy="170" rx="30" ry="6" stroke="#d4af6a" stroke-width="1.8" fill="none"/>
+    </svg>
+  </span>
+  <div class="sfc-text">
+    <span class="sfc-q">Hai bisogno di aiuto<br>per scegliere?</span>
+    <span class="sfc-sub">Il Sommelier arriva al tavolo →</span>
+  </div>
+</a>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <div class="footer-brand">Hedoné</div>
+      <p class="footer-tagline">Cucina italiana, passione autentica.<br>Vimodrone, sul Naviglio Martesana.</p>
+      <div class="footer-social-icons">
+        <a href="https://www.instagram.com/hedone.vimodrone" target="_blank" rel="noopener" aria-label="Instagram di Hedoné">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61587043508623" target="_blank" rel="noopener" aria-label="Facebook di Hedoné">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+    <div class="footer-links-col">
+      <p class="footer-col-title">Esplora</p>
+      <nav class="footer-nav">
+        <a href="#chi-siamo">Il ristorante</a>
+        <a href="menu.html">Il menù</a>
+        <a href="menu.html#mn-vini">I vini</a>
+        <a href="#recensioni">Recensioni</a>
+        <a href="serate.html">Serate &amp; Karaoke</a>
+        <a href="#prenota">Prenota un tavolo</a>
+      </nav>
+    </div>
+    <div class="footer-contact-col">
+      <p class="footer-col-title">Dove siamo</p>
+      <address class="footer-address">
+        Via Angelo Cazzaniga 129<br>
+        20055 Vimodrone (MI)<br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Angelo+Cazzaniga+129+Vimodrone+MI" target="_blank" rel="noopener">Apri in Google Maps →</a>
+      </address>
+      <p class="footer-contact-line"><a href="tel:+393336476506">+39 333 6476506</a></p>
+      <p class="footer-contact-line"><a href="mailto:info@hedonevimodrone.com">info@hedonevimodrone.com</a></p>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <p>COMUS S.R.L. · P.IVA 14024370968 · REA MI-2756947</p>
+    <p>© 2025 Hedoné · Tutti i diritti riservati</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+<script>
+(function () {
+  const HEDONE = { lat: 45.5188, lng: 9.2960 };
+
+  /* ── Mappa ── */
+  const map = L.map('hedone-map', {
+    scrollWheelZoom: false,
+    zoomControl: true,
+    attributionControl: true
+  }).setView([HEDONE.lat, HEDONE.lng], 15);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+    maxZoom: 19
+  }).addTo(map);
+
+  /* ── Marker Hedoné ── */
+  const hedoneIcon = L.divIcon({
+    html: '<div class="hmap-marker"><span>Η</span></div>',
+    className: '',
+    iconSize: [52, 52],
+    iconAnchor: [26, 26],
+    popupAnchor: [0, -28]
+  });
+  L.marker([HEDONE.lat, HEDONE.lng], { icon: hedoneIcon })
+    .addTo(map)
+    .bindPopup('<div class="hmap-popup"><strong>Hedoné</strong><br>Via Angelo Cazzaniga 129<br>Vimodrone (MI)</div>', { maxWidth: 180 })
+    .openPopup();
+
+  /* ── Layer condivisi ── */
+  let userMarker = null;
+  let routeLayer = null;
+
+  const userIcon = L.divIcon({
+    html: '<div class="hmap-user-marker"></div>',
+    className: '', iconSize: [16, 16], iconAnchor: [8, 8]
+  });
+
+  /* ── Routing OSRM: percorso stradale reale ── */
+  async function drawRoute(uLat, uLng, originLabel) {
+    const result = document.getElementById('distanceResult');
+    try {
+      const osrmUrl =
+        'https://router.project-osrm.org/route/v1/driving/' +
+        uLng + ',' + uLat + ';' + HEDONE.lng + ',' + HEDONE.lat +
+        '?overview=full&geometries=geojson';
+      const res  = await fetch(osrmUrl);
+      const data = await res.json();
+
+      if (userMarker) map.removeLayer(userMarker);
+      if (routeLayer) map.removeLayer(routeLayer);
+
+      userMarker = L.marker([uLat, uLng], { icon: userIcon }).addTo(map);
+
+      if (data.routes && data.routes.length) {
+        const route    = data.routes[0];
+        const distKm   = route.distance < 1000
+          ? Math.round(route.distance) + ' m'
+          : (route.distance / 1000).toFixed(1) + ' km';
+        const durMin   = Math.ceil(route.duration / 60);
+        const durLabel = durMin < 60
+          ? durMin + ' min'
+          : Math.floor(durMin / 60) + ' h ' + (durMin % 60) + ' min';
+
+        const latlngs = route.geometry.coordinates.map(function(c) { return [c[1], c[0]]; });
+        routeLayer = L.polyline(latlngs, {
+          color: '#ff5722', weight: 6, opacity: 0.95, lineCap: 'round', lineJoin: 'round'
+        }).addTo(map);
+
+        map.fitBounds(routeLayer.getBounds(), { padding: [50, 50] });
+
+        const gmUrl = 'https://www.google.com/maps/dir/?api=1&destination=Via+Angelo+Cazzaniga+129+Vimodrone+MI' +
+          (originLabel ? '&origin=' + encodeURIComponent(originLabel) : '');
+
+        result.className = 'distance-result show';
+        result.innerHTML =
+          '<strong>' + distKm + '</strong> in auto · <strong>' + durLabel + '</strong> ' +
+          '<a href="' + gmUrl + '" target="_blank" rel="noopener" class="distance-link">Apri in Maps →</a>';
+      } else {
+        throw new Error('no route');
+      }
+    } catch (_) {
+      result.className = 'distance-result error';
+      result.textContent = 'Percorso non trovato. Prova con l\'indirizzo manuale.';
+    }
+  }
+
+  /* ── Geolocalizzazione automatica ── */
+  const GPS_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8" opacity=".3"/></svg>';
+  const gpsBtn = document.getElementById('gpsBtn');
+
+  if (gpsBtn) {
+    gpsBtn.addEventListener('click', function () {
+      gpsBtn.classList.add('loading');
+      gpsBtn.textContent = 'Rilevamento posizione…';
+      const result = document.getElementById('distanceResult');
+      result.className = 'distance-result loading';
+      result.textContent = 'Rilevamento posizione in corso…';
+
+      if (!navigator.geolocation) {
+        gpsBtn.classList.remove('loading');
+        gpsBtn.innerHTML = GPS_ICON + ' Usa la mia posizione';
+        result.className = 'distance-result error';
+        result.textContent = 'GPS non supportato. Inserisci il tuo indirizzo qui sotto.';
+        document.getElementById('userAddress').focus();
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        function (pos) {
+          gpsBtn.classList.remove('loading');
+          gpsBtn.innerHTML = GPS_ICON + ' Posizione rilevata';
+          drawRoute(pos.coords.latitude, pos.coords.longitude, '');
+        },
+        function (err) {
+          gpsBtn.classList.remove('loading');
+          gpsBtn.innerHTML = GPS_ICON + ' Usa la mia posizione';
+          result.className = 'distance-result error';
+          if (err.code === 1) {
+            result.textContent = 'Permesso negato. Attiva la posizione nelle impostazioni del browser, oppure inserisci il tuo indirizzo qui sotto.';
+          } else {
+            result.textContent = 'GPS non disponibile su questo dispositivo. Inserisci il tuo indirizzo qui sotto.';
+          }
+          document.getElementById('userAddress').focus();
+        },
+        { timeout: 8000, maximumAge: 60000 }
+      );
+    });
+  }
+
+  /* ── Ricerca per indirizzo ── */
+  async function calcDistance() {
+    const input  = document.getElementById('userAddress');
+    const result = document.getElementById('distanceResult');
+    const addr   = input.value.trim();
+    if (!addr) return;
+
+    result.className = 'distance-result loading';
+    result.textContent = 'Cerco l\'indirizzo…';
+
+    try {
+      const res  = await fetch(
+        'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + encodeURIComponent(addr),
+        { headers: { 'Accept-Language': 'it' } }
+      );
+      const data = await res.json();
+      if (!data.length) {
+        result.className = 'distance-result error';
+        result.textContent = 'Indirizzo non trovato. Prova a essere più preciso.';
+        return;
+      }
+      await drawRoute(parseFloat(data[0].lat), parseFloat(data[0].lon), addr);
+    } catch (_) {
+      result.className = 'distance-result error';
+      result.textContent = 'Errore di connessione. Riprova.';
+    }
+  }
+
+  document.getElementById('distanceBtn').addEventListener('click', calcDistance);
+  document.getElementById('userAddress').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') calcDistance();
+  });
+})();
+</script>
+</body>
+</html>

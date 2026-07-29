@@ -1,0 +1,14 @@
+# Dipendenze
+node_modules/
+
+# Materiale grezzo non destinato al repo (foto/video sorgente, backup, archivio locale)
+BACKUP/
+FOTO E VIDEO UFFICIALE/
+_archivio/
+
+# Log
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
