@@ -99,11 +99,16 @@
     <p class="gate-error" id="gateError"></p>
   </form>
 <script>
-  var PASSWORD = "Xq4vT9nRw2Lp7k!";
-  document.getElementById('gateForm').addEventListener('submit', function (e) {
+  var PASSWORD_HASH = "40f302e577faaed627044c0469a930e5f53614e078fcbf93c8ec3643f6c8e865";
+  async function sha256(str) {
+    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+  }
+  document.getElementById('gateForm').addEventListener('submit', async function (e) {
     e.preventDefault();
     var val = document.getElementById('gatePwd').value;
-    if (val === PASSWORD) {
+    var hash = await sha256(val);
+    if (hash === PASSWORD_HASH) {
       localStorage.setItem('hedone_preview_ok', '1');
       var params = new URLSearchParams(location.search);
       var next = params.get('next') || 'index.html';
