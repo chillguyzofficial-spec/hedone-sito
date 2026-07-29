@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Anteprima riservata — Hedoné</title>
+<meta name="theme-color" content="#110c08">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/png" href="assets/img/logo-hedone-emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #110c08;
+    --ink: #f3f1ea;
+    --ink-dim: #b9b6ac;
+    --gold: #d4af6a;
+    --glass: rgba(255, 230, 200, 0.07);
+    --glass-border: rgba(255, 215, 170, 0.16);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Manrope", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body { padding: 1.5rem; }
+  .gate-card {
+    width: 100%;
+    max-width: 380px;
+    background: linear-gradient(155deg, rgba(28, 19, 13, 0.7), rgba(20, 13, 8, 0.56));
+    border: 1px solid rgba(212, 175, 106, 0.35);
+    border-radius: 3px;
+    padding: clamp(1.8rem, 5vw, 2.6rem);
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+  .gate-logo { width: 56px; height: 56px; margin-bottom: 1.1rem; opacity: 0.92; }
+  .gate-title {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0 0 0.4rem;
+    color: var(--ink);
+  }
+  .gate-sub {
+    font-size: 0.9rem;
+    color: var(--ink-dim);
+    margin: 0 0 1.6rem;
+    line-height: 1.5;
+  }
+  .gate-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--ink);
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
+    text-align: center;
+  }
+  .gate-input:focus { outline: none; border-color: var(--gold); }
+  .gate-btn {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 999px;
+    border: none;
+    background: var(--gold);
+    color: #1c130d;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+  .gate-btn:hover { filter: brightness(1.08); }
+  .gate-error {
+    color: #e08a7a;
+    font-size: 0.85rem;
+    margin-top: 0.9rem;
+    min-height: 1.2em;
+  }
+</style>
+</head>
+<body>
+  <form class="gate-card" id="gateForm" autocomplete="off">
+    <img class="gate-logo" src="assets/img/logo-hedone-emblema.png" alt="">
+    <p class="gate-title">Anteprima riservata</p>
+    <p class="gate-sub">Il sito di Hedoné è ancora in lavorazione.<br>Inserisci la password per continuare.</p>
+    <input class="gate-input" type="password" id="gatePwd" placeholder="Password" autofocus>
+    <button class="gate-btn" type="submit">Entra</button>
+    <p class="gate-error" id="gateError"></p>
+  </form>
+<script>
+  var PASSWORD = "Xq4vT9nRw2Lp7k!";
+  document.getElementById('gateForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = document.getElementById('gatePwd').value;
+    if (val === PASSWORD) {
+      localStorage.setItem('hedone_preview_ok', '1');
+      var params = new URLSearchParams(location.search);
+      var next = params.get('next') || 'index.html';
+      location.href = next;
+    } else {
+      document.getElementById('gateError').textContent = 'Password errata, riprova.';
+      document.getElementById('gatePwd').value = '';
+      document.getElementById('gatePwd').focus();
+    }
+  });
+</script>
+</body>
+</html>

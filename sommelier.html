@@ -2,6 +2,11 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<script>
+  if (localStorage.getItem('hedone_preview_ok') !== '1') {
+    location.replace('preview-login.html?next=' + encodeURIComponent(location.pathname.split('/').pop() + location.search));
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Sommelier AI — Hedoné | Abbinamento vini e piatti</title>
