@@ -3482,6 +3482,28 @@ a.booking-card:hover {
   border-color: rgba(212,175,106,0.45);
   background: rgba(212,175,106,0.06);
 }
+.footer-credit {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.6rem;
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.01em;
+}
+.footer-credit-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 9px 1px rgba(212, 175, 106, 0.75);
+  flex-shrink: 0;
+}
+.footer-credit strong {
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
 .footer-col-title {
   font-size: 0.64rem;
   text-transform: uppercase;
