@@ -2036,6 +2036,7 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 .dish-modal-body {
   padding: clamp(1.5rem, 3vw, 2.4rem);
   overflow-y: auto;
+  min-height: 0;
 }
 .dish-modal-kicker {
   text-transform: uppercase;
