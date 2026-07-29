@@ -109,7 +109,7 @@
     var val = document.getElementById('gatePwd').value;
     var hash = await sha256(val);
     if (hash === PASSWORD_HASH) {
-      localStorage.setItem('hedone_preview_ok', '1');
+      sessionStorage.setItem('hedone_preview_ok', '1');
       var params = new URLSearchParams(location.search);
       var next = params.get('next') || 'index.html';
       location.href = next;

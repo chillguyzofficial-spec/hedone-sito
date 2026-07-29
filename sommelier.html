@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <script>
-  if (localStorage.getItem('hedone_preview_ok') !== '1') {
+  if (sessionStorage.getItem('hedone_preview_ok') !== '1') {
     location.replace('preview-login.html?next=' + encodeURIComponent(location.pathname.split('/').pop() + location.search));
   }
 </script>
