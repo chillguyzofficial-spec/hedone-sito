@@ -1906,7 +1906,7 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 .dish-modal {
   position: fixed;
   inset: 0;
-  z-index: 200;
+  z-index: 950;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2109,7 +2109,8 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 @media (max-width: 720px) {
   .dish-modal-panel { grid-template-columns: 1fr; max-height: 92vh; }
   .dish-modal-media { min-height: 200px; }
-  .dish-modal-media::after { background: linear-gradient(180deg, transparent 55%, rgba(21, 21, 27, 0.9) 100%); }
+  .dish-modal-media::after { background: linear-gradient(180deg, transparent 45%, rgba(12, 12, 16, 0.8) 78%, #0c0c10 96%); }
+  .dish-modal-body { position: relative; z-index: 3; background: #0c0c10; }
   .dishes-chapter-deco { display: none; }
   .dishes-chapter-body { width: 100%; padding: 0 1.4rem; }
 }

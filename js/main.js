@@ -702,6 +702,7 @@
   var dishModalDesc = document.getElementById("dishModalDesc");
   var dishModalIngredients = document.getElementById("dishModalIngredients");
   var dishModalPairing = document.getElementById("dishModalPairing");
+  var dishModalBody = dishModal ? dishModal.querySelector(".dish-modal-body") : null;
   var galleryTrack = document.getElementById("dishGalleryTrack");
   var galleryDotsEl = document.getElementById("dishGalleryDots");
   var galleryPrevBtn = document.getElementById("dishGalleryPrev");
@@ -748,6 +749,13 @@
     if (_autoplayTimer) { clearInterval(_autoplayTimer); _autoplayTimer = null; }
   }
   function resetAutoplay() { startAutoplay(); }
+
+  /* Ferma l'autoplay della gallery appena l'utente scrolla la descrizione:
+     un cambio foto (transform in transizione) durante lo scroll del testo
+     puo' causare un artefatto di compositing su Chromium mobile. */
+  if (dishModalBody) {
+    dishModalBody.addEventListener("scroll", stopAutoplay, { passive: true });
+  }
 
   function fillDishModal(data) {
     galleryImgs = data.imgs || [];
