@@ -1461,6 +1461,49 @@ var CHIP_COMMENTS = {
   ],
 };
 
+var OCCASION_COMMENTS = {
+  celebrazione: [
+    'Un compleanno? Allora niente scherzi sul conto.',
+    'Festa è. Mi assicuro che il vino sia all\'altezza dei brindisi.',
+    'Adoro le feste. Sono l\'unica occasione in cui nessuno controlla quanto verso nel bicchiere.',
+    'Ottimo. Le candeline le soffia lei, il vino giusto lo scelgo io.',
+    'Si festeggia? Allora tiro fuori qualcosa di un po\' più serio del solito.',
+    'Una festa merita un brindisi vero, non un bicchiere qualunque. Ci penso io.',
+  ],
+  romantica: [
+    'Capito. Silenzio dalla cucina, non dal vino.',
+    'Una cena romantica merita un vino che non fa troppe domande. Ci penso io.',
+    'Atmosfera raccolta, quindi. Scelgo qualcosa che accompagna senza interrompere.',
+    'Romantica, dice. Farò finta di non aver sentito nient\'altro.',
+    'Capito — luci basse, voce bassa. Il vino lo scelgo di conseguenza.',
+    'Bene. Prometto di essere discreto quanto il vino che sto per proporle.',
+  ],
+  business: [
+    'Cliente importante? Le consiglio qualcosa che non fa scena, ma nemmeno passa inosservato.',
+    'Cena di lavoro. Il vino giusto chiude più trattative di quanto si creda.',
+    'Capisco — niente eccessi, ma nemmeno niente di dimenticabile. Trovo l\'equilibrio.',
+    'Lavoro, capito. Sceglierò qualcosa che fa fare bella figura senza dire una parola.',
+    'Cena d\'affari. Il vino giusto vale più di una buona stretta di mano.',
+    'Discreto ma non timido — è il tono giusto per un tavolo di lavoro. Ci penso io.',
+  ],
+  amici: [
+    'Serata tra amici. Vino che si presta bene a essere versato più di una volta.',
+    'Tra amici il vino gira più veloce. Ne terrò conto nella scelta.',
+    'Perfetto — compagnia buona merita un bicchiere che tiene il passo.',
+    'Tra amici, capito. Preparo qualcosa che non si offende se la bottiglia finisce presto.',
+    'Serata leggera in vista. Il vino sarà all\'altezza della compagnia.',
+    'Bene, tra amici si beve con più gusto. Ne scelgo uno che merita.',
+  ],
+  famiglia: [
+    'Cena in famiglia. Qualcosa che mette tutti d\'accordo, dai nonni ai più giovani.',
+    'In famiglia si discute su tutto tranne che sul vino, se scelgo bene.',
+    'Capito. Un vino conviviale, senza pretese ma con carattere.',
+    'Famiglia, capito. Cerco qualcosa che vada bene anche per lo zio più esigente.',
+    'A tavola con la famiglia serve un vino diplomatico. Lascio fare a me.',
+    'In famiglia c\'è sempre chi vuole solo acqua e chi vuole il calice pieno. Trovo un compromesso.',
+  ],
+};
+
 var IDLE_PHRASES = [
   'Cosa ordina stasera? Scelga dal menu — trovo io il vino.',
   'Un vino giusto trasforma una cena in un ricordo.',
@@ -1983,6 +2026,8 @@ function getText(dishes, text, wines) {
     'Ho scelto qualcosa di speciale per l\'occasione, pensando anche ' + contract('a', dishMention(ctx)) + ': ' + w0.name + ' di ' + w0.producer + '. ' + d0 + '. Merita un brindisi vero.' + alt,
     'Le occasioni speciali non capitano tutte le sere — e nemmeno i vini che ho in mente per loro. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Va bene, ammetto che per le occasioni importanti divento un po\' romantico anche io. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '. Le sta bene?' + alt,
+    'Un compleanno si festeggia una volta l\'anno, ma un buon vino se lo ricorda molto più a lungo. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Le candeline si spengono in un soffio, il vino giusto resta in bocca molto di più. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   if (ctx.romantica) return p([
@@ -1992,6 +2037,8 @@ function getText(dishes, text, wines) {
     'In una cena romantica il vino non deve rubare la scena ' + contract('a', dishMention(ctx)) + '. ' + w0.name + ' di ' + w0.producer + ' conosce il suo ruolo: ' + d0 + '.' + alt,
     'Non faccio da chaperon, ma se posso aiutare la serata a scorrere bene, lo faccio volentieri. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Il terzo incomodo stasera sono io, e ho intenzione di sparire in fretta dopo aver versato questo: ' + w0.name + ' di ' + w0.producer + '. ' + d0 + '.' + alt,
+    'Le luci basse le pensa il locale, la parte difficile — il silenzio giusto nel bicchiere — la penso io. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Non prometto miracoli, ma un vino così aiuta la conversazione a scorrere da sola. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   if (ctx.business) return p([
@@ -1999,6 +2046,9 @@ function getText(dishes, text, wines) {
     'Per un tavolo di lavoro, con ' + dishMention(ctx) + ' scelto, serve autorevolezza discreta. Ho scelto ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Un vino che dice "so quello che faccio" senza dirlo ad alta voce — e che regge bene ' + dishMention(ctx) + '. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Un pranzo di lavoro dove il vino diventa l\'argomento di conversazione è un pranzo di lavoro riuscito male. Evitiamolo con ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Con un cliente importante non si gioca d\'azzardo — nemmeno con il vino. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '. Sicuro, mai banale.' + alt,
+    'Se la trattativa va male, almeno il vino sarà stato all\'altezza. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Chiedere consiglio al sommelier davanti a un cliente fa sempre una buona impressione. Gliene faccio uno solido: ' + w0.name + ' di ' + w0.producer + '. ' + d0 + '.' + alt,
   ]);
 
   if (ctx.amici) return p([
@@ -2007,12 +2057,17 @@ function getText(dishes, text, wines) {
     'Con la comitiva giusta, e con ' + dishMention(ctx) + ' sul tavolo, si beve meglio. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '. Perfetto da condividere.' + alt,
     'Tra amici il vino gira, le storie pure — meglio che sia buono in entrambi i casi. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Prevedo che questa bottiglia non arrivi a fine serata. Ne prendiamo una seconda? ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Tra amici c\'è sempre uno che vuole assaggiare il bicchiere degli altri. Con questo, capisco perché. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Nessuno controlla quanto si versa quando è tra amici. Meglio che il vino regga il ritmo. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   if (ctx.famiglia) return p([
     'Per una cena di famiglia, con ' + dishMention(ctx) + ' scelto, ho pensato a qualcosa che metta d\'accordo tutti. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '. Nessuno protesta, qualcuno chiede il bis.' + alt,
     'A tavola con la famiglia, e con ' + dishMention(ctx) + ' in mezzo, serve un vino che non diventi l\'argomento principale. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '. Si beve e basta.' + alt,
     'In famiglia c\'è sempre chi beve poco e chi vorrebbe la seconda bottiglia. ' + w0.name + ' di ' + w0.producer + ' mette tutti d\'accordo: ' + d0 + '.' + alt,
+    'Mettere d\'accordo una famiglia intera su un vino è più difficile che scegliere il ristorante. Ci ho pensato io: ' + w0.name + ' di ' + w0.producer + '. ' + d0 + '.' + alt,
+    'C\'è sempre uno zio con opinioni molto precise sul vino. Questo dovrebbe accontentare anche lui. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'In famiglia si litiga su tutto, tranne che su un buon bicchiere condiviso bene. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   if (ctx.scoperta) return p([
@@ -2071,6 +2126,8 @@ function getText(dishes, text, wines) {
     'Questa selezione ha ambizione — ' + secondoRef(ctx) + ' compresa — e il vino deve averne altrettanta. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Quattro portate sono un impegno serio, ma qualcuno doveva prendersene la responsabilità. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Chi ordina tutto il menu ha le idee chiare, o una fame notevole. In entrambi i casi, approvo. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Il menu intero, senza sconti su nessuna portata. Il vino deve avere lo stesso coraggio. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Non capita spesso di accompagnare una cena dall\'inizio alla fine. Quando capita, mi diverto. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── 3 portate: A+P+S ────────────────────────────────────────────
@@ -2163,6 +2220,8 @@ function getText(dishes, text, wines) {
       'Quando c\'è sia pasta che ' + secondoRef(ctx) + ', il vino deve sapere quando parlare e quando tacere. ' + w0.name + ' di ' + w0.producer + ' lo sa: ' + d0 + '.' + alt,
       'Due portate diverse, un solo vino — deve avere equilibrio fino ' + contract('a', secondoRef(ctx)) + '. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'Primo e secondo sono la coppia più classica del menu. Le coppie classiche funzionano perché funzionano. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+      'Chi si ferma a primo e secondo ha già le idee chiare — niente fronzoli, solo sostanza. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+      'Due portate, zero esitazioni. Il vino segue lo stesso spirito diretto. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     ]);
   }
 
@@ -2226,6 +2285,8 @@ function getText(dishes, text, wines) {
     'Una cena che inizia con ' + secondoRef(ctx) + ' e finisce in dolcezza. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Si punta direttamente ' + contract('a', secondoRef(ctx)) + ', poi si chiude con il dolce. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Sostanza e dolcezza, senza distrazioni in mezzo. Un piano che approvo. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Niente antipasto, niente primo — si va dritti al punto e si chiude con classe. Rispetto questa efficienza. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Chi salta due portate per arrivare prima al dolce ha già capito come va la vita. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── 2 portate: P+D ──────────────────────────────────────────────
@@ -2356,6 +2417,8 @@ function getText(dishes, text, wines) {
       'Un primo piatto elegante vuole un vino all\'altezza. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'La pasta di Hedoné merita attenzione — anche nel bicchiere. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'Un primo da solo non è un ripiego, è una scelta di misura. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+      'Chi si ferma al primo sa esattamente quanto vuole mangiare stasera. Rispetto la misura. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+      'Un piatto solo, scelto bene, vale più di un menu intero scelto a caso. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     ]);
   }
 
@@ -3466,6 +3529,14 @@ setTimeout(function setupDynMenu(){
       } else {
         chip.classList.add('is-selected');
         state.occasionText = chip.getAttribute('data-text');
+        var occasionKey = chip.getAttribute('data-occasion');
+        var lines = OCCASION_COMMENTS[occasionKey];
+        if (lines && dmToast && dmToastText) {
+          clearTimeout(dmToastTimer);
+          dmToastText.textContent = lines[Math.floor(Math.random() * lines.length)];
+          dmToast.classList.add('visible');
+          dmToastTimer = setTimeout(function(){ dmToast.classList.remove('visible'); }, 6000);
+        }
       }
     });
   });
