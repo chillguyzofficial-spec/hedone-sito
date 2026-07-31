@@ -3186,9 +3186,9 @@ function drawShareCanvas(selfieImg) {
 
       y += 46;
       c.fillStyle = 'rgba(232,200,132,.9)';
-      c.font = 'italic 500 24px "Cormorant Garamond", serif';
+      c.font = 'italic 500 27px "Cormorant Garamond", serif';
       var poeticLines = wrapCanvasText(c, poetic, W - 260);
-      poeticLines.forEach(function(l) { c.fillText(l, cx, y); y += 34; });
+      poeticLines.forEach(function(l) { c.fillText(l, cx, y); y += 37; });
 
       y += 60;
       c.strokeStyle = 'rgba(201,169,110,.3)';
@@ -3197,13 +3197,13 @@ function drawShareCanvas(selfieImg) {
 
       y += 50;
       c.fillStyle = '#e8c884';
-      c.font = 'italic 500 28px "Cormorant Garamond", serif';
+      c.font = 'italic 500 31px "Cormorant Garamond", serif';
       var thanksLines = wrapCanvasText(c, 'Grazie di essere stati da Hedoné' + (name ? ', ' + name : '') + '.', W - 240);
-      thanksLines.forEach(function(l) { c.fillText(l, cx, y); y += 37; });
+      thanksLines.forEach(function(l) { c.fillText(l, cx, y); y += 41; });
 
       y += 8;
       c.fillStyle = 'rgba(245,237,224,.55)';
-      c.font = 'italic 400 21px "Cormorant Garamond", serif';
+      c.font = 'italic 400 23px "Cormorant Garamond", serif';
       c.fillText('Torni a trovarci presto.', cx, y);
 
       return y;

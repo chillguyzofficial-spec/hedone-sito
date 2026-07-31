@@ -1388,13 +1388,22 @@
     var imgs = document.querySelectorAll(".about-team-img");
     var dots = document.querySelectorAll(".about-team-dot");
     if (imgs.length < 2) return;
+    // La prima foto (scelta insieme) resta sempre l'apertura; il resto dell'ordine
+    // viene rimescolato ad ogni caricamento pagina, così il giro non è mai lo stesso.
+    var order = [];
+    for (var i = 1; i < imgs.length; i++) order.push(i);
+    for (var j = order.length - 1; j > 0; j--) {
+      var k = Math.floor(Math.random() * (j + 1));
+      var tmp = order[j]; order[j] = order[k]; order[k] = tmp;
+    }
+    order.unshift(0);
     var current = 0;
     var started = false;
     function goTo(n) {
-      imgs[current].classList.remove("is-active");
+      imgs[order[current]].classList.remove("is-active");
       dots[current].classList.remove("is-active");
       current = n;
-      imgs[current].classList.add("is-active");
+      imgs[order[current]].classList.add("is-active");
       dots[current].classList.add("is-active");
     }
     function startLoop() {
