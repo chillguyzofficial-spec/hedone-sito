@@ -1120,14 +1120,22 @@
     barmanShowStep0();
   }
 
-  /* Floating CTA sommelier (homepage): appare dopo 400px di scroll */
+  /* Floating CTA sommelier (homepage): appare dopo 400px di scroll,
+     richiudibile dall'utente per il resto della sessione */
   var sommelierFloat = document.getElementById("sommelierFloat");
   if (sommelierFloat) {
     window.addEventListener("scroll", function () {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 400 && sessionStorage.getItem("hedone_sfc_dismissed") !== "1") {
         sommelierFloat.classList.add("is-visible");
       }
     }, { passive: true });
+    var sfcClose = document.getElementById("sfcClose");
+    if (sfcClose) {
+      sfcClose.addEventListener("click", function () {
+        sommelierFloat.classList.remove("is-visible");
+        sessionStorage.setItem("hedone_sfc_dismissed", "1");
+      });
+    }
   }
 
   /* ---------- FOOD GALLERY: drag-to-scroll ---------- */

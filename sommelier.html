@@ -2978,6 +2978,34 @@ function loadImage(src) {
   });
 }
 
+// Frasi poetiche per la card ricordo — una scelta a caso ogni volta, per rendere ogni card unica
+var POETIC_PHRASES = [
+  'Le sere migliori si riconoscono dal retrogusto che lasciano.',
+  'Un buon vino non si dimentica. Le persone con cui lo si è bevuto, ancora meno.',
+  'Ogni cena che vale la pena ricordare inizia con un brindisi e finisce con un sorriso.',
+  'Il tempo passato a tavola, tra buon cibo e buona compagnia, non si conta mai per sbaglio.',
+  'C\'è chi cerca il ristorante perfetto. Qui, si cerca solo di stare bene.',
+  'Un pasto condiviso pesa meno nei ricordi e resta più a lungo nel cuore.',
+  'Le cene che contano non si misurano in portate, ma in risate.',
+  'Un calice alzato al momento giusto vale più di mille parole.',
+  'Certe serate si raccontano. Questa, forse, basta ricordarla.',
+  'Il profumo di una buona cena resta più a lungo del sapore.',
+  'Non tutte le sere sono uguali. Alcune, come questa, meritano di essere fermate.',
+  'C\'è un tempo per affrettarsi, e un tempo per un buon bicchiere di vino. Stasera era il secondo.',
+  'Le storie migliori nascono spesso tra un antipasto e un dolce.',
+  'Ricordare una cena è un modo elegante di ricordare le persone con cui l\'abbiamo vissuta.',
+  'Un buon tavolo non serve solo cibo — serve tempo, e il tempo, si sa, non si ripete.',
+  'A volte basta un piatto ben fatto e la persona giusta accanto per chiamarla una bella serata.',
+  'Il vino invecchia nella botte. I ricordi di una cena così, invece, restano giovani per sempre.',
+  'Le cene che si ricordano non sono sempre le più lunghe, ma le più sincere.',
+  'C\'è una piccola magia in ogni tavola apparecchiata con cura — stasera l\'abbiamo trovata.',
+  'Un buon abbinamento si dimentica. Una buona serata, mai.',
+  'Le migliori conversazioni nascono quando il piatto è buono e il tempo non ha fretta.',
+  'Ogni brindisi porta con sé un augurio non detto. Il nostro era che questa sera restasse.',
+  'Ci sono cene che si consumano, e cene che si vivono. Speriamo sia stata la seconda.',
+  'Il bello di una tavola condivisa è che il conto si divide, ma i ricordi restano interi a ciascuno.',
+];
+
 // Ritaglia l'immagine a coprire un cerchio (come object-fit:cover), centrata
 function drawImageCoverCircle(ctx, img, cx, cy, r) {
   var size = r * 2;
@@ -3005,6 +3033,7 @@ function drawShareCanvas(selfieImg) {
   var sub   = (document.getElementById('sscWineSub')|| {}).textContent || '';
   var quote = (document.getElementById('sscQuote') || {}).textContent || '';
   var name  = window.customerName || '';
+  var poetic = POETIC_PHRASES[Math.floor(Math.random() * POETIC_PHRASES.length)];
 
   // Sfondo
   var bg = ctx.createLinearGradient(0, 0, 0, H);
@@ -3055,6 +3084,7 @@ function drawShareCanvas(selfieImg) {
         // Emblema Hedoné come "adesivo" sul bordo della foto
         if (logoImg) {
           var br = 54, bx = cx + r * 0.68, by = y + r * 0.68;
+          var bInner = (br - 6) * 2 * 1.18; // leggero "sconfinamento" per un ritaglio sempre pulito, senza bordo bianco residuo
           c.save();
           c.beginPath();
           c.arc(bx, by, br, 0, Math.PI * 2);
@@ -3062,7 +3092,7 @@ function drawShareCanvas(selfieImg) {
           c.fill();
           c.closePath();
           c.clip();
-          c.drawImage(logoImg, bx - br + 6, by - br + 6, (br - 6) * 2, (br - 6) * 2);
+          c.drawImage(logoImg, bx - bInner / 2, by - bInner / 2, bInner, bInner);
           c.restore();
           c.beginPath();
           c.arc(bx, by, br, 0, Math.PI * 2);
@@ -3073,12 +3103,13 @@ function drawShareCanvas(selfieImg) {
         y += r + 66;
       } else if (logoImg) {
         var r2 = 84;
+        var r2Inner = r2 * 2 * 1.18;
         c.save();
         c.beginPath();
         c.arc(cx, y, r2, 0, Math.PI * 2);
         c.closePath();
         c.clip();
-        c.drawImage(logoImg, cx - r2, y - r2, r2 * 2, r2 * 2);
+        c.drawImage(logoImg, cx - r2Inner / 2, y - r2Inner / 2, r2Inner, r2Inner);
         c.restore();
         c.beginPath();
         c.arc(cx, y, r2, 0, Math.PI * 2);
@@ -3143,25 +3174,36 @@ function drawShareCanvas(selfieImg) {
       c.fillText(sub.toUpperCase(), cx, y);
 
       y += 90;
-      c.fillStyle = 'rgba(245,237,224,.8)';
-      c.font = 'italic 400 30px "Cormorant Garamond", serif';
+      c.fillStyle = 'rgba(245,237,224,.85)';
+      c.font = 'italic 400 31px "Cormorant Garamond", serif';
       var quoteLines = wrapCanvasText(c, '"' + quote + '"', W - 260);
-      quoteLines.forEach(function(l) { c.fillText(l, cx, y); y += 42; });
+      quoteLines.forEach(function(l) { c.fillText(l, cx, y); y += 43; });
 
-      y += 66;
+      y += 56;
+      c.strokeStyle = 'rgba(201,169,110,.3)';
+      c.lineWidth = 1;
+      c.beginPath(); c.moveTo(cx - 60, y); c.lineTo(cx + 60, y); c.stroke();
+
+      y += 46;
+      c.fillStyle = 'rgba(232,200,132,.9)';
+      c.font = 'italic 500 24px "Cormorant Garamond", serif';
+      var poeticLines = wrapCanvasText(c, poetic, W - 260);
+      poeticLines.forEach(function(l) { c.fillText(l, cx, y); y += 34; });
+
+      y += 60;
       c.strokeStyle = 'rgba(201,169,110,.3)';
       c.lineWidth = 1;
       c.beginPath(); c.moveTo(cx - 60, y); c.lineTo(cx + 60, y); c.stroke();
 
       y += 50;
       c.fillStyle = '#e8c884';
-      c.font = 'italic 500 27px "Cormorant Garamond", serif';
+      c.font = 'italic 500 28px "Cormorant Garamond", serif';
       var thanksLines = wrapCanvasText(c, 'Grazie di essere stati da Hedoné' + (name ? ', ' + name : '') + '.', W - 240);
-      thanksLines.forEach(function(l) { c.fillText(l, cx, y); y += 36; });
+      thanksLines.forEach(function(l) { c.fillText(l, cx, y); y += 37; });
 
       y += 8;
-      c.fillStyle = 'rgba(245,237,224,.5)';
-      c.font = 'italic 400 20px "Cormorant Garamond", serif';
+      c.fillStyle = 'rgba(245,237,224,.55)';
+      c.font = 'italic 400 21px "Cormorant Garamond", serif';
       c.fillText('Torni a trovarci presto.', cx, y);
 
       return y;
