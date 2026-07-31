@@ -815,6 +815,15 @@
     }
   }
 
+  function lockBodyScroll() {
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+  }
+  function unlockBodyScroll() {
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+  }
+
   function openDishModal(card) {
     var data = dishData[card.dataset.dish];
     if (!data || !dishModal) return;
@@ -826,6 +835,8 @@
       dishModal.setAttribute("aria-hidden", "false");
       startAutoplay();
     }
+
+    lockBodyScroll();
 
     if (document.startViewTransition) {
       document.startViewTransition(update);
@@ -845,6 +856,7 @@
     dishModal.classList.remove("is-open");
     dishModal.setAttribute("aria-hidden", "true");
     document.removeEventListener("keydown", onDishModalKeydown);
+    unlockBodyScroll();
     if (lastFocusedDish) lastFocusedDish.focus();
   }
 
@@ -1170,21 +1182,51 @@
       e.preventDefault();
       fruitGalleryWrap.scrollLeft = _fruitScroll - (e.pageX - fruitGalleryWrap.offsetLeft - _fruitStartX);
     });
+
+    /* Nasconde l'indicatore "scorri" quando non c'e' altro contenuto a destra */
+    function updateFruitScrollHint() {
+      var atEnd = fruitGalleryWrap.scrollLeft + fruitGalleryWrap.clientWidth >= fruitGalleryWrap.scrollWidth - 4;
+      fruitGalleryWrap.classList.toggle("is-end", atEnd);
+    }
+    fruitGalleryWrap.addEventListener("scroll", updateFruitScrollHint, { passive: true });
+    window.addEventListener("resize", updateFruitScrollHint);
+    updateFruitScrollHint();
+  }
+
+  /* Il tile video e' solo un'anteprima: non deve portare al menu come le foto */
+  var fruitVideoTile = document.querySelector(".fruit-illusion-gallery-video");
+  if (fruitVideoTile) {
+    fruitVideoTile.addEventListener("click", function (e) { e.preventDefault(); });
   }
 
   /* ---------- FRUTTI REALISTICI: anteprima ingrandita al passaggio del mouse ---------- */
   var fruitPreview = document.getElementById("fruitPreview");
   var fruitPreviewImg = fruitPreview ? fruitPreview.querySelector("img") : null;
-  if (fruitPreview && fruitPreviewImg) {
+  var fruitPreviewVideo = fruitPreview ? fruitPreview.querySelector("video") : null;
+  if (fruitPreview && fruitPreviewImg && fruitPreviewVideo) {
     document.querySelectorAll(".fruit-illusion-gallery a").forEach(function (a) {
       function showPreview() {
         var src = a.getAttribute("data-preview");
         if (!src) return;
-        fruitPreviewImg.setAttribute("src", src);
-        fruitPreviewImg.setAttribute("alt", a.getAttribute("aria-label") || "");
+        if (/\.mp4(\?|$)/i.test(src)) {
+          fruitPreviewImg.style.display = "none";
+          fruitPreviewVideo.style.display = "block";
+          if (fruitPreviewVideo.getAttribute("src") !== src) fruitPreviewVideo.setAttribute("src", src);
+          fruitPreviewVideo.currentTime = 0;
+          fruitPreviewVideo.play().catch(function () {});
+        } else {
+          fruitPreviewVideo.pause();
+          fruitPreviewVideo.style.display = "none";
+          fruitPreviewImg.style.display = "block";
+          fruitPreviewImg.setAttribute("src", src);
+          fruitPreviewImg.setAttribute("alt", a.getAttribute("aria-label") || "");
+        }
         fruitPreview.classList.add("is-visible");
       }
-      function hidePreview() { fruitPreview.classList.remove("is-visible"); }
+      function hidePreview() {
+        fruitPreview.classList.remove("is-visible");
+        fruitPreviewVideo.pause();
+      }
       a.addEventListener("mouseenter", showPreview);
       a.addEventListener("mouseleave", hidePreview);
       a.addEventListener("focus", showPreview);

@@ -52,7 +52,7 @@
   "acceptsReservations": "True",
   "sameAs": [
     "https://www.instagram.com/hedone.vimodrone",
-    "https://www.facebook.com/profile.php?id=61587043508623",
+    "https://www.tiktok.com/@hedone_vimodrone",
     "https://www.thefork.it/ristorante/hedone-r858105"
   ]
 }
@@ -98,7 +98,7 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
-    <video class="hero-bg" id="heroBg" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-dea-banchetto.jpg">
+    <video class="hero-bg" id="heroBg" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-dea-banchetto.jpg" disablepictureinpicture>
       <source src="assets/video/hero-loop-web.mp4" type="video/mp4">
     </video>
     <div class="hero-glow" aria-hidden="true"></div>
@@ -125,10 +125,10 @@
   <!-- CHI È HEDONÉ -->
   <section class="about" id="chi-siamo">
     <div class="about-bgvideo" aria-hidden="true">
-      <video autoplay muted loop playsinline preload="auto" poster="assets/img/chi-siamo-tramonto-tempio.jpg" id="aboutBgVideoA" class="about-bgvideo-layer">
+      <video autoplay muted loop playsinline preload="auto" poster="assets/img/chi-siamo-tramonto-tempio.jpg" id="aboutBgVideoA" class="about-bgvideo-layer" disablepictureinpicture>
         <source src="assets/video/chi-siamo-tramonto-tempio.mp4" type="video/mp4">
       </video>
-      <video autoplay muted loop playsinline preload="auto" id="aboutBgVideoB" class="about-bgvideo-layer">
+      <video autoplay muted loop playsinline preload="auto" id="aboutBgVideoB" class="about-bgvideo-layer" disablepictureinpicture>
         <source src="assets/video/chi-siamo-tramonto-tempio.mp4" type="video/mp4">
       </video>
       <div class="about-bgvideo-fade"></div>
@@ -329,7 +329,7 @@
   </div>
 
     <div class="dishes-hero">
-      <video class="dishes-hero-video" autoplay loop muted playsinline>
+      <video class="dishes-hero-video" autoplay loop muted playsinline disablepictureinpicture>
         <source src="assets/video/grigliata-mista.mp4" type="video/mp4">
       </video>
       <div class="dishes-hero-overlay" aria-hidden="true"></div>
@@ -490,6 +490,12 @@
         <p class="fruit-illusion-note">Sicuro di trovarli? <a href="tel:+393336476506">Chiamaci ora</a>.</p>
         <div class="fruit-illusion-gallery-wrap" id="fruitGalleryWrap">
           <div class="fruit-illusion-gallery">
+            <a href="menu.html#mn-frutti-realistici" aria-label="I nostri semifreddi in vetrina, in video" class="fruit-illusion-gallery-video" data-preview="assets/video/frutti-realistici-vetrina.mp4">
+              <video src="assets/video/frutti-realistici-vetrina.mp4" autoplay muted loop playsinline disablepictureinpicture></video>
+              <span class="fruit-illusion-video-badge" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </a>
             <a href="menu.html#mn-frutti-realistici" aria-label="Lampone realistico in tavola" data-preview="assets/img/frutti-lampone-tavolo.jpg"><img src="assets/img/frutti-lampone-tavolo.jpg" alt="Semifreddo a forma di lampone in tavola" loading="lazy" style="object-position: center 65%;"></a>
             <a href="menu.html#mn-frutti-realistici" aria-label="Mela realistica" data-preview="assets/img/frutti-mela.jpg"><img src="assets/img/frutti-mela.jpg" alt="Semifreddo a forma di mela" loading="lazy" style="object-position: 38% 32%;"></a>
             <a href="menu.html#mn-frutti-realistici" aria-label="Arancia realistica" data-preview="assets/img/frutti-arancia.jpg"><img src="assets/img/frutti-arancia.jpg" alt="Semifreddo a forma di arancia" loading="lazy"></a>
@@ -497,9 +503,12 @@
             <a href="menu.html#mn-frutti-realistici" aria-label="Un cliente assaggia il semifreddo" data-preview="assets/img/frutti-cliente.png"><img src="assets/img/frutti-cliente.png" alt="Cliente Hedoné assaggia il semifreddo a forma di lampone" loading="lazy" style="object-position: center 65%;"></a>
             <a href="menu.html#mn-frutti-realistici" aria-label="Vetrina dei frutti realistici" data-preview="assets/img/frutti-vetrina.png"><img src="assets/img/frutti-vetrina.png" alt="Vetrina con i semifreddi a forma di frutta" loading="lazy" style="object-position: center 60%;"></a>
           </div>
+          <div class="fruit-illusion-gallery-fade" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
         </div>
       </div>
-      <div class="fruit-preview" id="fruitPreview" aria-hidden="true"><img alt=""></div>
+      <div class="fruit-preview" id="fruitPreview" aria-hidden="true"><img alt=""><video muted loop playsinline disablepictureinpicture style="display: none;"></video></div>
     </div>
   </section>
 
@@ -611,6 +620,39 @@
     </div>
     <div class="reviews-fade-left" aria-hidden="true"></div>
     <div class="reviews-fade-right" aria-hidden="true"></div>
+  </section>
+
+  <!-- SEGUICI -->
+  <section class="social-strip" id="seguici">
+    <div class="social-strip-inner">
+      <div class="social-strip-head">
+        <span class="section-kicker">Seguici</span>
+        <h2>Ci segui sui social?</h2>
+        <p>Scatti dal locale, dietro le quinte in cucina e qualche chicca in anteprima. Cosa aspetti?</p>
+      </div>
+      <div class="social-strip-track">
+        <a href="https://www.instagram.com/hedone.vimodrone/" target="_blank" rel="noopener" class="social-strip-card is-instagram">
+          <span class="social-strip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="social-strip-text">
+            <span class="social-strip-name">Instagram</span>
+            <span class="social-strip-handle">@hedone.vimodrone</span>
+          </span>
+          <span class="social-strip-cta">Segui →</span>
+        </a>
+        <a href="https://www.tiktok.com/@hedone_vimodrone" target="_blank" rel="noopener" class="social-strip-card is-tiktok">
+          <span class="social-strip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3c.5 2.7 2.3 4.5 5 4.8V11c-1.9 0-3.6-.6-5-1.7V15a6 6 0 1 1-5.5-6v3.2a2.8 2.8 0 1 0 2.5 2.8V3h3z"/></svg>
+          </span>
+          <span class="social-strip-text">
+            <span class="social-strip-name">TikTok</span>
+            <span class="social-strip-handle">@hedone_vimodrone</span>
+          </span>
+          <span class="social-strip-cta">Segui →</span>
+        </a>
+      </div>
+    </div>
   </section>
 
 
@@ -792,14 +834,23 @@
           <span class="booking-value">info@hedone<wbr>vimodrone.com</span>
           <span class="booking-card-sub">Rispondiamo presto</span>
         </a>
-        <a class="booking-card" href="https://www.instagram.com/hedone.vimodrone" target="_blank" rel="noopener">
+        <div class="booking-card booking-card-social">
           <div class="booking-card-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
           </div>
-          <span class="booking-label">Instagram</span>
-          <span class="booking-value">@hedone.vimodrone</span>
-          <span class="booking-card-sub">Seguici per novità e storie</span>
-        </a>
+          <span class="booking-label">Seguici</span>
+          <div class="booking-social-links">
+            <a href="https://www.instagram.com/hedone.vimodrone/" target="_blank" rel="noopener" class="booking-social-link is-instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.tiktok.com/@hedone_vimodrone" target="_blank" rel="noopener" class="booking-social-link is-tiktok">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3c.5 2.7 2.3 4.5 5 4.8V11c-1.9 0-3.6-.6-5-1.7V15a6 6 0 1 1-5.5-6v3.2a2.8 2.8 0 1 0 2.5 2.8V3h3z"/></svg>
+              TikTok
+            </a>
+          </div>
+          <span class="booking-card-sub">Novità, storie e video</span>
+        </div>
         <div class="booking-card booking-card-hours">
           <div class="booking-card-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -872,9 +923,9 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
           Instagram
         </a>
-        <a href="https://www.facebook.com/profile.php?id=61587043508623" target="_blank" rel="noopener" aria-label="Facebook di Hedoné">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          Facebook
+        <a href="https://www.tiktok.com/@hedone_vimodrone" target="_blank" rel="noopener" aria-label="TikTok di Hedoné">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3c.5 2.7 2.3 4.5 5 4.8V11c-1.9 0-3.6-.6-5-1.7V15a6 6 0 1 1-5.5-6v3.2a2.8 2.8 0 1 0 2.5 2.8V3h3z"/></svg>
+          TikTok
         </a>
       </div>
       <div class="footer-credit">
@@ -903,6 +954,11 @@
       <p class="footer-contact-line"><a href="tel:+393336476506">+39 333 6476506</a></p>
       <p class="footer-contact-line"><a href="mailto:info@hedonevimodrone.com">info@hedonevimodrone.com</a></p>
     </div>
+  </div>
+  <div class="footer-ornament" aria-hidden="true">
+    <span class="footer-orn-line"></span>
+    <span class="footer-orn-gem">✦</span>
+    <span class="footer-orn-line"></span>
   </div>
   <div class="footer-legal">
     <p>COMUS S.R.L. · P.IVA 14024370968 · REA MI-2756947</p>

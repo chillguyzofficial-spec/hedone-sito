@@ -874,6 +874,18 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
   align-items: center;
   gap: 0.5rem;
   margin-top: 1.8rem;
+  animation: cta-glow-pulse 2.6s ease-in-out infinite;
+}
+@keyframes cta-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(212, 175, 106, 0.2), 0 0 18px rgba(212, 175, 106, 0.35), 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(212, 175, 106, 0.35), 0 0 32px rgba(212, 175, 106, 0.65), 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dishes-chapter-cta { animation: none; }
 }
 
 .myth-epigraph {
@@ -1640,7 +1652,8 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-bottom: 1.2rem;
+  max-width: 1020px;
+  margin: 0 auto 1.2rem;
   perspective: 1400px;
 }
 
@@ -2107,7 +2120,12 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 .dish-modal-close:hover { border-color: var(--gold); transform: rotate(90deg); }
 
 @media (max-width: 720px) {
-  .dish-modal-panel { grid-template-columns: 1fr; max-height: 92vh; }
+  .dish-modal-panel {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    max-height: 92vh;
+    max-height: 92dvh;
+  }
   .dish-modal-media { min-height: 200px; }
   .dish-modal-media::after { background: linear-gradient(180deg, transparent 45%, rgba(12, 12, 16, 0.8) 78%, #0c0c10 96%); }
   .dish-modal-body { position: relative; z-index: 3; background: #0c0c10; }
@@ -2454,6 +2472,7 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 .fruit-illusion-note a { color: var(--gold); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
 .fruit-illusion-note a:hover { color: #e8c46c; }
 .fruit-illusion-gallery-wrap {
+  position: relative;
   overflow-x: auto;
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
@@ -2463,7 +2482,7 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 }
 .fruit-illusion-gallery-wrap::-webkit-scrollbar { display: none; }
 .fruit-illusion-gallery-wrap:active { cursor: grabbing; }
-.fruit-illusion-gallery { display: flex; gap: 0.9rem; width: max-content; padding-bottom: 0.3rem; }
+.fruit-illusion-gallery { display: flex; align-items: center; gap: 0.9rem; width: max-content; padding-bottom: 0.3rem; }
 .fruit-illusion-gallery a {
   display: block;
   width: 130px;
@@ -2476,7 +2495,57 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 .fruit-illusion-gallery a:hover { transform: translateY(-4px); border-color: var(--gold); }
-.fruit-illusion-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fruit-illusion-gallery img,
+.fruit-illusion-gallery video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.fruit-illusion-gallery a.fruit-illusion-gallery-video {
+  position: relative;
+  border-color: rgba(212, 175, 106, 0.55);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 16px rgba(212, 175, 106, 0.14);
+}
+.fruit-illusion-video-badge {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 7, 10, 0.65);
+  border: 1px solid rgba(212, 175, 106, 0.55);
+  backdrop-filter: blur(4px);
+  color: var(--gold);
+}
+
+/* Indicatore di scorrimento: dissolvenza + freccia sul bordo destro */
+.fruit-illusion-gallery-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0.3rem;
+  right: 0;
+  width: 3.2rem;
+  background: linear-gradient(270deg, #080502 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.fruit-illusion-gallery-fade svg {
+  color: var(--gold);
+  animation: fruit-scroll-hint 1.6s ease-in-out infinite;
+}
+@keyframes fruit-scroll-hint {
+  0%, 100% { transform: translateX(0); opacity: 0.6; }
+  50% { transform: translateX(-4px); opacity: 1; }
+}
+.fruit-illusion-gallery-wrap.is-end .fruit-illusion-gallery-fade { opacity: 0; transition: opacity 0.3s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .fruit-illusion-gallery-fade svg { animation: none; }
+}
 
 .fruit-preview {
   position: fixed;
@@ -2500,7 +2569,8 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
   transform: translate(-50%, -50%) scale(1);
   transition: opacity 0.28s ease, transform 0.28s ease;
 }
-.fruit-preview img {
+.fruit-preview img,
+.fruit-preview video {
   display: block;
   max-width: min(440px, 82vw);
   max-height: min(440px, 72vh);
@@ -2520,7 +2590,7 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 /* ---------- RECENSIONI ---------- */
 .reviews {
   position: relative;
-  padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(3rem, 7vw, 6rem);
+  padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(1.5rem, 3vw, 2.5rem);
   overflow: hidden;
   margin-top: -2px;
   background-image:
@@ -2773,6 +2843,84 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 .reviews-fade-right {
   right: 0;
   background: linear-gradient(270deg, var(--bg) 0%, transparent 100%);
+}
+
+/* ---------- SEGUICI (social strip) ---------- */
+.social-strip {
+  position: relative;
+  margin-top: -2px;
+  padding: clamp(0.4rem, 1vw, 0.8rem) clamp(1.25rem, 5vw, 3rem) clamp(2.4rem, 4.5vw, 3.4rem);
+  background: #080502;
+  text-align: center;
+}
+.social-strip-inner { max-width: var(--maxw); margin: 0 auto; }
+.social-strip-head h2 {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+  color: var(--ink);
+  margin: 0;
+}
+.social-strip-head p {
+  color: var(--ink-dim);
+  max-width: 480px;
+  margin: 0.6rem auto 1.6rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.social-strip-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.social-strip-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: clamp(260px, 30vw, 320px);
+  padding: 1.1rem 1.3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 106, 0.25);
+  background: rgba(255, 240, 215, 0.04);
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.social-strip-card:hover { transform: translateY(-3px); }
+.social-strip-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 240, 215, 0.06);
+}
+.social-strip-text { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; min-width: 0; }
+.social-strip-name { font-weight: 700; font-size: 0.98rem; }
+.social-strip-handle { font-size: 0.8rem; color: var(--ink-dim); }
+.social-strip-cta {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.social-strip-card.is-instagram .social-strip-icon { color: #e1306c; }
+.social-strip-card.is-instagram:hover {
+  border-color: #e1306c;
+  background: rgba(225, 48, 108, 0.1);
+  box-shadow: 0 10px 28px rgba(225, 48, 108, 0.15);
+}
+.social-strip-card.is-tiktok .social-strip-icon { color: #25f4ee; }
+.social-strip-card.is-tiktok:hover {
+  border-color: #25f4ee;
+  background: rgba(37, 244, 238, 0.1);
+  box-shadow: 0 10px 28px rgba(37, 244, 238, 0.15);
 }
 
 /* ---------- KARAOKE ---------- */
@@ -3432,12 +3580,54 @@ a.booking-card:hover {
   font-size: 0.74rem;
   color: var(--ink-dim);
 }
+.booking-card-social {
+  border-color: rgba(212, 175, 106, 0.4);
+  background: linear-gradient(155deg, rgba(255, 240, 215, 0.07), rgba(255, 240, 215, 0.02));
+  box-shadow: 0 0 0 1px rgba(212, 175, 106, 0.08), 0 16px 34px rgba(0, 0, 0, 0.35);
+}
+.booking-social-links { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.booking-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 106, 0.3);
+  background: rgba(255, 240, 215, 0.04);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.booking-social-link svg { flex-shrink: 0; }
+.booking-social-link:hover { transform: translateY(-2px); }
+.booking-social-link.is-instagram svg { color: #e1306c; }
+.booking-social-link.is-instagram:hover { border-color: #e1306c; background: rgba(225, 48, 108, 0.14); color: #fff; }
+.booking-social-link.is-tiktok svg { color: #25f4ee; }
+.booking-social-link.is-tiktok:hover { border-color: #25f4ee; background: rgba(37, 244, 238, 0.14); color: #fff; }
 
 /* ---------- FOOTER ---------- */
 .site-footer {
+  position: relative;
   background: #040200;
   border-top: 1px solid rgba(212,175,106,0.08);
   padding: 3.5rem clamp(1.25rem, 5vw, 3rem) 2rem;
+}
+.site-footer::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url("../assets/img/greek-meander.svg");
+  background-repeat: repeat;
+  background-size: 64px 64px;
+  opacity: 0.05;
+  animation: greek-drift 60s linear infinite;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-footer::before { animation: none; }
 }
 .footer-inner {
   max-width: var(--maxw);
@@ -3552,6 +3742,22 @@ a.booking-card:hover {
   transition: color 0.2s;
 }
 .footer-contact-line a:hover { color: var(--ink-light); }
+.footer-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.footer-orn-line {
+  width: clamp(50px, 8vw, 100px);
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(212, 175, 106, 0.4) 100%);
+}
+.footer-orn-line:last-child { background: linear-gradient(to left, transparent 0%, rgba(212, 175, 106, 0.4) 100%); }
+.footer-orn-gem { color: var(--gold); font-size: 0.6rem; opacity: 0.65; }
+
 .footer-legal {
   max-width: var(--maxw);
   margin: 0 auto;
