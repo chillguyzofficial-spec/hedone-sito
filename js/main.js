@@ -1422,4 +1422,8 @@
     obs.observe(frame);
   })();
 
+  /* ---------- FOOTER: anno copyright sempre aggiornato ---------- */
+  var footerYear = document.getElementById("footerYear");
+  if (footerYear) footerYear.textContent = new Date().getFullYear();
+
 })();

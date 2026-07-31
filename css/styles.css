@@ -3762,7 +3762,7 @@ a.booking-card:hover {
 .footer-legal {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0 6rem;
   border-top: 1px solid rgba(212,175,106,0.07);
   display: flex;
   justify-content: space-between;
@@ -3772,6 +3772,14 @@ a.booking-card:hover {
   color: rgba(255,255,255,0.2);
 }
 .footer-legal p { margin: 0; }
+
+/* Sotto i 1360px il pulsante fisso "Chiamaci" in basso a sinistra si sovrappone
+   al testo legale del footer (P.IVA, ragione sociale): il padding extra sopra
+   gli lascia spazio. Da 1360px in su il footer è abbastanza rientrato da non
+   averne bisogno. */
+@media (min-width: 1360px) {
+  .footer-legal { padding-bottom: 1.5rem; }
+}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 680px) {

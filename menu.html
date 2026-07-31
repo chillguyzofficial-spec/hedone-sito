@@ -204,7 +204,7 @@
     border-bottom: 1px solid rgba(212, 175, 106, 0.1);
     break-inside: avoid;
   }
-  .mn-lrow-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 1.22rem; color: var(--ink); flex-shrink: 0; }
+  .mn-lrow-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 1.22rem; color: var(--ink); min-width: 0; }
   .mn-lrow-desc { display: block; font-family: var(--font-body); font-style: normal; font-size: 0.84rem; color: var(--ink-dim); opacity: 0.88; margin-top: 0.2rem; line-height: 1.4; }
   .mn-lrow-fill { flex: 1; border-bottom: 1.5px dotted rgba(212, 175, 106, 0.4); margin-bottom: 5px; min-width: 16px; }
   .mn-lrow-price { font-weight: 700; color: var(--gold); white-space: nowrap; font-size: 1.05rem; flex-shrink: 0; }
@@ -684,7 +684,6 @@
           <h3 class="mn-subgroup-title">Rossi</h3>
           <div class="mn-lrow"><span class="mn-lrow-name">Malandrino — Montepulciano d'Abruzzo</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 20</span></div>
           <div class="mn-lrow"><span class="mn-lrow-name">Toni' — Montepulciano d'Abruzzo</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 60</span></div>
-          <div class="mn-lrow"><span class="mn-lrow-name">Cerasuolo d'Abruzzo</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 18</span></div>
           <div class="mn-lrow"><span class="mn-lrow-name">Aglianico del Vulture</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 24</span></div>
           <div class="mn-lrow"><span class="mn-lrow-name">Primitivo di Manduria</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 28</span></div>
           <div class="mn-lrow"><span class="mn-lrow-name">Barolo della Marmora 2021</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 34</span></div>
@@ -709,6 +708,10 @@
           <div class="mn-lrow"><span class="mn-lrow-name">Franciacorta Extra Brut — Ca' del Bosco</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 70</span></div>
           <div class="mn-lrow"><span class="mn-lrow-name">Dom Pérignon Rosé</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 1100</span></div>
           <div class="mn-lrow"><span class="mn-lrow-name">Dom Pérignon</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 478</span></div>
+        </div>
+        <div class="mn-subgroup">
+          <h3 class="mn-subgroup-title">Rosati</h3>
+          <div class="mn-lrow"><span class="mn-lrow-name">Cerasuolo d'Abruzzo</span><span class="mn-lrow-fill"></span><span class="mn-lrow-price">€ 18</span></div>
         </div>
       </div>
 
@@ -938,12 +941,14 @@
   </div>
   <div class="footer-legal">
     <p>COMUS S.R.L. · P.IVA 14024370968 · REA MI-2756947</p>
-    <p>© 2025 Hedoné · Tutti i diritti riservati</p>
+    <p>© <span id="footerYear">2025</span> Hedoné · Tutti i diritti riservati</p>
   </div>
 </footer>
 
 <script>
 (function () {
+  var footerYear = document.getElementById('footerYear');
+  if (footerYear) footerYear.textContent = new Date().getFullYear();
   var trigger = document.getElementById('navTrigger');
   var panel   = document.getElementById('navPanel');
   var float   = document.getElementById('navFloat');
