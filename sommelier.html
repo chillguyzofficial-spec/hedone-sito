@@ -1250,12 +1250,18 @@ if (welcome) {
   var wcYesLines = [
     'Perfetto — ecco come funziona:',
     'Ottima scelta, mi piace già lei. Ecco come funziona:',
-    "Sapevo che avremmo legato. Ecco come funziona:"
+    "Sapevo che avremmo legato. Ecco come funziona:",
+    'Bene, così mi piace. Ecco come funziona:',
+    "Ottimo — due sono meglio di uno, specialmente in cantina. Ecco come funziona:",
+    'Ha fatto la scelta giusta. Ecco come funziona:',
   ];
   var wcNoLines = [
     "Da solo? Peccato, mi stavo già scaldando la voce. Va bene, resto qui — nel caso cambiasse idea.",
     "Ah, un'anima indipendente. Rispetto — ma tenga d'occhio quest'angolo, non si sa mai.",
-    "Va bene, farò il timido anche io allora. Se però le venisse un dubbio sul vino, sono a un tocco da qui."
+    "Va bene, farò il timido anche io allora. Se però le venisse un dubbio sul vino, sono a un tocco da qui.",
+    "Capito, vuole decidere da sola. Rispetto assoluto — io resto comunque qui, per ogni evenienza.",
+    "Nessun problema. Le lascio il menu e la mia disponibilità, in ordine di importanza discutibile.",
+    "Va bene così. Se cambia idea a metà cena, so fare finta di niente.",
   ];
   if (wcYes) wcYes.addEventListener('click', function(){
     wcSetLine(wcYesLines[Math.floor(Math.random() * wcYesLines.length)]);
@@ -1563,6 +1569,9 @@ var THINKING_PHRASES = [
   'Sto scartando le opzioni ovvie — quelle le sanno consigliare tutti.',
   'Do il meglio di me quando nessuno ha fretta. Grazie per la pazienza.',
   'Mentalmente sto già stappando la bottiglia giusta.',
+  'Sto confrontando due o tre etichette che mi convincono ugualmente. Decido io, per fortuna sua.',
+  'Qualche secondo ancora — le scelte importanti non vanno affrettate.',
+  'Sto ripassando mentalmente ogni bottiglia in cantina. Sì, anche quelle in fondo.',
 ];
 var TYPING_PHRASES = [
   'Ho trovato la selezione perfetta per questa sera. Lascia che ti racconti...',
@@ -1614,6 +1623,10 @@ var PREF_PHRASES = [
   'Ho il piatto. Ora scegli tu: un rosso importante o un gin artigianale in abbinamento?',
   'Vino o gin? Non c\'è risposta sbagliata, solo la sua preferenza di stasera.',
   'Cantina o bancone del bar — dica lei chi vince stasera.',
+  'Due strade, entrambe buone: vino da cantina o gin artigianale?',
+  'Mi lasci indovinare — no, meglio me lo dica lei: vino o gin stasera?',
+  'Mi piace tenere aperte entrambe le porte. Da quale entriamo, vino o gin?',
+  'Prima di stappare qualcosa, mi dica: stasera è serata da vino o da gin?',
 ];
 
 var CLEAR_PHRASES = [
@@ -1629,6 +1642,9 @@ var CLEAR_PHRASES = [
   'Ripartiamo. Anche i grandi sommelier a volte cambiano idea due volte.',
   'Cancellato senza rancore. Il menu aspetta la sua vera scelta.',
   'Foglio bianco. Stavolta niente ripensamenti — o forse sì, va bene comunque.',
+  'Tabula rasa. Anche i sommelier veri cambiano idea, è un buon segno.',
+  'Ripartiamo senza giudizi — nemmeno io ricordo più cosa aveva scelto prima.',
+  'Cancellato. Prenda tutto il tempo che vuole, la cantina non scappa.',
 ];
 
 var WINES = [
@@ -2139,6 +2155,7 @@ function getText(dishes, text, wines) {
     'Dall\'apertura ' + contract('a', secondoRef(ctx)) + ': ho cercato struttura ma senza eccedere. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     antipastoRef(ctx) + ', ' + primoRef(ctx) + ' e ' + secondoRef(ctx) + ' insieme richiedono un vino equilibrista. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Tre portate ordinate senza esitazione — mi piace chi sa quello che vuole. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Antipasto, primo e secondo: un menu che non lascia nulla al caso. Nemmeno il vino lo farà. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── 3 portate: P+S+D ────────────────────────────────────────────
@@ -2150,6 +2167,7 @@ function getText(dishes, text, wines) {
     'Per questo percorso, fino ' + contract('a', secondoRef(ctx)) + ', serviva un vino con resistenza. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     primoRef(ctx) + ', ' + secondoRef(ctx) + ' e dolce: non è semplice trovare il vino giusto per tutti e tre. Ho trovato. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Chi salta l\'antipasto va dritto al sodo. Rispetto la strategia. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Primo, secondo e dolce: tre atti, nessun intervallo. Il vino li accompagna tutti senza uscire di scena. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── 3 portate: A+S+D ────────────────────────────────────────────
@@ -2161,6 +2179,7 @@ function getText(dishes, text, wines) {
     'Tre momenti distinti, un unico vino. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '. Versatile abbastanza da tenere apertura, ' + secondoRef(ctx) + ' e dolce.' + alt,
     antipastoRef(ctx) + ', ' + secondoRef(ctx) + ' e finale dolce — una serata con struttura chiara. ' + w0.name + ' di ' + w0.producer + ' la sostiene: ' + d0 + '.' + alt,
     'Il primo saltato, ma nessuno sentirà la mancanza con questa selezione. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Antipasto, secondo e dolce — una cena a tre atti, senza il classico secondo intervallo. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── 3 portate: A+P+D ────────────────────────────────────────────
@@ -2172,6 +2191,7 @@ function getText(dishes, text, wines) {
     'Antipasto, pasta e dessert — tre momenti distinti che vogliono freschezza nel bicchiere. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Ho scelto qualcosa di versatile per questo percorso senza carne: ' + w0.name + ' di ' + w0.producer + '. ' + d0 + '.' + alt,
     'Niente carne stasera, ma non manca certo il carattere in tavola. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Una cena vegetariana di fatto, anche se nessuno l\'ha chiamata così. Il vino si adegua con piacere. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── 2 portate: P+S ──────────────────────────────────────────────
@@ -2261,6 +2281,7 @@ function getText(dishes, text, wines) {
       'Apertura e ' + secondoRef(ctx) + ': ho scelto qualcosa che sapesse gestire entrambi i momenti. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       antipastoRef(ctx) + ' e ' + secondoRef(ctx) + ' — una combinazione che punta all\'essenziale. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'Chi salta il primo ha un piano preciso. Il mio compito è non intralciarlo. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+      'Due portate, ritmo veloce. Il vino tiene il passo senza rallentare la serata. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     ]);
   }
 
@@ -2274,6 +2295,7 @@ function getText(dishes, text, wines) {
     antipastoRef(ctx) + ' e ' + primoRef(ctx) + ' — leggeri, eleganti. Il vino di conseguenza: ' + w0.name + ' di ' + w0.producer + '. ' + d0 + '.' + alt,
     'Niente carne stasera — e va benissimo così, anche il vino ringrazia. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Una cena leggera non vuol dire una cena noiosa, tutt\'altro. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Chi si accontenta di antipasto e primo di solito ha già in programma il dolce. Non giudico. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── 2 portate: S+D ──────────────────────────────────────────────
@@ -2298,6 +2320,7 @@ function getText(dishes, text, wines) {
     'Pasta e chiusura dolce — la parte più piacevole di una cena. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Una cena senza carne ha le sue soddisfazioni. ' + w0.name + ' di ' + w0.producer + ' per pasta e dolce: ' + d0 + '.' + alt,
     'Chi dice che serve la carne per una cena memorabile non ha mai provato questa combinazione. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Primo e dolce — una cena breve ma senza compromessi sul gusto. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── 2 portate: A+D ──────────────────────────────────────────────
@@ -2309,6 +2332,7 @@ function getText(dishes, text, wines) {
     'Una serata leggera e piacevole. ' + w0.name + ' di ' + w0.producer + ' la accompagna: ' + d0 + '.' + alt,
     'Si apre con l\'antipasto e si chiude con il dolce. ' + w0.name + ' di ' + w0.producer + ' fa il percorso con naturalezza: ' + d0 + '.' + alt,
     'Antipasto e dolce, la carne resta fuori dai giochi stasera. Il vino si adatta senza problemi. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Apertura e chiusura, senza il resto — una cena essenziale che sa comunque cosa vuole. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── 1 portata: S ────────────────────────────────────────────────
@@ -2390,6 +2414,7 @@ function getText(dishes, text, wines) {
       'Un taglio importante chiede un vino importante. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'La carne alla griglia di Hedoné merita attenzione nel bicchiere. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'Un secondo di carne senza un buon vino è tempo perso. Rimediamo. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+      'Dritti al secondo, senza preamboli. Il vino segue lo stesso approccio diretto. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     ]);
   }
 
@@ -2441,6 +2466,7 @@ function getText(dishes, text, wines) {
       'Per stuzzichi e antipasti ho scelto qualcosa che stimoli senza stancare. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'Gli antipasti sono l\'ouverture. Il vino deve aprire la serata nel modo giusto. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'Chi si ferma all\'antipasto ha le sue ragioni, e io non faccio domande. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+      'Solo antipasto stasera — leggero non vuol dire meno interessante. Il vino lo dimostra. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     ]);
   }
 
@@ -2453,6 +2479,7 @@ function getText(dishes, text, wines) {
     'Il dolce è un atto conclusivo. Il vino lo è altrettanto: ' + w0.name + ' di ' + w0.producer + '. ' + d0 + '.' + alt,
     'Finire in dolcezza è un\'arte. ' + w0.name + ' di ' + w0.producer + ' la pratica: ' + d0 + '.' + alt,
     'Chi ordina solo il dolce ha capito che la vita è breve. Non discuto la logica. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Si comincia dal dolce — o forse si finisce, dipende dai punti di vista. Il vino si adatta. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 
   // ── Fallback ─────────────────────────────────────────────────────
@@ -2463,6 +2490,7 @@ function getText(dishes, text, wines) {
     'Ogni selezione racconta una storia. Stasera la racconta ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     'Nessun dubbio: ' + w0.name + ' di ' + w0.producer + '. ' + d0 + '. Il vino giusto per questa serata.' + alt,
     'Non esiste una combinazione di piatti che mi metta davvero in difficoltà. Questa no di certo. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+    'Qualunque cosa scelga, la cantina di Hedoné ha sempre una risposta pronta. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
   ]);
 }
 
@@ -3067,6 +3095,14 @@ var POETIC_PHRASES = [
   'Ogni brindisi porta con sé un augurio non detto. Il nostro era che questa sera restasse.',
   'Ci sono cene che si consumano, e cene che si vivono. Speriamo sia stata la seconda.',
   'Il bello di una tavola condivisa è che il conto si divide, ma i ricordi restano interi a ciascuno.',
+  'Certe sere non hanno bisogno di un motivo speciale. Bastano le persone giuste e un buon calice.',
+  'Il segreto di una bella cena non è mai un solo piatto, ma tutto quello che gli succede intorno.',
+  'Ogni tavola racconta una storia diversa. Stasera, la nostra aveva un buon finale.',
+  'Non si ricordano le sere perfette, ma quelle vissute con le persone giuste.',
+  'Un buon ristorante nutre il corpo. Una buona serata nutre anche il resto.',
+  'Le foto sbiadiscono, i sapori si dimenticano. Quello che resta è come ci si è sentiti a quel tavolo.',
+  'C\'è una differenza tra mangiare e stare a tavola. Stasera, speriamo, avete fatto la seconda cosa.',
+  'Il miglior vino della serata è spesso quello bevuto ridendo di qualcosa che nessun altro capirebbe.',
 ];
 
 // Ritaglia l'immagine a coprire un cerchio (come object-fit:cover), centrata
