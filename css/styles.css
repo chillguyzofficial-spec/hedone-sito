@@ -2746,7 +2746,7 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
   margin-top: -2px;
   background-image:
     linear-gradient(rgba(8, 5, 2, 0.68), rgba(8, 5, 2, 0.68)),
-    url('../assets/img/sfondo-recensioni.png');
+    url('../assets/img/sfondo-recensioni.jpg');
   background-size: cover;
   background-position: center;
 }

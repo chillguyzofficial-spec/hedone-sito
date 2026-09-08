@@ -676,7 +676,7 @@
       kicker: "Primi",
       name: "Trofiette Verdi",
       desc: "Trofiette al pesto alla genovese, cuore di stracciatella fresca e granella di pistacchio tostato. Una pasta che racconta il profumo del Mediterraneo.",
-      imgs: ["assets/img/piatto-trofie-pesto-burrata.jpg", "assets/img/food-gal-02.png"],
+      imgs: ["assets/img/piatto-trofie-pesto-burrata.jpg", "assets/img/food-gal-02.jpg"],
       ingredients: ["Trofiette verdi (grano, spinaci)", "Pesto alla genovese", "Stracciatella", "Granella di pistacchio"],
       wines: [
         { name: "Franciacorta Pas Operé — Bellavista", desc: "Zero dosage che taglia la cremosità della stracciatella ed esalta il pesto." },
@@ -687,7 +687,7 @@
       kicker: "Primi",
       name: "Mezzelune di Ricotta e Rucola",
       desc: "Ravioli ripieni di ricotta fresca e rucola, mantecati in burro alle erbe con foglie di salvia croccanti. Una pasta che unisce semplicità e tecnica.",
-      imgs: ["assets/img/piatto-ravioli-fiori.jpg", "assets/img/food-gal-01.png"],
+      imgs: ["assets/img/piatto-ravioli-fiori.jpg", "assets/img/food-gal-01.jpg"],
       ingredients: ["Pasta fresca all'uovo", "Ricotta", "Rucola", "Burro alle erbe", "Salvia croccante"],
       wines: [
         { name: "Alta Langa Bianc 'd Bianc — Giulio Cocchi", desc: "Bollicine fini e agrumi che esaltano il burro alle erbe." },
