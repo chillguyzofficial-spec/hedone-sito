@@ -709,7 +709,7 @@
       kicker: "Secondi alla griglia",
       name: "Grigliata Mista",
       desc: "Filetto di pollo, würstel, salsiccia, costolette di agnello, picanha e costine di maiale — tutto sulla brace. Una festa del gusto per chi vuole assaggiare il meglio della griglia di Hedoné.",
-      imgs: ["assets/img/piatto-grigliata-mista.jpg", "assets/img/piatto-picanha.png"],
+      imgs: ["assets/img/piatto-grigliata-mista.jpg", "assets/img/piatto-picanha.png", "assets/img/piatto-grigliata-01.jpg", "assets/img/piatto-grigliata-02.jpg", "assets/img/piatto-grigliata-03.jpg", "assets/img/piatto-grigliata-04.jpg"],
       ingredients: ["Filetto di pollo", "Würstel artigianale", "Salsiccia", "Costolette di agnello", "Picanha", "Costine di maiale"],
       wines: [
         { name: "Primitivo di Manduria", desc: "Caldo, fruttato e generoso — nato per accompagnare la griglia." },

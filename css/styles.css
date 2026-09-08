@@ -165,8 +165,6 @@ button:focus-visible {
   transition: opacity 0.3s ease, max-width 0.38s cubic-bezier(.4,0,.2,1), padding 0.3s ease;
 }
 
-.nav-float:hover .nav-panel,
-.nav-float:focus-within .nav-panel,
 .nav-float.is-open .nav-panel {
   opacity: 1;
   max-width: 1000px;
@@ -314,16 +312,18 @@ button:focus-visible {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    background: rgba(7, 7, 10, 0.88);
-    border: 1px solid rgba(212, 175, 106, 0.3);
+    background: transparent;
+    border: 1px solid transparent;
     border-radius: 18px;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
     overflow: hidden;
   }
   .nav-float.is-open .nav-panel {
     max-width: calc(100vw - 2rem);
     padding: 1.2rem 1.5rem;
+    background: rgba(7, 7, 10, 0.88);
+    border-color: rgba(212, 175, 106, 0.3);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
   }
   .nav-panel-links { flex-direction: column; align-items: flex-start; gap: 1rem; }
 
