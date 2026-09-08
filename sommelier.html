@@ -1610,7 +1610,7 @@ var DONE_PHRASES = [
   'La serata è in buone mani — le vostre e le mie. Cin cin.',
   'Il vino giusto è come un buon silenzio: sa stare al suo posto.',
   'Da Hedoné si torna per il vino. Stasera capirà perché.',
-  'Se il vino le piace, la merito è mia. Se non le piace... è colpa del piatto, ovviamente.',
+  'Se il vino le piace, il merito è mio. Se non le piace... è colpa del piatto, ovviamente.',
   'Missione compiuta. La prossima consulenza la offro io — figurativamente, sono pur sempre un\'IA.',
   'Buona serata. E se qualcuno le chiede "ma chi te l\'ha consigliato", il nome è Thomas.',
 ];
@@ -1649,7 +1649,7 @@ var CLEAR_PHRASES = [
 
 var WINES = [
   { id:'malandrino', name:'Malandrino', producer:'Illuminati', region:"Montepulciano d'Abruzzo DOC", type:'rosso', typeColor:'#8b1a2e', description:"Rubino vivace con riflessi violacei. Note di ciliegia matura, prugna, viola e spezie dolci. Al palato è morbido, equilibrato, con finale caldo e persistente.", pairing:"Pasta al ragù, salumi, taglieri rustici, antipasti elaborati.", scores:{'pasta-ragu':9,'carni':7,'antipasti':8,'salumi':9} },
-  { id:'toni', name:"TONI'", producer:'Illuminati', region:"Montepulciano d'Abruzzo DOC", type:'rosso', typeColor:'#7a1528', description:"Versione più strutturata del Montepulciano. Mora, cioccolato fondente, tabacco dolce. Tannini levigati, finale lungo e speziato.", pairing:"Orecchietta al ragù, Troccoli alla Norma, Grigliata Mista.", scores:{'pasta-ragu':10,'carni':8,'formaggi':7} },
+  { id:'toni', name:"Tonì", producer:'Illuminati', region:"Montepulciano d'Abruzzo DOC", type:'rosso', typeColor:'#7a1528', description:"Versione più strutturata del Montepulciano. Mora, cioccolato fondente, tabacco dolce. Tannini levigati, finale lungo e speziato.", pairing:"Orecchietta al ragù, Troccoli alla Norma, Grigliata Mista.", scores:{'pasta-ragu':10,'carni':8,'formaggi':7} },
   { id:'cerasuolo', name:'Cerasuolo', producer:'Masciarelli', region:"Cerasuolo d'Abruzzo DOC", type:'rosato', typeColor:'#c96070', description:"Rosato intenso, quasi rubino. Ciliegia fresca, melograno, petali di rosa. Struttura insolita, freschezza lunghissima.", pairing:"Tagliere Salumi, Tartare, Manzo Tonnato. Versatile dall'apertura al primo.", scores:{'antipasti':9,'salumi':9,'tartare':8,'pasta-veg':7} },
   { id:'aglianico', name:'Teodosio', producer:'Basilisco', region:'Aglianico del Vulture DOC', type:'rosso', typeColor:'#50100f', description:"Figlio del vulcano. Potente e minerale, con tannini decisi e note di mora selvatica, liquirizia, pietra focaia.", pairing:"Costolette di Agnello, Grigliata Mista, formaggi stagionati.", scores:{'agnello':10,'carni':9,'formaggi':8,'grigliata':9} },
   { id:'primitivo', name:'Primitivo di Manduria', producer:'Produttori di Manduria', region:'Puglia', type:'rosso', typeColor:'#601225', description:"Caldo, avvolgente, generoso. Prugna matura, mirtillo, vaniglia, spezie dolci, cioccolato.", pairing:"Picanha, Grigliata Mista, Costolette di Agnello.", scores:{'carni':9,'grigliata':9,'picanha':10,'agnello':8} },
@@ -2220,7 +2220,7 @@ function getText(dishes, text, wines) {
       'Dal primo alla Costata: il vino sale di intensità man mano che arriva la brace. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'Pasta e Costata — struttura crescente, come deve essere. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
       'Primo e Costata: il vino deve tenere il ritmo fino alla brace. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
-      'La Costata dopo un primo importante è quasi un atto di coraggio. Le va di merito. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
+      'La Costata dopo un primo importante è quasi un atto di coraggio. Le va reso merito. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,
     ]);
     if (ctx.grigliata) return p([
       'Dal primo alla Grigliata Mista: il vino deve reggere tanti sapori diversi in un colpo solo. ' + w0.name + ' di ' + w0.producer + ': ' + d0 + '.' + alt,

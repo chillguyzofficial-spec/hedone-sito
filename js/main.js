@@ -709,7 +709,7 @@
       kicker: "Secondi alla griglia",
       name: "Grigliata Mista",
       desc: "Filetto di pollo, würstel, salsiccia, costolette di agnello, picanha e costine di maiale — tutto sulla brace. Una festa del gusto per chi vuole assaggiare il meglio della griglia di Hedoné.",
-      imgs: ["assets/img/piatto-grigliata-mista.jpg", "assets/img/piatto-picanha.png", "assets/img/piatto-grigliata-01.jpg", "assets/img/piatto-grigliata-02.jpg", "assets/img/piatto-grigliata-03.jpg", "assets/img/piatto-grigliata-04.jpg"],
+      imgs: ["assets/img/piatto-grigliata-mista.jpg", "assets/img/piatto-picanha.png", "assets/img/piatto-grigliata-02.jpg", "assets/img/piatto-grigliata-03.jpg", "assets/img/piatto-grigliata-04.jpg"],
       ingredients: ["Filetto di pollo", "Würstel artigianale", "Salsiccia", "Costolette di agnello", "Picanha", "Costine di maiale"],
       wines: [
         { name: "Primitivo di Manduria", desc: "Caldo, fruttato e generoso — nato per accompagnare la griglia." },
@@ -735,7 +735,7 @@
   var galleryIndex = 0;
   var lastFocusedDish = null;
   var maxTilt = 2;
-  var touchStartX = 0;
+  var touchStartX = null;
 
   function galleryGoTo(index, animate) {
     if (!galleryTrack) return;
@@ -912,6 +912,47 @@
 
   if (galleryPrevBtn) galleryPrevBtn.style.display = "none";
   if (galleryNextBtn) galleryNextBtn.style.display = "none";
+
+  /* Navigazione manuale della gallery foto piatto: frecce, pallini, swipe
+     touch e drag col mouse — il loop automatico resta attivo, riparte solo
+     da capo dopo ogni interazione dell'utente invece di saltare avanti subito. */
+  if (galleryPrevBtn) galleryPrevBtn.addEventListener("click", function () { galleryPrev(); resetAutoplay(); });
+  if (galleryNextBtn) galleryNextBtn.addEventListener("click", function () { galleryNext(); resetAutoplay(); });
+  if (galleryDotsEl) {
+    galleryDotsEl.addEventListener("click", function (e) {
+      var dot = e.target.closest(".dish-gallery-dot");
+      if (!dot) return;
+      galleryGoTo(parseInt(dot.dataset.galleryIndex, 10), true);
+      resetAutoplay();
+    });
+  }
+  if (galleryTrack) {
+    galleryTrack.addEventListener("touchstart", function (e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    galleryTrack.addEventListener("touchend", function (e) {
+      if (touchStartX === null) return;
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      touchStartX = null;
+      if (Math.abs(dx) < 30) return;
+      if (dx < 0) galleryNext(); else galleryPrev();
+      resetAutoplay();
+    }, { passive: true });
+
+    var galleryDragStartX = null;
+    galleryTrack.addEventListener("mousedown", function (e) {
+      e.preventDefault();
+      galleryDragStartX = e.clientX;
+    });
+    window.addEventListener("mouseup", function (e) {
+      if (galleryDragStartX === null) return;
+      var dx = e.clientX - galleryDragStartX;
+      galleryDragStartX = null;
+      if (Math.abs(dx) < 30) return;
+      if (dx < 0) galleryNext(); else galleryPrev();
+      resetAutoplay();
+    });
+  }
 
   /* Story accordion nella sezione pairing principale (event delegation, una sola volta) */
   if (resultsContainer) {
