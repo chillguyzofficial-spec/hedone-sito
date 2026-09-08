@@ -89,15 +89,39 @@
     var offsetDone = false;
     var fadeWindow = 0.5; // secondi di dissolvenza a cavallo del punto di loop
 
+    function applyOffset(aTime) {
+      if (!vA.duration || !isFinite(vA.duration)) return;
+      vB.currentTime = (aTime + vA.duration / 2) % vA.duration;
+    }
+
     function trySetOffset() {
       if (offsetDone && vA.duration) return;
       if (vA.duration) {
-        vB.currentTime = vA.duration / 2;
+        // vA potrebbe aver già accumulato secondi di riproduzione nel tempo
+        // trascorso prima che i metadati fossero pronti: l'offset va calcolato
+        // a partire dalla sua posizione reale in quel momento, non da zero,
+        // altrimenti i due video finiscono sfalsati meno di mezzo ciclo e le
+        // rispettive dissolvenze di fine-loop possono sovrapporsi (schermata nera).
+        applyOffset(vA.currentTime);
         offsetDone = true;
       }
     }
     vA.addEventListener("loadedmetadata", trySetOffset);
     if (vA.readyState >= 1) trySetOffset();
+
+    // La stima iniziale resta comunque approssimata (il seek di vB non è istantaneo,
+    // e nel frattempo vA continua ad avanzare). Al primo riavvolgimento nativo di vA
+    // sappiamo con certezza che si trova a currentTime≈0: ricalibriamo lì, una volta
+    // sola, per un offset esatto senza margine di errore residuo.
+    var recalibrated = false;
+    var lastATime = 0;
+    vA.addEventListener("timeupdate", function () {
+      if (!recalibrated && vA.currentTime < lastATime - 0.5) {
+        applyOffset(0);
+        recalibrated = true;
+      }
+      lastATime = vA.currentTime;
+    });
 
     function fadeFactor(v) {
       if (!v.duration) return 1;

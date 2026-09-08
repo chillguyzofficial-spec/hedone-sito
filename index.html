@@ -27,7 +27,7 @@
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Hedoné",
-  "description": "Ristorante e lounge bar a Vimodrone sul Naviglio Martesana. Cucina italiana, carne alla griglia, cocktail bar e serate karaoke.",
+  "description": "Ristorante e lounge bar a Vimodrone sul Naviglio Martesana. Cucina italiana, carne alla griglia, cocktail bar e serate a tema.",
   "servesCuisine": "Italiana",
   "priceRange": "€€",
   "telephone": "+39 333 6476506",
@@ -59,7 +59,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
 </head>
@@ -82,7 +82,7 @@
   </button>
   <nav class="nav-panel" id="navPanel" aria-label="Navigazione principale">
     <div class="nav-panel-links">
-      <a href="#chi-siamo">Chi siamo</a>
+      <a href="chi-siamo.html">Chi siamo</a>
       <a href="#piatti">Cucina</a>
       <a href="menu.html">Menù</a>
       <a href="#frutti-realistici">Frutti Realistici</a>
@@ -116,198 +116,31 @@
         </div>
       </div>
     </div>
-    <a href="#chi-siamo" class="scroll-cue" aria-label="Scorri per scoprire di più">
-      <span></span>
-      <small>scorri</small>
-    </a>
   </section>
 
   <!-- CHI È HEDONÉ -->
   <section class="about" id="chi-siamo">
-    <div class="about-bgvideo" aria-hidden="true">
-      <video autoplay muted loop playsinline preload="auto" poster="assets/img/chi-siamo-tramonto-tempio.jpg" id="aboutBgVideoA" class="about-bgvideo-layer" disablepictureinpicture>
-        <source src="assets/video/chi-siamo-tramonto-tempio.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline preload="auto" id="aboutBgVideoB" class="about-bgvideo-layer" disablepictureinpicture>
-        <source src="assets/video/chi-siamo-tramonto-tempio.mp4" type="video/mp4">
-      </video>
-      <div class="about-bgvideo-fade"></div>
-    </div>
     <div class="about-seam" aria-hidden="true"></div>
     <span class="about-spotlight" aria-hidden="true"></span>
     <div class="about-inner">
-      <div class="myth-epigraph" data-reveal tabindex="0" role="button" aria-expanded="false" aria-label="Mostra la citazione">
-        <span class="myth-roller" aria-hidden="true"></span>
-        <div class="myth-paper">
-          <span class="myth-hint">Un pensiero sul cibo — sfiora per leggere</span>
-          <div class="myth-body">
-            <span class="myth-rule" aria-hidden="true"></span>
-            «Il mangiare è uno dei piaceri della vita, e il mangiare bene è un'arte.»
-            <span class="myth-cite">— Pellegrino Artusi, <em>La scienza in cucina e l'arte di mangiar bene</em></span>
-            <span class="myth-rule" aria-hidden="true"></span>
-          </div>
-        </div>
-        <span class="myth-roller" aria-hidden="true"></span>
-      </div>
-
-      <div class="section-head about-intro about-panel" id="aboutIntroPanel">
-        <span class="section-kicker">Chi siamo</span>
+      <div class="about-intro-header" data-reveal>
         <h2>
           <img class="about-emblem" src="assets/img/logo-hedone-emblema.png" alt="">
-          <span class="about-wordmark">Hedoné</span>
+          <span class="about-wordmark">Perché Hedoné?</span>
         </h2>
         <span class="about-etymology-rule" aria-hidden="true"></span>
-        <p class="about-etymology">Il nome viene dal greco antico <strong>hedoné</strong>, che significa letteralmente "piacere" — la stessa radice della parola "edonismo", la filosofia che pone il piacere come fine ultimo della vita. Per gli antichi greci non era un semplice svago, ma la gioia e il godimento profondo che nascono quando l'amore si fonde con l'anima.</p>
-        <img class="about-etymology-photo" src="assets/img/arredo-scultura-emblema.jpg" alt="Il busto della dea Hedoné accanto all'insegna del locale" loading="lazy">
-        <p>Da questa idea nasce una scelta precisa: un locale a <strong>conduzione familiare</strong>, dove cucina, servizio e atmosfera restano nelle nostre mani, per conoscere davvero chi si siede al tavolo. Di giorno è un posto luminoso e senza fretta, ideale per un pranzo rilassato; di sera diventa <strong>lounge cocktail bar</strong>, luci basse, drink di carattere e carni selezionate.</p>
-        <p>Una cena romantica, una serata tra amici, il tuo lounge bar sul Naviglio Martesana: Hedoné è pensato per accogliere ogni occasione, senza mai sembrare improvvisato. E quando si accende il <strong>karaoke</strong>, il locale diventa il tuo palco — sono le serate che si raccontano il giorno dopo.</p>
       </div>
-
-      <div class="about-features about-panel" data-reveal>
-        <div class="about-feat about-feat-cucina">
-          <span class="about-feat-photo" aria-hidden="true"></span>
-          <span class="about-feat-kicker">Cucina</span>
-          <p>Tartare di Fassona, Fiorentina, picanha, filetto e grigliata mista. Materia prima selezionata, tradizione italiana, ogni piatto costruito per essere ricordato.</p>
+      <div class="about-intro-split" id="aboutIntroPanel" data-reveal>
+        <div class="about-intro-photo-wrap">
+          <img class="about-intro-photo" src="assets/img/arredo-scultura-emblema.jpg" alt="Il busto della dea Hedoné accanto all'insegna del locale" loading="lazy">
         </div>
-        <div class="about-feat about-feat-bar">
-          <span class="about-feat-photo" aria-hidden="true"></span>
-          <span class="about-feat-kicker">Cocktail Bar</span>
-          <p>Classici eseguiti bene, cocktail contemporanei e una selezione di vini dai grandi nomi italiani alle bollicine più ricercate. Il bancone di Hedoné è il posto giusto per un aperitivo curato o per prolungare la serata.</p>
-        </div>
-        <div class="about-feat about-feat-karaoke">
-          <span class="about-feat-photo" aria-hidden="true"></span>
-          <span class="about-feat-kicker">Karaoke</span>
-          <p>Il tuo palco, ogni settimana. Tra amici, risate e qualcosa di buono da bere. Serate karaoke, eventi a tema e appuntamenti musicali: una serata da Hedoné non finisce mai troppo presto.</p>
+        <div class="about-intro-copy about-intro">
+          <p class="about-etymology">Il nome viene dal greco antico <strong>hedoné</strong>, che significa letteralmente "piacere" — la stessa radice della parola "edonismo", la filosofia che pone il piacere come fine ultimo della vita. Per gli antichi greci non era un semplice svago, ma la gioia e il godimento profondo che nascono quando l'amore si fonde con l'anima.</p>
+          <p>Da questa idea nasce una scelta precisa: un locale a <strong>conduzione familiare</strong>, dove cucina, servizio e atmosfera restano nelle nostre mani, per conoscere davvero chi si siede al tavolo. Di giorno è un posto luminoso e senza fretta, ideale per un pranzo rilassato; di sera diventa <strong>lounge cocktail bar</strong>, luci basse, drink di carattere e carni selezionate.</p>
+          <p>Una cena romantica, una serata tra amici, il tuo lounge bar sul Naviglio Martesana: Hedoné è pensato per accogliere ogni occasione, senza mai sembrare improvvisato — sono le serate che si raccontano il giorno dopo.</p>
+          <a href="chi-siamo.html" class="btn btn-primary">Scopri chi siamo</a>
         </div>
       </div>
-
-      <!-- TEAM -->
-      <div class="about-team" data-reveal>
-        <div class="about-team-frame">
-          <img class="about-team-img is-active" src="assets/img/team-barman.png" alt="Il team di Hedoné al bancone" loading="eager" style="object-position: center 22%;">
-          <img class="about-team-img" src="assets/img/arredo-sala-notte.png" alt="La sala di Hedoné la sera" loading="lazy" style="object-position: center 40%;">
-          <img class="about-team-img" src="assets/img/clienti-serata-2.jpg" alt="Serata al karaoke da Hedoné" loading="lazy" style="object-position: center 25%;">
-          <img class="about-team-img" src="assets/img/arredo-bancone-bar.jpg" alt="Il bancone cocktail di Hedoné" loading="lazy" style="object-position: center 50%;">
-          <img class="about-team-img" src="assets/img/staff-bar-action1.jpg" alt="Il team al lavoro" loading="lazy" style="object-position: center 28%;">
-          <img class="about-team-img" src="assets/img/arredo-dehor-sera.png" alt="Il dehor serale di Hedoné" loading="lazy" style="object-position: center 50%;">
-          <img class="about-team-img" src="assets/img/clienti-karaoke-1.jpg" alt="Una serata karaoke da Hedoné" loading="lazy" style="object-position: center 25%;">
-          <img class="about-team-img" src="assets/img/arredo-tavolo-finestra.jpg" alt="Tavolo apparecchiato da Hedoné" loading="lazy" style="object-position: center 50%;">
-          <img class="about-team-img" src="assets/img/clienti-serata-1.jpg" alt="Clienti in serata" loading="lazy" style="object-position: center 30%;">
-          <img class="about-team-img" src="assets/img/arredo-dehor-giorno.png" alt="Il dehor di giorno di Hedoné" loading="lazy" style="object-position: center 50%;">
-          <img class="about-team-img" src="assets/img/staff-gin-bar.jpg" alt="Barman con la selezione gin" loading="lazy" style="object-position: center 12%;">
-          <img class="about-team-img" src="assets/img/clienti-sala-karaoke.jpg" alt="L'atmosfera serale da Hedoné" loading="lazy" style="object-position: center 40%;">
-          <img class="about-team-img" src="assets/img/arredo-mise-en-place.jpg" alt="Mise en place da Hedoné" loading="lazy" style="object-position: center 40%;">
-          <img class="about-team-img" src="assets/img/staff-bar-action2.jpg" alt="Preparazione cocktail" loading="lazy" style="object-position: center 28%;">
-          <img class="about-team-img" src="assets/img/clienti-serata-3.jpg" alt="Una serata speciale da Hedoné" loading="lazy" style="object-position: center 20%;">
-          <img class="about-team-img" src="assets/img/clienti-staff-abbraccio.jpg" alt="Cliente e staff di Hedoné" loading="lazy" style="object-position: center 20%;">
-          <img class="about-team-img" src="assets/img/clienti-karaoke-2.jpg" alt="Karaoke serale" loading="lazy" style="object-position: center 20%;">
-          <img class="about-team-img" src="assets/img/clienti-serata-4.jpg" alt="Momenti di serata" loading="lazy" style="object-position: center 25%;">
-          <img class="about-team-img" src="assets/img/team-champagne-sera.jpg" alt="Un brindisi da Hedoné" loading="lazy" style="object-position: center 40%;">
-          <img class="about-team-img" src="assets/img/team-esterno-sera.jpg" alt="L'ingresso di Hedoné di sera" loading="lazy" style="object-position: center 55%;">
-          <img class="about-team-img" src="assets/img/team-cucina-piatti.jpg" alt="Il team in cucina mentre impiatta" loading="lazy" style="object-position: center 55%;">
-          <img class="about-team-img" src="assets/img/team-staff-selfie.jpg" alt="Il team di Hedoné in cucina" loading="lazy" style="object-position: center 35%;">
-          <div class="about-team-dots" aria-hidden="true">
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot is-active"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-            <span class="about-team-dot"></span>
-          </div>
-        </div>
-        <div class="about-team-copy about-panel">
-          <span class="about-team-kicker">Il team</span>
-          <p class="about-team-quote">"La serata giusta non si ordina dal menù. La costruiamo insieme."</p>
-          <p>Al bancone e tra i tavoli trovi le stesse persone da anni. Non semplice personale: volti che ricordano il tuo vino preferito, che capiscono quando proporre un cocktail in più e quando lasciare che la serata si allunghi da sola.</p>
-          <p class="about-team-accent">Vieni una sera. Capire perché si torna è più facile quando ci sei.</p>
-          <a href="serate.html" class="btn btn-primary about-team-cta">Scopri Serate &amp; Eventi</a>
-        </div>
-      </div>
-
-      <div class="pillars">
-        <div class="pillar" data-reveal="pop">
-          <span class="pillar-photo-wrap">
-            <img class="pillar-photo" src="assets/img/piatto-ravioli-fiori.jpg" alt="Ravioli con fiori edibili, cucina curata di Hedoné" loading="lazy" style="object-position: center 60%;">
-          </span>
-          <span class="pillar-mark" aria-hidden="true">Α</span>
-          <h3>Piacere</h3>
-          <p>Non fretta né ostentazione, ma il risultato di una cucina curata, di un drink ben fatto, di un'atmosfera che invita a restare.</p>
-        </div>
-        <div class="pillar" data-reveal="pop">
-          <span class="pillar-photo-wrap">
-            <img class="pillar-photo" src="assets/img/pillar-tempo.jpg" alt="Il dehors di Hedoné la sera, tavoli con luci calde per restare senza fretta" loading="lazy">
-          </span>
-          <span class="pillar-mark" aria-hidden="true">Β</span>
-          <h3>Tempo</h3>
-          <p>Un valore da rispettare: a tavola, nelle conversazioni, in tutta l'esperienza — mai qualcosa da consumare in fretta.</p>
-        </div>
-        <div class="pillar" data-reveal="pop">
-          <span class="pillar-photo-wrap">
-            <img class="pillar-photo" src="assets/img/piatto-tartare.png" alt="Tartare con foglia oro, identità della cucina di Hedoné" loading="lazy" style="object-position: center 45%;">
-          </span>
-          <span class="pillar-mark" aria-hidden="true">Γ</span>
-          <h3>Identità</h3>
-          <p>Cucina che parte dalla tradizione italiana, materie prime scelte con cura, cocktail pensati per il momento giusto.</p>
-        </div>
-      </div>
-
-      <div class="about-daynight">
-        <div class="about-time about-time-day" data-reveal="pop">
-          <span class="about-time-photo" aria-hidden="true"></span>
-          <span class="about-time-kicker">
-            <svg class="about-time-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.4"/>
-              <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-                <path d="M12 2.4v2.6"/>
-                <path d="M12 19v2.6"/>
-                <path d="M21.6 12h-2.6"/>
-                <path d="M5 12H2.4"/>
-                <path d="M18.6 5.4l-1.8 1.8"/>
-                <path d="M7.2 16.8l-1.8 1.8"/>
-                <path d="M18.6 18.6l-1.8-1.8"/>
-                <path d="M7.2 7.2L5.4 5.4"/>
-              </g>
-            </svg>
-            Di giorno
-          </span>
-          <p>Luminoso e tranquillo: lo spazio ideale per un pranzo rilassato, con vista sulla Martesana.</p>
-        </div>
-        <div class="about-time about-time-night" data-reveal="pop">
-          <span class="about-time-photo" aria-hidden="true"></span>
-          <span class="about-time-kicker">
-            <svg class="about-time-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-            </svg>
-            Di sera
-          </span>
-          <p>L'atmosfera si accende: luci più calde, serate a tema, karaoke e appuntamenti musicali — mai gridati, sempre curati. La musica accompagna senza invadere, il cocktail giusto completa la serata.</p>
-        </div>
-      </div>
-
-      <div class="about-tags" data-reveal>
-        <span>Conduzione familiare</span>
-        <span>Pet friendly</span>
-        <span>Serate karaoke</span>
-        <span>Cantina con etichette italiane e bollicine ricercate</span>
-      </div>
-
-      <p class="about-closing" data-reveal>Qui il piacere è semplice. Ed è fatto per durare.</p>
     </div>
   </section>
 
@@ -349,7 +182,6 @@
         </span>
         <h2 class="dishes-chapter-title">Solo un assaggio</h2>
         <p class="dishes-intro-sub">La nostra cucina parte dalla tradizione italiana e si prende il tempo giusto per farsi ricordare. Ogni piatto è costruito per essere riconoscibile, sincero, appagante.</p>
-        <a href="#dishStrip" class="btn btn-primary dishes-chapter-cta">Scopri i piatti ↓</a>
       </div>
     </div>
 
@@ -947,11 +779,11 @@
     <div class="footer-links-col">
       <p class="footer-col-title">Esplora</p>
       <nav class="footer-nav">
-        <a href="#chi-siamo">Il ristorante</a>
+        <a href="chi-siamo.html">Il ristorante</a>
         <a href="menu.html">Il menù</a>
         <a href="menu.html#mn-vini">I vini</a>
         <a href="#recensioni">Recensioni</a>
-        <a href="serate.html">Serate &amp; Karaoke</a>
+        <a href="serate.html">Serate &amp; Eventi</a>
         <a href="#prenota">Prenota un tavolo</a>
       </nav>
     </div>
