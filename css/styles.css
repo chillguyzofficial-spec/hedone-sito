@@ -286,8 +286,73 @@ button:focus-visible {
   70%, 100% { transform: scale(1.55); opacity: 0; }
 }
 
+/* ---------- WHATSAPP FAB (impilato sopra "Chiamaci ora") ---------- */
+.whatsapp-fab {
+  position: fixed;
+  left: clamp(1rem, 4vw, 2rem);
+  bottom: calc(clamp(1rem, 4vw, 2rem) + 72px);
+  z-index: 150;
+  display: inline-flex;
+  align-items: center;
+  height: 60px;
+  border-radius: 999px;
+  background: rgba(7, 7, 10, 0.78);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  animation: call-fab-bob 3.6s ease-in-out infinite 0.4s;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.whatsapp-fab:hover,
+.whatsapp-fab:focus-visible {
+  border-color: rgba(37, 211, 102, 0.8);
+  background: rgba(4, 12, 7, 0.92);
+  box-shadow: 0 0 22px rgba(37, 211, 102, 0.35), 0 8px 26px rgba(0, 0, 0, 0.45);
+  outline: none;
+}
+.whatsapp-fab-icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #25d366;
+}
+.whatsapp-fab-icon svg { width: 24px; height: 24px; }
+.whatsapp-fab-ring {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(37, 211, 102, 0.55);
+  animation: call-fab-ping 2.6s cubic-bezier(0.2, 0.6, 0.3, 1) infinite 0.4s;
+  pointer-events: none;
+}
+.whatsapp-fab-label {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  transition: max-width 0.35s ease, opacity 0.3s ease 0.05s, padding-right 0.35s ease;
+}
+.whatsapp-fab:hover .whatsapp-fab-label,
+.whatsapp-fab:focus-visible .whatsapp-fab-label {
+  max-width: 160px;
+  opacity: 1;
+  padding-right: 1.3rem;
+}
+
 @media (max-width: 900px) {
-  .call-fab-label { display: none; }
+  .call-fab-label,
+  .whatsapp-fab-label { display: none; }
 
   .nav-float {
     background: transparent;
@@ -3061,6 +3126,12 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
   opacity: 0.7;
   white-space: nowrap;
 }
+.social-strip-card.is-facebook .social-strip-icon { color: #1877f2; }
+.social-strip-card.is-facebook:hover {
+  border-color: #1877f2;
+  background: rgba(24, 119, 242, 0.1);
+  box-shadow: 0 10px 28px rgba(24, 119, 242, 0.15);
+}
 .social-strip-card.is-instagram .social-strip-icon { color: #e1306c; }
 .social-strip-card.is-instagram:hover {
   border-color: #e1306c;
@@ -3599,7 +3670,7 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 /* Contact cards */
 .booking-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   margin-top: 1.5rem;
   text-align: left;
@@ -3673,6 +3744,8 @@ a.booking-card:hover {
 }
 .booking-social-link svg { flex-shrink: 0; }
 .booking-social-link:hover { transform: translateY(-2px); }
+.booking-social-link.is-facebook svg { color: #1877f2; }
+.booking-social-link.is-facebook:hover { border-color: #1877f2; background: rgba(24, 119, 242, 0.14); color: #fff; }
 .booking-social-link.is-instagram svg { color: #e1306c; }
 .booking-social-link.is-instagram:hover { border-color: #e1306c; background: rgba(225, 48, 108, 0.14); color: #fff; }
 .booking-social-link.is-tiktok svg { color: #25f4ee; }
@@ -3832,7 +3905,7 @@ a.booking-card:hover {
 .footer-legal {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 1.5rem 0 6rem;
+  padding: 1.5rem 0 11rem;
   border-top: 1px solid rgba(212,175,106,0.07);
   display: flex;
   justify-content: space-between;
@@ -3843,10 +3916,10 @@ a.booking-card:hover {
 }
 .footer-legal p { margin: 0; }
 
-/* Sotto i 1360px il pulsante fisso "Chiamaci" in basso a sinistra si sovrappone
-   al testo legale del footer (P.IVA, ragione sociale): il padding extra sopra
-   gli lascia spazio. Da 1360px in su il footer è abbastanza rientrato da non
-   averne bisogno. */
+/* Sotto i 1360px i due pulsanti fissi "WhatsApp"/"Chiamaci" impilati in basso
+   a sinistra si sovrappongono al testo legale del footer (P.IVA, ragione
+   sociale): il padding extra sopra gli lascia spazio. Da 1360px in su il
+   footer è abbastanza rientrato da non averne bisogno. */
 @media (min-width: 1360px) {
   .footer-legal { padding-bottom: 1.5rem; }
 }
@@ -3867,6 +3940,7 @@ a.booking-card:hover {
     aspect-ratio: 3 / 2;
   }
   .booking-grid { grid-template-columns: repeat(2, 1fr); }
+  .booking-grid > .booking-card-hours { grid-column: 1 / -1; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-brand-col { grid-column: 1 / -1; }
   .location-bottom {
