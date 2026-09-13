@@ -709,7 +709,7 @@
       kicker: "Secondi alla griglia",
       name: "Grigliata Mista",
       desc: "Filetto di pollo, würstel, salsiccia, costolette di agnello, picanha e costine di maiale — tutto sulla brace. Una festa del gusto per chi vuole assaggiare il meglio della griglia di Hedoné.",
-      imgs: ["assets/img/piatto-grigliata-mista.jpg", "assets/img/piatto-picanha.png", "assets/img/piatto-grigliata-02.jpg", "assets/img/piatto-grigliata-03.jpg", "assets/img/piatto-grigliata-04.jpg"],
+      imgs: ["assets/img/piatto-grigliata-mista.jpg", "assets/img/piatto-grigliata-02.jpg", "assets/img/piatto-grigliata-03.jpg", "assets/img/piatto-grigliata-05.jpg"],
       ingredients: ["Filetto di pollo", "Würstel artigianale", "Salsiccia", "Costolette di agnello", "Picanha", "Costine di maiale"],
       wines: [
         { name: "Primitivo di Manduria", desc: "Caldo, fruttato e generoso — nato per accompagnare la griglia." },
@@ -1183,24 +1183,6 @@
   /* Sommelier page: init inline (nessun modal) */
   if (document.body.classList.contains("page-sommelier")) {
     barmanShowStep0();
-  }
-
-  /* Floating CTA sommelier (homepage): appare dopo 400px di scroll,
-     richiudibile dall'utente per il resto della sessione */
-  var sommelierFloat = document.getElementById("sommelierFloat");
-  if (sommelierFloat) {
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 400 && sessionStorage.getItem("hedone_sfc_dismissed") !== "1") {
-        sommelierFloat.classList.add("is-visible");
-      }
-    }, { passive: true });
-    var sfcClose = document.getElementById("sfcClose");
-    if (sfcClose) {
-      sfcClose.addEventListener("click", function () {
-        sommelierFloat.classList.remove("is-visible");
-        sessionStorage.setItem("hedone_sfc_dismissed", "1");
-      });
-    }
   }
 
   /* ---------- FOOD GALLERY: drag-to-scroll ---------- */
