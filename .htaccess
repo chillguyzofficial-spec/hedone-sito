@@ -1,0 +1,11 @@
+# Redirect 301 dalle vecchie URL WordPress (hedonevimodrone.it) alle nuove pagine statiche
+# Preparato in locale — da caricare su Aruba SOLO al momento del lancio reale,
+# dopo backup completo del sito WordPress attuale.
+
+RewriteEngine On
+
+RewriteRule ^chi-siamo/?$ /chi-siamo.html [R=301,L]
+RewriteRule ^menu/?$ /menu.html [R=301,L]
+RewriteRule ^serata-karaoke/?$ /serate.html [R=301,L]
+RewriteRule ^gallery/?$ /serate.html [R=301,L]
+RewriteRule ^contattaci/?$ /index.html#prenota [R=301,L]
