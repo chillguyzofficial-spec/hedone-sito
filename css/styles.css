@@ -593,7 +593,7 @@ button:focus-visible {
     0 2px 18px rgba(0, 0, 0, 0.9), 0 6px 40px rgba(0, 0, 0, 0.75);
 }
 @media (max-width: 480px) {
-  .hero-tagline { font-size: 1.3rem; }
+  .hero-tagline { font-size: 1.45rem; }
 }
 
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
