@@ -698,7 +698,7 @@
       kicker: "Secondi alla griglia",
       name: "Costata",
       desc: "Costata di manzo selezionata, cotta alla griglia su brace viva. Un taglio nobile che porta in tavola tutta la qualità della materia prima — da condividere o gustare da soli.",
-      imgs: ["assets/img/piatto-costata-manzo.jpg", "assets/img/food-gal-10.jpg"],
+      imgs: ["assets/img/piatto-costata-manzo.jpg"],
       ingredients: ["Costata di manzo", "Sale grosso", "Pepe nero", "Rosmarino", "Brace viva"],
       wines: [
         { name: "Barolo Della Marmora 2021", desc: "Il Re dei vini italiani per un taglio che merita rispetto." },
@@ -709,7 +709,7 @@
       kicker: "Secondi alla griglia",
       name: "Grigliata Mista",
       desc: "Filetto di pollo, würstel, salsiccia, costolette di agnello, picanha e costine di maiale — tutto sulla brace. Una festa del gusto per chi vuole assaggiare il meglio della griglia di Hedoné.",
-      imgs: ["assets/img/piatto-grigliata-mista.jpg", "assets/img/piatto-grigliata-02.jpg", "assets/img/piatto-grigliata-03.jpg", "assets/img/piatto-grigliata-05.jpg"],
+      imgs: ["assets/img/piatto-grigliata-mista.jpg", "assets/img/piatto-grigliata-03.jpg", "assets/img/piatto-grigliata-05.jpg"],
       ingredients: ["Filetto di pollo", "Würstel artigianale", "Salsiccia", "Costolette di agnello", "Picanha", "Costine di maiale"],
       wines: [
         { name: "Primitivo di Manduria", desc: "Caldo, fruttato e generoso — nato per accompagnare la griglia." },

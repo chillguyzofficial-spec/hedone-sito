@@ -213,7 +213,7 @@ button:focus-visible {
 /* ---------- CALL FAB ---------- */
 .call-fab {
   position: fixed;
-  left: clamp(1rem, 4vw, 2rem);
+  right: clamp(1rem, 4vw, 2rem);
   bottom: clamp(1rem, 4vw, 2rem);
   z-index: 150;
   display: inline-flex;
@@ -286,11 +286,11 @@ button:focus-visible {
   70%, 100% { transform: scale(1.55); opacity: 0; }
 }
 
-/* ---------- WHATSAPP FAB (impilato sopra "Chiamaci ora") ---------- */
+/* ---------- WHATSAPP FAB (a sinistra, "Chiamaci ora" a destra) ---------- */
 .whatsapp-fab {
   position: fixed;
   left: clamp(1rem, 4vw, 2rem);
-  bottom: calc(clamp(1rem, 4vw, 2rem) + 72px);
+  bottom: clamp(1rem, 4vw, 2rem);
   z-index: 150;
   display: inline-flex;
   align-items: center;
