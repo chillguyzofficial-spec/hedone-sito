@@ -640,6 +640,10 @@
             <textarea id="resNotes" name="note" placeholder="Allergie, richieste particolari, dettagli sull'occasione..." rows="3"></textarea>
           </div>
         </div>
+        <div class="form-group form-group-full" style="display:flex; align-items:flex-start; gap:0.6rem; margin: 0.4rem 0 1.1rem;">
+          <input type="checkbox" id="resPrivacy" name="privacy_accettata" value="si" required style="margin-top:0.28rem; flex-shrink:0; width:16px; height:16px;">
+          <label for="resPrivacy" style="margin:0; font-weight:400; font-size:0.85rem; line-height:1.5;">Ho letto e accetto l'<a href="privacy.html" target="_blank" rel="noopener">informativa sulla privacy</a> *</label>
+        </div>
         <div class="form-actions">
           <button type="submit" class="btn btn-primary form-submit-btn">Invia richiesta di prenotazione →</button>
           <a href="https://wa.me/393336476506" target="_blank" rel="noopener" class="btn btn-ghost fgc-pdf">
@@ -676,6 +680,10 @@
             <label for="ctMessage">Messaggio *</label>
             <textarea id="ctMessage" name="messaggio" required placeholder="Come possiamo aiutarti?" rows="5"></textarea>
           </div>
+        </div>
+        <div class="form-group form-group-full" style="display:flex; align-items:flex-start; gap:0.6rem; margin: 0.4rem 0 1.1rem;">
+          <input type="checkbox" id="ctPrivacy" name="privacy_accettata" value="si" required style="margin-top:0.28rem; flex-shrink:0; width:16px; height:16px;">
+          <label for="ctPrivacy" style="margin:0; font-weight:400; font-size:0.85rem; line-height:1.5;">Ho letto e accetto l'<a href="privacy.html" target="_blank" rel="noopener">informativa sulla privacy</a> *</label>
         </div>
         <div class="form-actions">
           <button type="submit" class="btn btn-primary form-submit-btn">Invia messaggio →</button>
@@ -825,7 +833,7 @@
   </div>
   <div class="footer-legal">
     <p>COMUS S.R.L. · P.IVA 14024370968 · REA MI-2756947</p>
-    <p>© <span id="footerYear">2025</span> Hedoné · Tutti i diritti riservati</p>
+    <p>© <span id="footerYear">2025</span> Hedoné · Tutti i diritti riservati · <a href="privacy.html" style="color:inherit;">Privacy Policy</a></p>
   </div>
 </footer>
 
