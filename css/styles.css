@@ -487,16 +487,22 @@ button:focus-visible {
 }
 
 /* Ken Burns legato allo scroll: l'immagine si avvicina e si sposta leggermente
-   mentre l'hero esce dalla vista, dando l'illusione di una scena viva. */
-@supports (animation-timeline: scroll()) {
-  .hero-bg {
-    animation: hero-kenburns linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0 100vh;
-  }
-  @keyframes hero-kenburns {
-    from { transform: scale(1.06) translateY(0%); }
-    to   { transform: scale(1.22) translateY(5%); }
+   mentre l'hero esce dalla vista, dando l'illusione di una scena viva.
+   Solo da tablet in su: su mobile la barra degli indirizzi che si nasconde/mostra
+   durante lo scroll fa oscillare 100vh in tempo reale, e animation-timeline: scroll()
+   ricalcolato su un range instabile puo' lasciare il video/immagine scalato e
+   spostato in modo scorretto quando si torna in cima (video "tagliato"). */
+@media (min-width: 769px) {
+  @supports (animation-timeline: scroll()) {
+    .hero-bg {
+      animation: hero-kenburns linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 100vh;
+    }
+    @keyframes hero-kenburns {
+      from { transform: scale(1.06) translateY(0%); }
+      to   { transform: scale(1.22) translateY(5%); }
+    }
   }
 }
 
@@ -587,7 +593,7 @@ button:focus-visible {
     0 2px 18px rgba(0, 0, 0, 0.9), 0 6px 40px rgba(0, 0, 0, 0.75);
 }
 @media (max-width: 480px) {
-  .hero-tagline { font-size: 1.05rem; }
+  .hero-tagline { font-size: 1.3rem; }
 }
 
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -3905,7 +3911,7 @@ a.booking-card:hover {
 .footer-legal {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 1.5rem 0 11rem;
+  padding: 1.5rem 0 6rem;
   border-top: 1px solid rgba(212,175,106,0.07);
   display: flex;
   justify-content: space-between;
@@ -3916,10 +3922,10 @@ a.booking-card:hover {
 }
 .footer-legal p { margin: 0; }
 
-/* Sotto i 1360px i due pulsanti fissi "WhatsApp"/"Chiamaci" impilati in basso
-   a sinistra si sovrappongono al testo legale del footer (P.IVA, ragione
-   sociale): il padding extra sopra gli lascia spazio. Da 1360px in su il
-   footer è abbastanza rientrato da non averne bisogno. */
+/* Sotto i 1360px i due pulsanti fissi WhatsApp (sinistra) e Chiamaci (destra)
+   sono in basso sulla stessa riga del testo legale del footer (P.IVA, ragione
+   sociale): il padding extra sotto gli lascia spazio per non sovrapporsi.
+   Da 1360px in su il footer è abbastanza rientrato da non averne bisogno. */
 @media (min-width: 1360px) {
   .footer-legal { padding-bottom: 1.5rem; }
 }
