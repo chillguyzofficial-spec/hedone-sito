@@ -3591,6 +3591,30 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
   cursor: pointer;
 }
 .form-group select option { background: #1c130d; color: var(--ink); }
+.form-group input[type="checkbox"] {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.form-group input[type="checkbox"]:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.form-group input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid #1c130d;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
