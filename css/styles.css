@@ -3710,18 +3710,12 @@ a.booking-card:hover {
 }
 .footer-credit {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.55rem;
   margin-top: 1.6rem;
   font-size: 0.82rem;
   color: var(--ink-dim);
   letter-spacing: 0.01em;
-}
-.footer-credit-row {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
 }
 .footer-credit-dot {
   width: 5px;
@@ -3735,17 +3729,6 @@ a.booking-card:hover {
   color: var(--gold);
   font-weight: 700;
   letter-spacing: 0.03em;
-}
-.footer-credit-cta {
-  font-size: 0.76rem;
-  color: var(--ink-dim);
-  opacity: 0.75;
-  transition: opacity 0.2s ease;
-}
-.footer-credit-cta:hover {
-  opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 .footer-col-title {
   font-size: 0.64rem;
