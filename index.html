@@ -554,136 +554,15 @@
     <div class="booking-inner" data-reveal>
       <span class="section-kicker">Prenota</span>
       <h2>Riservaci il tuo tempo</h2>
-      <p class="booking-lead">Prenota il tuo tavolo direttamente, o scrivici per qualsiasi informazione. Risponderemo entro poche ore.</p>
+      <p class="booking-lead">Scegli data, orario e numero di persone: il tavolo è confermato subito, senza chiamarci.</p>
 
-      <!-- Toggle Prenota / Contatta -->
-      <div class="booking-mode-toggle" role="group" aria-label="Tipo di richiesta">
-        <button class="bmt-btn is-active" data-mode="reservation" type="button">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          Prenota un tavolo
-        </button>
-        <button class="bmt-btn" data-mode="contact" type="button">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Scrivi al locale
-        </button>
+      <!-- Prenotazione via Plateform -->
+      <div class="booking-form is-active" id="reservationPanel">
+        <div class="form-actions" style="margin-top:0; justify-content:center;">
+          <a href="https://hedonevimodrone.plateform.app/welcome" target="_blank" rel="noopener" class="btn btn-primary">Prenota un tavolo →</a>
+        </div>
+        <p class="form-note" style="text-align:center; margin-top:1rem;">I tuoi dati vengono trattati secondo la nostra <a href="privacy.html" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:2px;">informativa sulla privacy</a>.</p>
       </div>
-
-      <!-- Form Prenotazione -->
-      <form class="booking-form is-active" id="formReservation" novalidate>
-        <input type="hidden" name="_subject" value="Nuova richiesta di prenotazione — Hedoné">
-        <input type="hidden" name="_template" value="box">
-        <div class="booking-form-grid">
-          <div class="form-group">
-            <label for="resName">Nome e cognome *</label>
-            <input type="text" id="resName" name="nome" required placeholder="Mario Rossi" autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label for="resPhone">Telefono *</label>
-            <input type="tel" id="resPhone" name="telefono" required placeholder="+39 333 0000000" autocomplete="tel">
-          </div>
-          <div class="form-group">
-            <label for="resDate">Data *</label>
-            <input type="date" id="resDate" name="data" required>
-          </div>
-          <div class="form-group">
-            <label for="resTime">Orario preferito *</label>
-            <select id="resTime" name="ora" required>
-              <option value="">Seleziona orario</option>
-              <optgroup label="Pranzo">
-                <option value="12:00">12:00</option>
-                <option value="12:30">12:30</option>
-                <option value="13:00">13:00</option>
-                <option value="13:30">13:30</option>
-                <option value="14:00">14:00</option>
-                <option value="14:30">14:30</option>
-              </optgroup>
-              <optgroup label="Cena">
-                <option value="19:00">19:00</option>
-                <option value="19:30">19:30</option>
-                <option value="20:00">20:00</option>
-                <option value="20:30">20:30</option>
-                <option value="21:00">21:00</option>
-                <option value="21:30">21:30</option>
-                <option value="22:00">22:00</option>
-                <option value="22:30">22:30</option>
-              </optgroup>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="resPeople">Numero persone *</label>
-            <select id="resPeople" name="persone" required>
-              <option value="">Quante persone?</option>
-              <option value="1">1 persona</option>
-              <option value="2">2 persone</option>
-              <option value="3">3 persone</option>
-              <option value="4">4 persone</option>
-              <option value="5">5 persone</option>
-              <option value="6">6 persone</option>
-              <option value="7+">7 o più persone</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="resOccasion">Occasione speciale</label>
-            <select id="resOccasion" name="occasione">
-              <option value="Nessuna">Nessuna in particolare</option>
-              <option value="Compleanno">Compleanno</option>
-              <option value="Anniversario">Anniversario</option>
-              <option value="Proposta di matrimonio">Proposta di matrimonio</option>
-              <option value="Festa o evento speciale">Festa o evento speciale</option>
-              <option value="Addio al celibato/nubilato">Addio al celibato/nubilato</option>
-              <option value="Cena di lavoro">Cena di lavoro</option>
-              <option value="Altro">Altro (specificare nelle note)</option>
-            </select>
-          </div>
-          <div class="form-group form-group-full">
-            <label for="resNotes">Note (richieste speciali, dettagli sull'occasione...)</label>
-            <textarea id="resNotes" name="note" placeholder="Richieste particolari, dettagli sull'occasione..." rows="3"></textarea>
-            <p style="margin:0.4rem 0 0; font-size:0.78rem; color:var(--ink-dim, rgba(243,241,234,0.55)); font-weight:400; text-transform:none; letter-spacing:normal;">Per allergie, intolleranze o esigenze alimentari particolari, ti invitiamo a comunicarle direttamente al ristorante (telefono o di persona).</p>
-          </div>
-        </div>
-        <div class="form-group form-group-full" style="display:flex; align-items:flex-start; gap:0.6rem; margin: 0.4rem 0 1.1rem;">
-          <input type="checkbox" id="resPrivacy" name="privacy_accettata" value="si" required style="margin-top:0.28rem; flex-shrink:0; width:16px; height:16px;">
-          <label for="resPrivacy" style="margin:0; font-weight:400; font-size:0.85rem; line-height:1.5; text-transform:none; letter-spacing:normal;">Ho letto l'<a href="privacy.html" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:2px;">informativa sulla privacy</a> *</label>
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary form-submit-btn">Invia richiesta di prenotazione →</button>
-          <a href="https://wa.me/393336476506" target="_blank" rel="noopener" class="btn btn-ghost fgc-pdf">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/></svg>
-            Scrivici direttamente su WhatsApp
-          </a>
-          <p class="form-note">Risponderemo entro poche ore per confermare il tuo tavolo.</p>
-        </div>
-        <div class="form-feedback" id="resFeedback" aria-live="polite"></div>
-      </form>
-
-      <!-- Form Contatto -->
-      <form class="booking-form" id="formContact" novalidate>
-        <input type="hidden" name="_subject" value="Nuovo messaggio dal sito — Hedoné">
-        <input type="hidden" name="_template" value="box">
-        <input type="hidden" name="_autoresponse" value="Grazie per averci scritto! Abbiamo ricevuto il tuo messaggio e ti risponderemo al più presto.&#10;&#10;Per qualsiasi urgenza puoi anche scriverci su WhatsApp al +39 333 6476506 o chiamarci allo stesso numero.&#10;&#10;A presto,&#10;Il team di Hedoné — Lounge Bar & Restaurant, Vimodrone">
-        <div class="booking-form-grid">
-          <div class="form-group">
-            <label for="ctName">Nome *</label>
-            <input type="text" id="ctName" name="nome" required placeholder="Mario Rossi" autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label for="ctEmail">Email *</label>
-            <input type="email" id="ctEmail" name="email" required placeholder="mario@esempio.com" autocomplete="email">
-          </div>
-          <div class="form-group form-group-full">
-            <label for="ctMessage">Messaggio *</label>
-            <textarea id="ctMessage" name="messaggio" required placeholder="Come possiamo aiutarti?" rows="5"></textarea>
-          </div>
-        </div>
-        <div class="form-group form-group-full" style="display:flex; align-items:flex-start; gap:0.6rem; margin: 0.4rem 0 1.1rem;">
-          <input type="checkbox" id="ctPrivacy" name="privacy_accettata" value="si" required style="margin-top:0.28rem; flex-shrink:0; width:16px; height:16px;">
-          <label for="ctPrivacy" style="margin:0; font-weight:400; font-size:0.85rem; line-height:1.5; text-transform:none; letter-spacing:normal;">Ho letto l'<a href="privacy.html" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:2px;">informativa sulla privacy</a> *</label>
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary form-submit-btn">Invia messaggio →</button>
-        </div>
-        <div class="form-feedback" id="ctFeedback" aria-live="polite"></div>
-      </form>
 
       <!-- Card contatti -->
       <div class="booking-grid">
