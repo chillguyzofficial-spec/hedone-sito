@@ -1,23 +1,12 @@
 # Redirect 301 dalle vecchie URL WordPress (hedonevimodrone.it) alle nuove pagine statiche
+# Preparato in locale — da caricare su Aruba SOLO al momento del lancio reale,
+# dopo backup completo del sito WordPress attuale.
+
 RewriteEngine On
 
-RewriteRule ^chi-siamo/?$ /chi-siamo [R=301,L]
-RewriteRule ^menu/?$ /menu [R=301,L]
-RewriteRule ^serata-karaoke/?$ /serate [R=301,L]
-RewriteRule ^gallery/?$ /serate [R=301,L]
-RewriteRule ^contattaci/?$ /#prenota [R=301,L]
-RewriteRule ^privacy-policy/?$ /privacy [R=301,L]
-
-# URL puliti: nasconde l'estensione .html
-# index.html -> root
-RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
-RewriteRule ^index\.html$ / [R=301,L]
-
-# altrapagina.html -> /altrapagina (redirect canonico, evita contenuti duplicati)
-RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L]
-
-# internamente, serve pagina.html quando si richiede /pagina
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^.]+)$ $1.html [L]
+RewriteRule ^chi-siamo/?$ /chi-siamo.html [R=301,L]
+RewriteRule ^menu/?$ /menu.html [R=301,L]
+RewriteRule ^serata-karaoke/?$ /serate.html [R=301,L]
+RewriteRule ^gallery/?$ /serate.html [R=301,L]
+RewriteRule ^contattaci/?$ /index.html#prenota [R=301,L]
+RewriteRule ^privacy-policy/?$ /privacy.html [R=301,L]
