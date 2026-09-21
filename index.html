@@ -40,8 +40,12 @@
     "longitude": 9.2960
   },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Sunday"], "opens": "10:00", "closes": "23:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "10:00", "closes": "02:00" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "11:00", "closes": "14:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "17:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "11:00", "closes": "14:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "17:00", "closes": "24:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "24:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "23:00" }
   ],
   "acceptsReservations": "True",
   "sameAs": [
@@ -623,9 +627,10 @@
           </div>
           <span class="booking-label">Siamo aperti</span>
           <span class="booking-value booking-hours-table">
-            <span>Mar–Gio</span><span>10:00–23:00</span>
-            <span>Ven–Sab</span><span>10:00–02:00</span>
-            <span>Dom</span><span>10:00–23:00</span>
+            <span>Mar–Gio</span><span><span style="white-space:nowrap">11–14:30</span>, <span style="white-space:nowrap">17–23</span></span>
+            <span>Venerdì</span><span><span style="white-space:nowrap">11–14:30</span>, <span style="white-space:nowrap">17–00</span></span>
+            <span>Sabato</span><span>11–00</span>
+            <span>Domenica</span><span>11–23</span>
             <span class="hours-closed">Lunedì</span><span class="hours-closed">chiuso</span>
           </span>
         </div>
