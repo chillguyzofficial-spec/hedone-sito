@@ -54,7 +54,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=20260914c">
+<link rel="stylesheet" href="css/styles.css?v=20260921a">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
 </head>
 <body>
@@ -76,6 +76,13 @@
   </span>
   <span class="call-fab-label">Chiamaci ora</span>
 </a>
+
+<div class="cookie-notice" id="cookieNotice" role="region" aria-label="Informativa cookie">
+  <p class="cookie-notice-text">Questo sito non utilizza cookie di profilazione o pubblicitari. Alcune funzionalità (come la mappa) si appoggiano a servizi tecnici di terze parti — <a href="privacy.html#privacy-cookie">maggiori info nella Privacy Policy</a>.</p>
+  <div class="cookie-notice-actions">
+    <button type="button" class="cookie-notice-btn" id="cookieNoticeBtn">Ho capito</button>
+  </div>
+</div>
 
 <div class="nav-float" id="navFloat">
   <button class="nav-trigger" id="navTrigger" aria-label="Apri il menu" aria-expanded="false" aria-controls="navPanel">
@@ -878,5 +885,6 @@
   });
 })();
 </script>
+<script src="js/cookie-notice.js"></script>
 </body>
 </html>
