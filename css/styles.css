@@ -2910,6 +2910,74 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 
 .reviews-platforms { display: none; }
 
+/* Riconoscimento Restaurant Guru 2026: sigillo dorato tra titolo e voti */
+.award-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin: 1.6rem auto 0;
+  max-width: calc(100% - 2.5rem);
+  box-sizing: border-box;
+  padding: 0.85rem 1.6rem 0.85rem 0.85rem;
+  border: 1px solid rgba(212, 175, 106, 0.45);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(212, 175, 106, 0.16), rgba(8, 5, 2, 0.55) 60%);
+  box-shadow: 0 0 34px rgba(212, 175, 106, 0.18), inset 0 0 0 1px rgba(255, 236, 190, 0.05);
+  color: inherit;
+  text-decoration: none;
+  text-align: left;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.award-seal:hover,
+.award-seal:focus-visible {
+  border-color: rgba(212, 175, 106, 0.8);
+  box-shadow: 0 0 46px rgba(212, 175, 106, 0.32), inset 0 0 0 1px rgba(255, 236, 190, 0.08);
+  outline: none;
+}
+.award-seal-badge {
+  position: relative;
+  flex-shrink: 0;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  color: #1a1206;
+  background: radial-gradient(circle at 35% 30%, #f6e2a8 0%, #d4af6a 45%, #a9822f 100%);
+  box-shadow: 0 0 0 3px rgba(8, 5, 2, 0.9), 0 0 0 4px rgba(212, 175, 106, 0.6), 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+.award-seal-year {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+.award-seal-text { display: flex; flex-direction: column; gap: 0.22rem; }
+.award-seal-kicker {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.award-seal-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink, #f3ead8);
+}
+.award-seal-note { font-size: 0.74rem; color: var(--ink-dim); opacity: 0.8; }
+@media (max-width: 520px) {
+  .award-seal { gap: 0.85rem; padding: 0.7rem 1.1rem 0.7rem 0.7rem; }
+  .award-seal-badge { width: 60px; height: 60px; }
+  .award-seal-badge svg { width: 24px; height: 24px; }
+}
+
 .reviews-track-wrap {
   position: relative;
   overflow-x: auto;
