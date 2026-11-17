@@ -2675,7 +2675,7 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 }
 /* allineato al resto del sito: il contenitore ha già il suo margine laterale, il padding in più spostava il testo verso il centro */
 .fruit-illusion-inner { padding-left: 0; padding-right: 0; }
-@media (max-width: 720px) { .fruit-illusion-inner { padding-left: clamp(1.25rem, 5vw, 3rem); padding-right: clamp(1.25rem, 5vw, 3rem); } }
+
 .fruit-illusion-body { max-width: clamp(320px, 44vw, 560px); }
 .fruit-illusion-body h2 {
   font-family: var(--font-elegant);
@@ -4539,3 +4539,19 @@ body.footer-in-vista .call-fab, body.footer-in-vista .whatsapp-fab { opacity: 0;
 
 /* Dal menù (ancore #...) ogni sezione si ferma con il suo inizio a filo in alto: niente striscia della sezione precedente */
 #chi-siamo, #piatti, #frutti-realistici, #recensioni, #seguici, #location, #prenota { scroll-margin-top: -5rem; }
+
+/* TELEFONO (fino a 720px): la sezione frutta resta com'era prima, con le misure originali (richiesta di Francesco, 2026-11-17).
+   Il PC (da 721px) usa la versione più bassa e allineata al sito qui sopra. */
+@media (max-width: 720px) {
+  .fruit-illusion-inner { padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 3rem); }
+  .fruit-illusion-body h2 { font-size: clamp(2.1rem, 4vw, 3.2rem); margin: 0.5rem 0 1rem; }
+  .fruit-illusion-body p { font-size: clamp(0.92rem, 1.3vw, 1.02rem); margin: 0 0 0.9rem; }
+  .fruit-illusion-body p:last-of-type { margin-bottom: 1.5rem; }
+  .fruit-illusion-btns { margin-bottom: 1.6rem; }
+  .fruit-illusion-note { margin: -0.6rem 0 1.6rem; }
+  .fruit-illusion-gallery a { width: 130px; height: 130px; }
+  /* la foto dietro si vede: strato scuro più leggero (prima 0.55 → 0.9 → pieno; ora 0.4 → 0.72 → 0.9), il testo resta leggibile con un'ombra un po' più decisa */
+  .fruit-illusion-bg::before { background-image: linear-gradient(to bottom, rgba(8,5,2,0.4) 0%, rgba(8,5,2,0.72) 45%, rgba(8,5,2,0.9) 100%); }
+  .fruit-illusion-body h2 { text-shadow: 0 1px 4px rgba(0,0,0,0.65), 0 4px 18px rgba(0,0,0,0.55); }
+  .fruit-illusion-body p { text-shadow: 0 1px 6px rgba(0,0,0,0.8), 0 2px 14px rgba(0,0,0,0.5); }
+}
