@@ -1180,11 +1180,6 @@
     if (e.key === "Escape" && barmanModal && barmanModal.classList.contains("is-open")) barmanCloseModal();
   });
 
-  /* Sommelier page: init inline (nessun modal) */
-  if (document.body.classList.contains("page-sommelier")) {
-    barmanShowStep0();
-  }
-
   /* ---------- FOOD GALLERY: drag-to-scroll ---------- */
   var foodGalleryWrap = document.querySelector(".food-gallery-wrap");
   if (foodGalleryWrap) {

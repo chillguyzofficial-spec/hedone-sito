@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=20261001c">
+<link rel="stylesheet" href="css/styles.css?v=20261117a">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
 </a>
 
 <div class="cookie-notice" id="cookieNotice" role="region" aria-label="Informativa cookie">
-  <p class="cookie-notice-text">Questo sito non utilizza cookie di profilazione o pubblicitari. Alcune funzionalità (come la mappa) si appoggiano a servizi tecnici di terze parti — <a href="privacy.html#privacy-cookie">maggiori info nella Privacy Policy</a>.</p>
+  <p class="cookie-notice-text">Questo sito non utilizza cookie di profilazione o pubblicitari. Alcune funzionalità (come la mappa) si appoggiano a servizi tecnici di terze parti — <a href="privacy#privacy-cookie">maggiori info nella Privacy Policy</a>.</p>
   <div class="cookie-notice-actions">
     <button type="button" class="cookie-notice-btn" id="cookieNoticeBtn">Ho capito</button>
   </div>
@@ -55,14 +55,14 @@
   </button>
   <nav class="nav-panel" id="navPanel" aria-label="Navigazione principale">
     <div class="nav-panel-links">
-      <a href="index.html">Home</a>
-      <a href="chi-siamo.html" aria-current="page">Chi siamo</a>
-      <a href="index.html#piatti">Cucina</a>
-      <a href="menu.html">Menù</a>
-      <a href="index.html#frutti-realistici">Frutti Realistici</a>
-      <a href="serate.html">Serate & Eventi</a>
-      <a href="index.html#location">Dove siamo</a>
-      <a href="index.html#prenota" class="nav-cta">Prenota</a>
+      <a href="./">Home</a>
+      <a href="chi-siamo" aria-current="page">Chi siamo</a>
+      <a href="./#piatti">Cucina</a>
+      <a href="menu">Menù</a>
+      <a href="./#frutti-realistici">Frutti Realistici</a>
+      <a href="serate">Serate & Eventi</a>
+      <a href="./#location">Dove siamo</a>
+      <a href="./#prenota" class="nav-cta">Prenota</a>
     </div>
   </nav>
 </div>
@@ -170,7 +170,7 @@
           <p class="about-team-quote">"La serata giusta non si ordina dal menù. La costruiamo insieme."</p>
           <p>Dietro Hedoné non c'è una catena, ma una famiglia. Lorenzo, il titolare, lo trovi in sala; suo figlio Thomas tiene la brace e decide come cuocere ogni taglio. Abbiamo aperto a febbraio 2026 con un'idea semplice: far mangiare e bere bene la gente.</p>
           <p class="about-team-accent">Vieni una sera. Capire perché si torna è più facile quando ci sei.</p>
-          <a href="serate.html" class="btn btn-primary about-team-cta">Scopri Serate &amp; Eventi</a>
+          <a href="serate" class="btn btn-primary about-team-cta">Scopri Serate &amp; Eventi</a>
         </div>
       </div>
 
@@ -249,7 +249,7 @@
       <p class="about-closing">Qui il piacere è semplice. Ed è fatto per durare.</p>
 
       <div style="text-align:center; margin-top: 1rem;">
-        <a href="index.html#prenota" class="btn btn-primary">Prenota un tavolo</a>
+        <a href="./#prenota" class="btn btn-primary">Prenota un tavolo</a>
       </div>
     </div>
   </section>
@@ -286,12 +286,12 @@
     <div class="footer-links-col">
       <p class="footer-col-title">Esplora</p>
       <nav class="footer-nav">
-        <a href="chi-siamo.html">Il ristorante</a>
-        <a href="menu.html">Il menù</a>
-        <a href="menu.html#mn-vini">I vini</a>
-        <a href="index.html#recensioni">Recensioni</a>
-        <a href="serate.html">Serate &amp; Eventi</a>
-        <a href="index.html#prenota">Prenota un tavolo</a>
+        <a href="chi-siamo">Il ristorante</a>
+        <a href="menu">Il menù</a>
+        <a href="menu#mn-vini">I vini</a>
+        <a href="./#recensioni">Recensioni</a>
+        <a href="serate">Serate &amp; Eventi</a>
+        <a href="./#prenota">Prenota un tavolo</a>
       </nav>
     </div>
     <div class="footer-contact-col">
@@ -312,9 +312,10 @@
   </div>
   <div class="footer-legal">
     <p>COMUS S.R.L. · P.IVA 14024370968 · REA MI-2756947</p>
-    <p>© <span id="footerYear">2025</span> Hedoné · Tutti i diritti riservati · <a href="privacy.html" style="color:inherit;">Privacy Policy</a></p>
+    <p>© <span id="footerYear">2025</span> Hedoné · Tutti i diritti riservati · <a href="privacy" style="color:inherit;">Privacy Policy</a></p>
   </div>
 </footer>
+<script src="js/footer-fab.js" defer></script>
 
 <script>
 (function () {
@@ -401,40 +402,40 @@
 
     var offsetDone = false;
     var fadeWindow = 0.5; // secondi di dissolvenza a cavallo del punto di loop
+    var avvio = 0;        // istante in cui le due copie partono insieme
+    var DISSOLVI_INIZIO = 0.6; // secondi per passare dal poster al video che gira
 
-    function applyOffset(aTime) {
-      if (!vA.duration || !isFinite(vA.duration)) return;
-      vB.currentTime = (aTime + vA.duration / 2) % vA.duration;
+    /* Partenza sincronizzata: prima si portano le due copie nei loro punti (A all'inizio,
+       B a metà), si aspetta che abbiano entrambe i dati, poi si fanno partire INSIEME.
+       Prima la seconda copia partiva ~0,4 s dopo e, al primo riavvolgimento, veniva
+       "ricalibrata" con un salto visibile sul video in vista (lo scatto del primo loop).
+       Ora lo sfasamento è giusto fin dall'inizio e non ci sono più salti. */
+    function pronto(v) {
+      return new Promise(function (ok) {
+        function chk() { if (!v.seeking && v.readyState >= 3) ok(); else setTimeout(chk, 30); }
+        chk();
+      });
     }
-
-    function trySetOffset() {
-      if (offsetDone && vA.duration) return;
-      if (vA.duration) {
-        // vA potrebbe aver già accumulato secondi di riproduzione nel tempo
-        // trascorso prima che i metadati fossero pronti: l'offset va calcolato
-        // a partire dalla sua posizione reale in quel momento, non da zero,
-        // altrimenti i due video finiscono sfalsati meno di mezzo ciclo e le
-        // rispettive dissolvenze di fine-loop possono sovrapporsi (schermata nera).
-        applyOffset(vA.currentTime);
-        offsetDone = true;
+    function parti() {
+      if (offsetDone || avvio) return;
+      var dur = vA.duration;
+      if (!dur || !isFinite(dur)) return;
+      avvio = -1; // in preparazione
+      vA.pause(); vB.pause();
+      try { vA.currentTime = 0; vB.currentTime = dur / 2; } catch (e) {}
+      var via = false;
+      function vai() {
+        if (via) return; via = true;
+        offsetDone = true; avvio = performance.now();
+        var pa = vA.play(), pb = vB.play();
+        if (pa && pa.catch) pa.catch(function () {});
+        if (pb && pb.catch) pb.catch(function () {});
       }
+      Promise.all([pronto(vA), pronto(vB)]).then(vai);
+      setTimeout(vai, 4000); // rete lenta: parte comunque
     }
-    vA.addEventListener("loadedmetadata", trySetOffset);
-    if (vA.readyState >= 1) trySetOffset();
-
-    // La stima iniziale resta comunque approssimata (il seek di vB non è istantaneo,
-    // e nel frattempo vA continua ad avanzare). Al primo riavvolgimento nativo di vA
-    // sappiamo con certezza che si trova a currentTime≈0: ricalibriamo lì, una volta
-    // sola, per un offset esatto senza margine di errore residuo.
-    var recalibrated = false;
-    var lastATime = 0;
-    vA.addEventListener("timeupdate", function () {
-      if (!recalibrated && vA.currentTime < lastATime - 0.5) {
-        applyOffset(0);
-        recalibrated = true;
-      }
-      lastATime = vA.currentTime;
-    });
+    vA.addEventListener("loadedmetadata", parti);
+    if (vA.readyState >= 1) parti();
 
     function fadeFactor(v) {
       if (!v.duration) return 1;
@@ -442,10 +443,15 @@
       return dist >= fadeWindow ? 1 : Math.max(0, dist / fadeWindow);
     }
 
+    var ultimaA = "", ultimaB = "";
     function tick() {
       if (offsetDone) {
-        vA.style.opacity = fadeFactor(vA);
-        vB.style.opacity = fadeFactor(vB);
+        var f = Math.min(1, (performance.now() - avvio) / (DISSOLVI_INIZIO * 1000)); // 0 → 1 nei primi istanti
+        var oa = Math.max(fadeFactor(vA), 1 - f);   // all'inizio resta il poster, poi lascia il posto al video
+        var ob = fadeFactor(vB) * f;
+        var sa = String(oa.toFixed(3)), sb = String(ob.toFixed(3));
+        if (sa !== ultimaA) { vA.style.opacity = sa; ultimaA = sa; }
+        if (sb !== ultimaB) { vB.style.opacity = sb; ultimaB = sb; }
       }
       requestAnimationFrame(tick);
     }

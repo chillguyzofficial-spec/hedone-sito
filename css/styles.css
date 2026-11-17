@@ -2670,36 +2670,39 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
   z-index: 3;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 3rem);
+  padding: clamp(1.25rem, 2.6vw, 2rem) clamp(1.5rem, 5vw, 3rem);
   width: 100%;
 }
+/* allineato al resto del sito: il contenitore ha già il suo margine laterale, il padding in più spostava il testo verso il centro */
+.fruit-illusion-inner { padding-left: 0; padding-right: 0; }
+@media (max-width: 720px) { .fruit-illusion-inner { padding-left: clamp(1.25rem, 5vw, 3rem); padding-right: clamp(1.25rem, 5vw, 3rem); } }
 .fruit-illusion-body { max-width: clamp(320px, 44vw, 560px); }
 .fruit-illusion-body h2 {
   font-family: var(--font-elegant);
   font-style: italic;
   font-weight: 600;
-  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
   color: var(--ink);
   line-height: 1.1;
-  margin: 0.5rem 0 1rem;
+  margin: 0.4rem 0 0.8rem;
   text-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 4px 18px rgba(0,0,0,0.4);
 }
 .fruit-illusion-body p {
   color: var(--ink);
   opacity: 0.92;
-  font-size: clamp(0.92rem, 1.3vw, 1.02rem);
+  font-size: clamp(0.9rem, 1.2vw, 0.98rem);
   line-height: 1.65;
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.75rem;
   text-shadow: 0 1px 6px rgba(0,0,0,0.55);
 }
-.fruit-illusion-body p:last-of-type { margin-bottom: 1.5rem; }
-.fruit-illusion-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+.fruit-illusion-body p:last-of-type { margin-bottom: 1.1rem; }
+.fruit-illusion-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
 .fruit-illusion-note {
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--ink-dim);
   opacity: 0.95;
-  margin: -0.6rem 0 1.6rem;
+  margin: -0.4rem 0 1.1rem;
   text-shadow: 0 1px 6px rgba(0,0,0,0.55);
 }
 .fruit-illusion-note a { color: var(--gold); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
@@ -2718,8 +2721,8 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 .fruit-illusion-gallery { display: flex; align-items: center; gap: 0.9rem; width: max-content; padding-bottom: 0.3rem; }
 .fruit-illusion-gallery a {
   display: block;
-  width: 130px;
-  height: 130px;
+  width: 112px;
+  height: 112px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(212, 175, 106, 0.35);
@@ -3734,7 +3737,7 @@ a.booking-card:hover {
   position: relative;
   background: #040200;
   border-top: 1px solid rgba(212,175,106,0.08);
-  padding: 3.5rem clamp(1.25rem, 5vw, 3rem) 2rem;
+  padding: 3.5rem clamp(1.25rem, 5vw, 3rem) 1.25rem;
 }
 .site-footer::before {
   content: '';
@@ -3900,9 +3903,8 @@ a.booking-card:hover {
 .footer-legal {
   max-width: var(--maxw);
   margin: 0 auto;
-  /* spazio sotto = solo quanto serve ai pulsanti fissi WhatsApp/Chiamaci (60px + distanza dal
-     bordo + 20px: i pulsanti oscillano di 7px), meno il padding del footer: prima era 6rem e restava vuoto */
-  padding: 1.5rem 0 calc(60px + clamp(1rem, 4vw, 2rem) + 1.25rem - 2rem);
+  /* niente spazio vuoto sotto: i pulsanti fissi WhatsApp/Chiamaci si nascondono quando questa riga è in vista (js/footer-fab.js) */
+  padding: 1.25rem 0 0;
   border-top: 1px solid rgba(212,175,106,0.07);
   display: flex;
   justify-content: space-between;
@@ -3912,14 +3914,6 @@ a.booking-card:hover {
   color: rgba(255,255,255,0.2);
 }
 .footer-legal p { margin: 0; }
-
-/* Sotto i 1360px i due pulsanti fissi WhatsApp (sinistra) e Chiamaci (destra)
-   sono in basso sulla stessa riga del testo legale del footer (P.IVA, ragione
-   sociale): il padding extra sotto gli lascia spazio per non sovrapporsi.
-   Da 1360px in su il footer è abbastanza rientrato da non averne bisogno. */
-@media (min-width: 1360px) {
-  .footer-legal { padding-bottom: 1.5rem; }
-}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 680px) {
@@ -4458,111 +4452,6 @@ a.booking-card:hover {
 }
 
 /* ========================================================
-   SOMMELIER PAGE
-   ======================================================== */
-
-/* Hero */
-.sommelier-hero {
-  position: relative;
-  min-height: 52vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 7rem 4rem 4rem;
-  overflow: hidden;
-}
-.sommelier-hero-bg {
-  position: absolute;
-  inset: 0;
-  background: url('../assets/img/sommelier-hero-dea.jpg') center 30% / cover no-repeat;
-}
-.sommelier-hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, rgba(7,5,2,0.02) 0%, rgba(7,5,2,0.72) 42%, rgba(7,5,2,0.96) 100%),
-    linear-gradient(to bottom, rgba(7,5,2,0.5) 0%, rgba(7,5,2,0.1) 35%);
-}
-.sommelier-hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 480px;
-  margin-left: auto;
-  text-align: left;
-  padding: 0.5rem 0;
-}
-.sommelier-hero .section-kicker {
-  display: block;
-  text-align: left;
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
-  color: rgba(212,175,106,0.85);
-  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-  margin-bottom: 0.3rem;
-}
-.sommelier-hero h1 {
-  font-family: var(--font-elegant);
-  font-style: italic;
-  font-size: clamp(2.8rem, 6vw, 4.2rem);
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.08;
-  margin: 0.6rem 0 1.1rem;
-  text-shadow: 0 2px 40px rgba(0,0,0,0.75), 0 0 100px rgba(0,0,0,0.4);
-  letter-spacing: 0.01em;
-}
-.sommelier-hero-inner > p {
-  color: rgba(255,230,200,0.85);
-  font-size: 0.96rem;
-  line-height: 1.72;
-  max-width: none;
-  margin: 0;
-  text-shadow: 0 1px 14px rgba(0,0,0,0.65);
-}
-
-/* Panel section */
-.sommelier-panel-section {
-  padding: 3.5rem 1.5rem 6rem;
-  display: flex;
-  justify-content: center;
-}
-
-/* Override: barman panel inline (no modal) */
-.page-sommelier .barman-modal-panel {
-  transform: none;
-  transition: none;
-  max-height: none;
-  height: auto;
-  width: min(860px, 100%);
-}
-.page-sommelier .barman-modal-panel.step-wines {
-  height: auto;
-}
-.page-sommelier .barman-sidebar {
-  overflow-y: visible;
-}
-.page-sommelier .barman-content {
-  overflow-y: auto;
-  max-height: 60vh;
-}
-
-@media (max-width: 768px) {
-  .sommelier-hero {
-    padding: 6rem 1.2rem 2.5rem;
-    min-height: auto;
-    justify-content: center;
-  }
-  .sommelier-hero-inner {
-    margin-left: 0;
-    text-align: center;
-    padding: 1.8rem 1.6rem;
-    max-width: 100%;
-  }
-  .sommelier-panel-section { padding: 2rem 0 4rem; }
-}
-
-/* ========================================================
    ACCESSIBILITÀ: riduzione del movimento
    Chi ha attivato "riduci movimento" nel sistema operativo
    naviga il sito senza animazioni né scorrimenti animati.
@@ -4644,3 +4533,9 @@ a.booking-card:hover {
 @media (max-width: 480px) {
   .cookie-notice { bottom: calc(76px + 1rem); padding: 1.05rem 1.15rem; }
 }
+
+/* pulsanti fissi nascosti quando la riga legale del footer è in vista */
+body.footer-in-vista .call-fab, body.footer-in-vista .whatsapp-fab { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .25s ease, visibility 0s linear .25s; }
+
+/* Dal menù (ancore #...) ogni sezione si ferma con il suo inizio a filo in alto: niente striscia della sezione precedente */
+#chi-siamo, #piatti, #frutti-realistici, #recensioni, #seguici, #location, #prenota { scroll-margin-top: -5rem; }
