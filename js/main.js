@@ -1060,15 +1060,15 @@
         { name: "Chianti Classico", desc: "Per chi preferisce il rosso: Sangiovese fresco e sapido." }
       ]
     },
-    costata: {
-      kicker: "Secondi alla griglia",
-      name: "Costata",
-      desc: "Costata di manzo selezionata, cotta alla griglia su brace viva. Un taglio nobile che porta in tavola tutta la qualità della materia prima — da condividere o gustare da soli.",
-      imgs: ["assets/img/piatto-costata-manzo.jpg"],
-      ingredients: ["Costata di manzo", "Sale grosso", "Pepe nero", "Rosmarino", "Brace viva"],
+    pizzoccheri: {
+      kicker: "Primi piatti",
+      name: "Pizzoccheri",
+      desc: "Pizzoccheri di grano saraceno con verze, coste, patate e formaggi: un piatto ricco e caldo, perfetto per l'inverno.",
+      imgs: ["assets/img/piatto-pizzoccheri.jpg"],
+      ingredients: ["Pizzoccheri di grano saraceno", "Verze", "Coste", "Patate", "Formaggi"],
       wines: [
-        { name: "Barolo Della Marmora 2021", desc: "Il Re dei vini italiani per un taglio che merita rispetto." },
-        { name: "Il Bruciato — Antinori", desc: "Super Tuscan elegante, tannini vellutati sulla marezzatura." }
+        { name: "Malandrino Montepulciano d'Abruzzo", desc: "Corpo e frutto per un piatto ricco e di montagna, tra formaggi e verze." },
+        { name: "Chianti Classico", desc: "Acidità vivace che alleggerisce i formaggi fusi." }
       ]
     },
     fiorentina: {
