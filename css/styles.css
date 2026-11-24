@@ -1933,11 +1933,14 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
 }
 .dish-card:hover img { transform: scale(1.03) translateZ(0); }
 
+/* Tagliere (1°): foto vera, si vedono i salumi in alto */
+.dish-strip .dish-card:nth-child(1) img { object-position: 50% 0%; }
+
 /* Tartare (2°): piatto in basso nell'inquadratura */
 .dish-strip .dish-card:nth-child(2) img { object-position: 50% 85%; }
 
 /* Trofie (4°): piatto in basso nell'inquadratura */
-.dish-strip .dish-card:nth-child(4) img { object-position: 50% 82%; }
+.dish-strip .dish-card:nth-child(4) img { object-position: 50% 50%; }
 
 .dish-glare {
   position: absolute;

@@ -1053,7 +1053,7 @@
       kicker: "Le specialità",
       name: "La Milanese",
       desc: "Cotoletta di vitello con osso battuta alla milanese, dorata e croccante fuori, tenera dentro.",
-      imgs: ["assets/img/piatto-cotoletta.jpg"],
+      imgs: ["assets/img/piatto-milanese-scheda.jpg"],
       ingredients: ["Cotoletta di vitello con osso", "Panatura alla milanese"],
       wines: [
         { name: "Valdobbiadene Prosecco Spago — Mionetto", desc: "Le bollicine sgrassano il palato e tengono fresca la croccantezza." },
