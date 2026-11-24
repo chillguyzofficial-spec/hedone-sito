@@ -299,11 +299,12 @@
     color: var(--ink);
     margin: 0.7rem 0 0;
   }
-  .mn-chapter-antipasti { background-image: linear-gradient(to bottom, #080502 0%, rgba(8,5,2,0.55) 16%, rgba(8,5,2,0.72) 62%, #080502 100%), url('assets/img/piatto-tagliere-misto.jpg'); background-position: center 38%; }
-  .mn-chapter-primi { background-image: linear-gradient(to bottom, #080502 0%, rgba(8,5,2,0.55) 16%, rgba(8,5,2,0.72) 62%, #0c0803 100%), url('assets/img/piatto-trofie-pesto-burrata.jpg'); background-position: center 72%; }
-  .mn-chapter-secondi { background-image: linear-gradient(to bottom, #0c0803 0%, rgba(8,5,2,0.55) 16%, rgba(8,5,2,0.72) 62%, #080502 100%), url('assets/img/piatto-grigliata-mista.jpg'); background-position: center 55%; }
-  .mn-chapter-contorni { background-image: linear-gradient(to bottom, #080502 0%, rgba(8,5,2,0.55) 16%, rgba(8,5,2,0.72) 62%, #0c0803 100%), url('assets/img/piatto-verdure-grigliate.png'); background-position: center 44%; }
-  .mn-chapter-dolci { background-image: linear-gradient(to bottom, #0c0803 0%, rgba(8,5,2,0.55) 16%, rgba(8,5,2,0.72) 62%, #080502 100%), url('assets/img/piatto-dolci-misti.png'); background-position: center 68%; }
+  .mn-chapter-antipasti { background-image: linear-gradient(to bottom, #080502 0%, rgba(8,5,2,0.5) 16%, rgba(8,5,2,0.7) 62%, #0c0803 100%), url('assets/img/menu-inv-antipasti.jpg'); background-position: center 45%; }
+  .mn-chapter-primi { background-image: linear-gradient(to bottom, #0c0803 0%, rgba(8,5,2,0.5) 16%, rgba(8,5,2,0.7) 62%, #080502 100%), url('assets/img/menu-inv-primi.jpg'); background-position: center 55%; }
+  .mn-chapter-secondi { background-image: linear-gradient(to bottom, #080502 0%, rgba(8,5,2,0.5) 16%, rgba(8,5,2,0.7) 62%, #0c0803 100%), url('assets/img/menu-inv-brace.jpg'); background-position: center 50%; }
+  .mn-chapter-specialita { background-image: linear-gradient(to bottom, #0c0803 0%, rgba(8,5,2,0.5) 16%, rgba(8,5,2,0.7) 62%, #080502 100%), url('assets/img/menu-inv-specialita.jpg'); background-position: center 55%; }
+  .mn-chapter-contorni { background-image: linear-gradient(to bottom, #080502 0%, rgba(8,5,2,0.5) 16%, rgba(8,5,2,0.7) 62%, #0c0803 100%), url('assets/img/menu-inv-contorni.jpg'); background-position: center 50%; }
+  .mn-chapter-dolci { background-image: linear-gradient(to bottom, #0c0803 0%, rgba(8,5,2,0.5) 16%, rgba(8,5,2,0.7) 62%, #080502 100%), url('assets/img/menu-inv-dessert.jpg'); background-position: center 55%; }
 
   /* ── BAR BANNER (divisore Vini & Drink) ── */
   .mn-bar-banner {
@@ -412,9 +413,9 @@
   <section class="mn-hero">
     <div class="mn-hero-bg" aria-hidden="true"></div>
     <div class="mn-hero-body" data-reveal>
-      <span class="section-kicker">Il Menù</span>
+      <span class="section-kicker">Il Menù invernale</span>
       <h1>Ogni piatto,<br>una scelta precisa.</h1>
-      <p>Antipasti, primi, griglia, vini e cocktail: tutta la nostra cucina e il nostro bar. Tocca un piatto per scoprirne gli ingredienti.</p>
+      <p>Antipasti, primi, brace, specialità, vini e cocktail: tutta la nostra cucina e il nostro bar. Tocca un piatto per scoprirne gli ingredienti.</p>
       <div class="mn-hero-btns">
         <a href="./#prenota" class="btn btn-primary">Prenota un tavolo</a>
       </div>
@@ -472,108 +473,109 @@
       <div class="mn-items" data-reveal>
         <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
           <div class="mn-item-top">
-            <span class="mn-item-name">Tagliere di Salumi &amp; Gnocco Fritto<span class="mn-allergen">1</span><span class="mn-item-toggle-icon"></span></span>
+            <span class="mn-item-name">Tagliere di Salumi Selezionati<span class="mn-allergen">1</span><span class="mn-item-toggle-icon"></span></span>
           </div>
+          <p class="mn-item-desc">Con gnocco fritto della casa</p>
           <div class="mn-item-expand"><div class="mn-item-chips">
             <span class="mn-chip">Crudo di Parma</span><span class="mn-chip">Pancetta</span><span class="mn-chip">Salame Felino IGP</span><span class="mn-chip">Prosciutto cotto</span><span class="mn-chip">Gnocco fritto</span>
           </div></div>
         </div>
         <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
           <div class="mn-item-top">
-            <span class="mn-item-name">Tagliere di Formaggi &amp; Gnocco Fritto<span class="mn-allergen">1,7</span><span class="mn-item-toggle-icon"></span></span>
+            <span class="mn-item-name">Tagliere di Formaggi Selezionati<span class="mn-allergen">1,7</span><span class="mn-item-toggle-icon"></span></span>
           </div>
+          <p class="mn-item-desc">Con confetture e gnocco fritto della casa</p>
           <div class="mn-item-expand"><div class="mn-item-chips">
             <span class="mn-chip">Parmigiano Reggiano 36 mesi</span><span class="mn-chip">Taleggio D.O.P.</span><span class="mn-chip">Brie</span><span class="mn-chip">Pecorino</span><span class="mn-chip">Confetture e miele</span><span class="mn-chip">Gnocco fritto</span>
           </div></div>
         </div>
-        <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">La Tartare<span class="mn-allergen">1,7,10</span><span class="mn-item-toggle-icon"></span></span>
+            <span class="mn-item-name">La Tartare Classica</span>
           </div>
-          <div class="mn-item-expand"><div class="mn-item-chips">
-            <span class="mn-chip">Fassona piemontese</span><span class="mn-chip">Capperi di Pantelleria IGP</span><span class="mn-chip">Senape in grani</span><span class="mn-chip">Taleggio</span>
-          </div></div>
+          <p class="mn-item-desc">Tartare di Fassona piemontese battuta a coltello, capperi e senape in grani</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">La Tartare al Tartufo</span>
+          </div>
+          <p class="mn-item-desc">Tartare di Fassona piemontese battuta a coltello, Olio EVO e scaglie di tartufo</p>
         </div>
         <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
           <div class="mn-item-top">
             <span class="mn-item-name">Manzo Tonnato<span class="mn-allergen">7</span><span class="mn-item-toggle-icon"></span></span>
           </div>
+          <p class="mn-item-desc">Roast beef di manzo, salsa tonnata e capperi</p>
           <div class="mn-item-expand"><div class="mn-item-chips">
             <span class="mn-chip">Roast-beef di manzo</span><span class="mn-chip">Salsa tonnata</span><span class="mn-chip">Capperi di Pantelleria IGP</span>
           </div></div>
         </div>
-        <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">La Caprese<span class="mn-allergen">7</span><span class="mn-item-toggle-icon"></span></span>
+            <span class="mn-item-name">Bis di Bruschette</span>
           </div>
-          <div class="mn-item-expand"><div class="mn-item-chips">
-            <span class="mn-chip">Mozzarella fior di latte</span><span class="mn-chip">Pomodoro</span><span class="mn-chip">Basilico</span><span class="mn-chip">Origano</span><span class="mn-chip">Olio E.V.O.</span><span class="mn-chip">Crumble di taralli</span>
-          </div></div>
-        </div>
-        <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
-          <div class="mn-item-top">
-            <span class="mn-item-name">Nervetti alla Milanese<span class="mn-item-toggle-icon"></span></span>
-          </div>
-          <div class="mn-item-expand"><div class="mn-item-chips">
-            <span class="mn-chip">Nervetti di vitello</span><span class="mn-chip">Fagioli piattoni</span><span class="mn-chip">Prezzemolo</span><span class="mn-chip">Limone</span>
-          </div></div>
+          <p class="mn-item-desc">Salsiccia e friarielli; gorgonzola, miele e noci</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRIMI -->
+  <!-- PRIMI PIATTI -->
   <div class="mn-chapter mn-chapter-primi" id="mn-primi" data-reveal>
     <div class="mn-chapter-inner">
-      <span class="section-kicker">02 — Pasta fresca</span>
-      <h2>Primi</h2>
+      <span class="section-kicker">02 — Primi piatti</span>
+      <h2>Primi piatti</h2>
     </div>
   </div>
   <section class="mn-section is-alt">
     <div class="mn-section-glow" aria-hidden="true"></div>
     <div class="mn-section-inner">
       <div class="mn-items" data-reveal>
-        <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Trofiette Verdi<span class="mn-allergen">1,7,8</span><span class="mn-item-toggle-icon"></span></span>
+            <span class="mn-item-name">L'Orecchietta</span>
           </div>
-          <div class="mn-item-expand"><div class="mn-item-chips">
-            <span class="mn-chip">Trofiette verdi</span><span class="mn-chip">Pesto alla genovese</span><span class="mn-chip">Stracciatella</span><span class="mn-chip">Granella di pistacchio</span>
-          </div></div>
+          <p class="mn-item-desc">Orecchiette con cime di rapa</p>
         </div>
-        <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Mezzelune di Ricotta e Rucola<span class="mn-allergen">1,7</span><span class="mn-item-toggle-icon"></span></span>
+            <span class="mn-item-name">Paccheri</span>
           </div>
-          <div class="mn-item-expand"><div class="mn-item-chips">
-            <span class="mn-chip">Pasta fresca all'uovo</span><span class="mn-chip">Ricotta</span><span class="mn-chip">Rucola</span><span class="mn-chip">Burro alle erbe</span><span class="mn-chip">Salvia croccante</span>
-          </div></div>
+          <p class="mn-item-desc">Paccheri alla norma con scaglie di ricotta salata</p>
         </div>
-        <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">L'Orecchietta<span class="mn-allergen">1</span><span class="mn-item-toggle-icon"></span></span>
+            <span class="mn-item-name">Gnocchi</span>
           </div>
-          <div class="mn-item-expand"><div class="mn-item-chips">
-            <span class="mn-chip">Orecchiette</span><span class="mn-chip">Ragù alla bolognese</span>
-          </div></div>
+          <p class="mn-item-desc">Gnocchi con ragù alla bolognese</p>
         </div>
-        <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Troccoli alla Norma<span class="mn-allergen">1,7</span><span class="mn-item-toggle-icon"></span></span>
+            <span class="mn-item-name">Pizzoccheri</span>
           </div>
-          <div class="mn-item-expand"><div class="mn-item-chips">
-            <span class="mn-chip">Troccoli</span><span class="mn-chip">Sugo di pomodoro</span><span class="mn-chip">Melanzane fritte a cubetti</span><span class="mn-chip">Ricotta salata</span>
-          </div></div>
+          <p class="mn-item-desc">Pizzoccheri di grano saraceno con verze, coste, patate e formaggi</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Risotto</span>
+          </div>
+          <p class="mn-item-desc">Riso Acquerello risottato con funghi porcini</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Ravioli</span>
+          </div>
+          <p class="mn-item-desc">Ravioli di zucca, crema di gorgonzola e speck croccante</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECONDI -->
+  <!-- DALLA BRACE -->
   <div class="mn-chapter mn-chapter-secondi" id="mn-secondi" data-reveal>
     <div class="mn-chapter-inner">
-      <span class="section-kicker">03 — Dalla griglia</span>
-      <h2>Secondi</h2>
+      <span class="section-kicker">03 — Dalla brace</span>
+      <h2>Dalla brace</h2>
     </div>
   </div>
   <section class="mn-section">
@@ -582,41 +584,84 @@
       <div class="mn-items" data-reveal>
         <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Picanha</span>
+            <span class="mn-item-name">Ribs</span>
           </div>
+          <p class="mn-item-desc">Costine di maiale alla brace</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Bombette</span>
+          </div>
+          <p class="mn-item-desc">Bombette di salamella avvolte nel bacon e cotte alla brace</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Tagliata di Picanha</span>
+          </div>
+          <p class="mn-item-desc">Picanha di Black Angus tagliata e cotta alla brace</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Filetto</span>
+          </div>
+          <p class="mn-item-desc">Filetto di manzo alla brace, maionese al tartufo e petali di rosa</p>
         </div>
         <div class="mn-item">
           <div class="mn-item-top">
             <span class="mn-item-name">Costata</span>
           </div>
+          <p class="mn-item-desc">Costata di manzo alla brace</p>
         </div>
         <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Filetto di Manzo</span>
+            <span class="mn-item-name">Agnello Scottadito</span>
           </div>
+          <p class="mn-item-desc">Costolette di agnello alla brace</p>
         </div>
         <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Costolette di Agnello</span>
+            <span class="mn-item-name">La Fiorentina</span>
           </div>
+          <p class="mn-item-desc">Bistecca di manzo con filetto e controfiletto alla brace</p>
         </div>
         <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Cotoletta alla Milanese XXL</span>
+            <span class="mn-item-name">Il Galletto</span>
           </div>
+          <p class="mn-item-desc">Galletto alla brace e patate arrosto</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LE SPECIALITÀ DI HEDONÉ -->
+  <div class="mn-chapter mn-chapter-specialita" id="mn-specialita" data-reveal>
+    <div class="mn-chapter-inner">
+      <span class="section-kicker">04 — Dalla casa</span>
+      <h2>Le specialità di Hedoné</h2>
+    </div>
+  </div>
+  <section class="mn-section is-alt">
+    <div class="mn-section-glow" aria-hidden="true"></div>
+    <div class="mn-section-inner">
+      <div class="mn-items" data-reveal>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Hedoné Burger</span>
+          </div>
+          <p class="mn-item-desc">Pane al latte con sesamo, hamburger alla brace, lattuga, pomodoro, cetriolini, cheddar e bacon. Servito con patatine</p>
         </div>
         <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Fiorentina</span>
+            <span class="mn-item-name">Würstel e Patatine</span>
           </div>
+          <p class="mn-item-desc">Würstel alla griglia e patatine fritte</p>
         </div>
-        <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Grigliata Mista<span class="mn-item-toggle-icon"></span></span>
+            <span class="mn-item-name">La Milanese</span>
           </div>
-          <div class="mn-item-expand"><div class="mn-item-chips">
-            <span class="mn-chip">Filetto di pollo</span><span class="mn-chip">Würstel</span><span class="mn-chip">Salsiccia</span><span class="mn-chip">Costolette di agnello</span><span class="mn-chip">Picanha</span><span class="mn-chip">Costine di maiale</span>
-          </div></div>
+          <p class="mn-item-desc">Cotoletta di vitello con osso battuta alla milanese</p>
         </div>
       </div>
     </div>
@@ -625,8 +670,59 @@
   <!-- CONTORNI -->
   <div class="mn-chapter mn-chapter-contorni" id="mn-contorni" data-reveal>
     <div class="mn-chapter-inner">
-      <span class="section-kicker">04 — Per accompagnare</span>
+      <span class="section-kicker">05 — Per accompagnare</span>
       <h2>Contorni</h2>
+    </div>
+  </div>
+  <section class="mn-section">
+    <div class="mn-section-glow" aria-hidden="true"></div>
+    <div class="mn-section-inner">
+      <div class="mn-items" data-reveal>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Spinaci</span>
+          </div>
+          <p class="mn-item-desc">Spinaci saltati al burro</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Patatine</span>
+          </div>
+          <p class="mn-item-desc">Patatine fritte</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Patate</span>
+          </div>
+          <p class="mn-item-desc">Patate arrosto</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Peperoni</span>
+          </div>
+          <p class="mn-item-desc">Peperoni in agrodolce e crostone bruschettato</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Insalata</span>
+          </div>
+          <p class="mn-item-desc">Insalata verde con pomodorini</p>
+        </div>
+        <div class="mn-item">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Verdure Grigliate</span>
+          </div>
+          <p class="mn-item-desc">Zucchine e melanzane grigliate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESSERT -->
+  <div class="mn-chapter mn-chapter-dolci" id="mn-dolci" data-reveal>
+    <div class="mn-chapter-inner">
+      <span class="section-kicker">06 — Il finale</span>
+      <h2>Dessert</h2>
     </div>
   </div>
   <section class="mn-section is-alt">
@@ -635,62 +731,21 @@
       <div class="mn-items" data-reveal>
         <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Insalata e pomodorini</span>
-          </div>
-        </div>
-        <div class="mn-item is-toggle" role="button" tabindex="0" aria-expanded="false">
-          <div class="mn-item-top">
-            <span class="mn-item-name">Insalata Hedoné<span class="mn-item-toggle-icon"></span></span>
-          </div>
-          <div class="mn-item-expand"><div class="mn-item-chips">
-            <span class="mn-chip">Cestino croccante</span><span class="mn-chip">Uova sode</span><span class="mn-chip">Petto di pollo</span><span class="mn-chip">Pomodorini</span><span class="mn-chip">Scaglie di grana</span><span class="mn-chip">Salsa caesar</span>
-          </div></div>
-        </div>
-        <div class="mn-item">
-          <div class="mn-item-top">
-            <span class="mn-item-name">Patate fritte</span>
-          </div>
-        </div>
-        <div class="mn-item">
-          <div class="mn-item-top">
-            <span class="mn-item-name">Carpaccio di zucchine marinate con grana in scaglie</span>
-          </div>
-        </div>
-        <div class="mn-item">
-          <div class="mn-item-top">
-            <span class="mn-item-name">Zucchine e melanzane grigliate</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DOLCI -->
-  <div class="mn-chapter mn-chapter-dolci" id="mn-dolci" data-reveal>
-    <div class="mn-chapter-inner">
-      <span class="section-kicker">05 — Il finale</span>
-      <h2>Dolci</h2>
-    </div>
-  </div>
-  <section class="mn-section">
-    <div class="mn-section-glow" aria-hidden="true"></div>
-    <div class="mn-section-inner">
-      <div class="mn-items" data-reveal>
-        <div class="mn-item" id="mn-frutti-realistici">
-          <div class="mn-item-top">
-            <span class="mn-item-name">Semifreddi di Frutti Realistici<span class="mn-allergen">1,3,6,7,8</span></span>
-          </div>
-          <p class="mn-item-desc">Sembrano frutta appena colta — sono semifreddi modellati a mano, uno per uno. Il dolce più richiesto del menù.</p>
-        </div>
-        <div class="mn-item">
-          <div class="mn-item-top">
             <span class="mn-item-name">Tiramisù della Casa<span class="mn-allergen">1,3,7</span></span>
           </div>
+          <p class="mn-item-desc">Crema al mascarpone, savoiardi al caffè e cacao</p>
         </div>
         <div class="mn-item">
           <div class="mn-item-top">
-            <span class="mn-item-name">Torroncino Pistacchio/Nocciole<span class="mn-allergen">1,3,5,6,7,8</span></span>
+            <span class="mn-item-name">Torroncino</span>
           </div>
+          <p class="mn-item-desc">Torroncino al pistacchio o alla nocciola, affogato</p>
+        </div>
+        <div class="mn-item" id="mn-frutti-realistici">
+          <div class="mn-item-top">
+            <span class="mn-item-name">Semifreddi<span class="mn-allergen">1,3,6,7,8</span></span>
+          </div>
+          <p class="mn-item-desc">Selezione di semifreddi dalla vetrina</p>
         </div>
       </div>
 
@@ -707,6 +762,7 @@
             <div class="mn-lrow"><span class="mn-lrow-name">Coperto</span></div>
           </div>
         </div>
+        <p class="mn-legend-note">Per informazioni su allergeni e intolleranze alimentari, rivolgersi al personale. È disponibile la documentazione relativa agli allergeni presenti nelle nostre preparazioni.</p>
         <p class="mn-legend-note"><strong style="color:var(--gold);">Elenco allergeni (Reg. 1169/2011):</strong></p>
         <div class="mn-legend-grid">
           <span class="mn-legend-item"><b>1</b> Cereali contenenti glutine</span>
