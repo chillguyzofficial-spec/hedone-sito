@@ -1075,7 +1075,7 @@
       kicker: "Dalla brace",
       name: "Agnello Scottadito",
       desc: "Costolette di agnello cotte alla brace: croccanti fuori, tenere dentro. Si mangiano con le mani, appena tolte dal fuoco.",
-      imgs: ["assets/img/piatto-agnello.jpg"],
+      imgs: ["assets/img/piatto-agnello-scheda.jpg"],
       ingredients: ["Costolette di agnello", "Brace"],
       wines: [
         { name: "Primitivo di Manduria", desc: "Calore e frutto con la nota selvatica dell’agnello." },
@@ -1737,4 +1737,23 @@
   var footerYear = document.getElementById("footerYear");
   if (footerYear) footerYear.textContent = new Date().getFullYear();
 
+})();
+
+/* ---------- FLUIDITÀ: i video girano solo quando si vedono; fuori schermo restano fermi (meno lavoro per telefono e PC mentre si scorre) ---------- */
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var vids = Array.prototype.slice.call(document.querySelectorAll("video[autoplay]"));
+  if (!vids.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) {
+        if (!reduce && v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      } else if (!v.paused) {
+        v.pause();
+      }
+    });
+  }, { rootMargin: "80px 0px", threshold: 0.01 });
+  vids.forEach(function (v) { io.observe(v); });
 })();

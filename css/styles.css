@@ -1271,8 +1271,8 @@ section { padding: clamp(2.5rem, 5.5vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
   height: 40vh;
   z-index: 1;
   background: radial-gradient(140% 100% at 50% 55%, rgba(20, 13, 7, 0.92) 0%, rgba(20, 13, 7, 0.55) 42%, transparent 80%);
-  backdrop-filter: blur(60px);
-  -webkit-backdrop-filter: blur(60px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 35%, black 65%, transparent 100%);
   mask-image: linear-gradient(180deg, transparent 0%, black 35%, black 65%, transparent 100%);
   pointer-events: none;
@@ -4554,4 +4554,10 @@ body.footer-in-vista .call-fab, body.footer-in-vista .whatsapp-fab { opacity: 0;
   .fruit-illusion-bg::before { background-image: linear-gradient(to bottom, rgba(8,5,2,0.4) 0%, rgba(8,5,2,0.72) 45%, rgba(8,5,2,0.9) 100%); }
   .fruit-illusion-body h2 { text-shadow: 0 1px 4px rgba(0,0,0,0.65), 0 4px 18px rgba(0,0,0,0.55); }
   .fruit-illusion-body p { text-shadow: 0 1px 6px rgba(0,0,0,0.8), 0 2px 14px rgba(0,0,0,0.5); }
+}
+
+/* Fluidità su telefono e tablet: niente effetti che servono solo al mouse (lucido sulle schede, riflettore sul testo) e blur più leggeri */
+@media (hover: none), (max-width: 900px) {
+  .dish-glare, .about-spotlight { display: none !important; }
+  .whatsapp-fab, .phone-fab, .nav-float, .navbar { -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
