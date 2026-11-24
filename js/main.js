@@ -1071,15 +1071,15 @@
         { name: "Chianti Classico", desc: "Acidità vivace che alleggerisce i formaggi fusi." }
       ]
     },
-    fiorentina: {
+    agnello: {
       kicker: "Dalla brace",
-      name: "La Fiorentina",
-      desc: "Bistecca di manzo con filetto e controfiletto alla brace: un taglio importante, da condividere.",
-      imgs: ["assets/img/piatto-fiorentina.jpg"],
-      ingredients: ["Bistecca di manzo con filetto e controfiletto", "Brace"],
+      name: "Agnello Scottadito",
+      desc: "Costolette di agnello cotte alla brace: croccanti fuori, tenere dentro. Si mangiano con le mani, appena tolte dal fuoco.",
+      imgs: ["assets/img/piatto-agnello.jpg"],
+      ingredients: ["Costolette di agnello", "Brace"],
       wines: [
-        { name: "Barolo Della Marmora 2021", desc: "Il Re dei vini italiani per un taglio che merita rispetto." },
-        { name: "Chianti Classico", desc: "Sangiovese toscano per un taglio toscano." }
+        { name: "Primitivo di Manduria", desc: "Calore e frutto con la nota selvatica dell’agnello." },
+        { name: "Aglianico del Vulture", desc: "Tannino fitto e mineralità per reggere la carne di agnello." }
       ]
     }
   };
