@@ -297,199 +297,565 @@
   };
 
   var dishPairings = {
-    antipasti: [
+    "antipasti": [
       {
-        name: "Tagliere di Salumi & Gnocco Fritto",
-        photo: "assets/img/piatto-tagliere-salumi.jpg",
-        desc: "Crudo di Parma, Pancetta, Salame Felino IGP e Prosciutto cotto, con gnocco fritto caldo.",
-        wines: [
-          { name: "Cerasuolo d'Abruzzo", tag: "Rosato fresco", desc: "Acidità e frutta croccante sgrassano la sapidità dei salumi e la frittura del gnocco." },
-          { name: "Franciacorta Rosé — Bellavista", tag: "Bollicine rosé", desc: "Più corpo del Cerasuolo, regge il crudo di Parma senza coprirlo." },
-          { name: "Dom Pérignon Rosé", tag: "Champagne rosé", desc: "Frutto rosso, profondità e bolla finissima: per un tagliere da ricordare." }
+        "name": "Tagliere di Salumi Selezionati",
+        "photo": "assets/img/piatto-tagliere-salumi.jpg",
+        "desc": "Con gnocco fritto della casa.",
+        "wines": [
+          {
+            "name": "Cerasuolo d'Abruzzo",
+            "tag": "Rosato fresco",
+            "desc": "Acidità e frutta croccante sgrassano la sapidità dei salumi e la frittura del gnocco."
+          },
+          {
+            "name": "Franciacorta Rosé — Bellavista",
+            "tag": "Bollicine rosé",
+            "desc": "Più corpo del Cerasuolo, regge il crudo di Parma senza coprirlo."
+          },
+          {
+            "name": "Dom Pérignon Rosé",
+            "tag": "Champagne rosé",
+            "desc": "Frutto rosso, profondità e bolla finissima: per un tagliere da ricordare."
+          }
         ]
       },
       {
-        name: "Tagliere di Formaggi",
-        photo: "assets/img/piatto-tagliere-formaggi.png",
-        desc: "Parmigiano Reggiano 36 mesi, Taleggio DOP, Brie e pecorino, con confetture.",
-        wines: [
-          { name: "Prosecco Gold — Bottega", tag: "Bollicine fruttate", desc: "Bollicine fresche per i formaggi più morbidi come il Brie." },
-          { name: "Chianti Classico", tag: "Rosso versatile", desc: "Tannino e acidità bilanciano la grassezza di Taleggio e Brie, la confettura fa da ponte." },
-          { name: "Amarone della Valpolicella", tag: "Rosso intenso", desc: "Concentrazione e dolcezza di frutta matura: l'abbinamento classico con il Parmigiano 36 mesi." }
+        "name": "Tagliere di Formaggi Selezionati",
+        "photo": "assets/img/piatto-tagliere-formaggi.png",
+        "desc": "Con confetture e gnocco fritto della casa.",
+        "wines": [
+          {
+            "name": "Prosecco Gold — Bottega",
+            "tag": "Bollicine fruttate",
+            "desc": "Bollicine fresche per i formaggi più morbidi come il Brie."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Tannino e acidità bilanciano la grassezza di Taleggio e Brie, la confettura fa da ponte."
+          },
+          {
+            "name": "Amarone della Valpolicella",
+            "tag": "Rosso intenso",
+            "desc": "Concentrazione e dolcezza di frutta matura: l'abbinamento classico con il Parmigiano 36 mesi."
+          }
         ]
       },
       {
-        name: "La Tartare",
-        photo: "assets/img/piatto-tartare-manzo.jpg",
-        desc: "Fassona piemontese battuta a coltello, capperi di Pantelleria IGP, senape in grani, Taleggio.",
-        wines: [
-          { name: "Cerasuolo d'Abruzzo", tag: "Rosato fresco", desc: "Alternativa agile, la sapidità dei capperi trova equilibrio nella sua acidità." },
-          { name: "Franciacorta Rosé — Bellavista", tag: "Bollicine rosé", desc: "La bolla rosé è l'abbinamento da manuale per una tartare di qualità." },
-          { name: "Dom Pérignon Rosé", tag: "Champagne rosé", desc: "Bolla finissima e frutto rosso che esaltano la carne cruda: per una tartare che diventa il piatto della serata." }
+        "name": "La Tartare Classica",
+        "photo": "assets/img/piatto-tartare-manzo.jpg",
+        "desc": "Tartare di Fassona piemontese battuta a coltello, capperi e senape in grani.",
+        "wines": [
+          {
+            "name": "Cerasuolo d'Abruzzo",
+            "tag": "Rosato fresco",
+            "desc": "Alternativa agile, la sapidità dei capperi trova equilibrio nella sua acidità."
+          },
+          {
+            "name": "Franciacorta Rosé — Bellavista",
+            "tag": "Bollicine rosé",
+            "desc": "La bolla rosé è l'abbinamento da manuale per una tartare di qualità."
+          },
+          {
+            "name": "Dom Pérignon Rosé",
+            "tag": "Champagne rosé",
+            "desc": "Bolla finissima e frutto rosso che esaltano la carne cruda: per una tartare che diventa il piatto della serata."
+          }
         ]
       },
       {
-        name: "Manzo Tonnato",
-        desc: "Roast-beef di manzo con salsa tonnata della casa.",
-        wines: [
-          { name: "Valdobbiadene Prosecco Spago — Mionetto", tag: "Bollicine fresche", desc: "La freschezza del Prosecco bilancia la sapidità della salsa tonnata." },
-          { name: "Cerasuolo d'Abruzzo", tag: "Rosato fresco", desc: "Rosato strutturato che regge il roast-beef e la cremosità della tonnata." },
-          { name: "Dom Pérignon", tag: "Champagne", desc: "Per un antipasto che merita una bollicina importante." }
+        "name": "La Tartare al Tartufo",
+        "photo": "assets/img/piatto-tartare-manzo.jpg",
+        "desc": "Tartare di Fassona piemontese battuta a coltello, olio EVO e scaglie di tartufo.",
+        "wines": [
+          {
+            "name": "Franciacorta Pas Opéré — Bellavista",
+            "tag": "Bollicine secche",
+            "desc": "Zero dosage: pulisce il palato e lascia parlare il tartufo senza coprirlo."
+          },
+          {
+            "name": "Alta Langa Brut Blanc de Blancs — Giulio Cocchi",
+            "tag": "Bollicine italiane",
+            "desc": "Finezza e mineralità che accompagnano la carne cruda e il profumo del tartufo."
+          },
+          {
+            "name": "Dom Pérignon",
+            "tag": "Champagne",
+            "desc": "Per una tartare al tartufo che diventa il piatto della serata."
+          }
         ]
       },
       {
-        name: "La Caprese",
-        desc: "Mozzarella fior di latte su crumble di taralli, pomodori, basilico.",
-        wines: [
-          { name: "Valdobbiadene Prosecco Spago — Mionetto", tag: "Bollicine fresche", desc: "Freschezza e leggerezza per la Caprese — tutto naturale." },
-          { name: "Franciacorta Pas Opéré — Bellavista", tag: "Bollicine secche", desc: "Mineralità e dosaggio zero che esaltano la freschezza della mozzarella." },
-          { name: "Dom Pérignon", tag: "Champagne", desc: "La mineralità calcarea del Dom Pérignon con la mozzarella fresca: semplicità che si trasforma." }
+        "name": "Manzo Tonnato",
+        "desc": "Roast beef di manzo, salsa tonnata e capperi.",
+        "wines": [
+          {
+            "name": "Valdobbiadene Prosecco Spago — Mionetto",
+            "tag": "Bollicine fresche",
+            "desc": "La freschezza del Prosecco bilancia la sapidità della salsa tonnata."
+          },
+          {
+            "name": "Cerasuolo d'Abruzzo",
+            "tag": "Rosato fresco",
+            "desc": "Rosato strutturato che regge il roast-beef e la cremosità della tonnata."
+          },
+          {
+            "name": "Dom Pérignon",
+            "tag": "Champagne",
+            "desc": "Per un antipasto che merita una bollicina importante."
+          }
         ]
       },
       {
-        name: "Nervetti alla Milanese",
-        desc: "Classico milanese con cipolla, prezzemolo, aceto.",
-        wines: [
-          { name: "Malandrino Montepulciano d'Abruzzo", tag: "Rosso rustico", desc: "Un vino di carattere per un piatto di carattere: frutto pieno e tannino gentile." },
-          { name: "Chianti Classico", tag: "Rosso versatile", desc: "Acidità che bilancia la grassezza e la nota acetica dei Nervetti alla milanese." },
-          { name: "Cerasuolo d'Abruzzo", tag: "Rosato fresco", desc: "Freschezza e struttura per un classico milanese che richiede coraggio." }
+        "name": "Bis di Bruschette",
+        "desc": "Salsiccia e friarielli; gorgonzola, miele e noci.",
+        "wines": [
+          {
+            "name": "Malandrino Montepulciano d'Abruzzo",
+            "tag": "Rosso rustico",
+            "desc": "Frutto pieno e tannino morbido: regge la salsiccia e l’amaro dei friarielli."
+          },
+          {
+            "name": "Prosecco Gold — Bottega",
+            "tag": "Bollicine fruttate",
+            "desc": "La dolcezza del miele e il gorgonzola trovano nella bolla fruttata un buon equilibrio."
+          },
+          {
+            "name": "Cerasuolo d'Abruzzo",
+            "tag": "Rosato fresco",
+            "desc": "Freschezza e struttura per tutte e due le bruschette."
+          }
         ]
       }
     ],
-    primi: [
+    "primi": [
       {
-        name: "Trofiette Verdi",
-        photo: "assets/img/piatto-trofie-pesto-burrata.jpg",
-        desc: "Trofiette al pesto alla genovese, stracciatella fresca, granella di pistacchio.",
-        wines: [
-          { name: "Franciacorta Pas Opéré — Bellavista", tag: "Bollicine secche", desc: "Il dosaggio zero taglia la cremosità della stracciatella, le bollicine esaltano il pesto." },
-          { name: "Alta Langa Brut Blanc de Blancs — Giulio Cocchi", tag: "Bollicine italiane", desc: "Mineralità e finezza, elegante con le note erbacee del pesto genovese." },
-          { name: "Dom Pérignon", tag: "Champagne", desc: "La mineralità del Dom Pérignon incontra il basilico del pesto in modo inatteso e raffinato." }
+        "name": "L'Orecchietta",
+        "desc": "Orecchiette con cime di rapa.",
+        "wines": [
+          {
+            "name": "Franciacorta Pas Opéré — Bellavista",
+            "tag": "Bollicine secche",
+            "desc": "Sapidità e freschezza che bilanciano l’amaro delle cime di rapa."
+          },
+          {
+            "name": "Cerasuolo d'Abruzzo",
+            "tag": "Rosato fresco",
+            "desc": "Un rosato agile e saporito, buono con la nota amarognola della verdura."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Per chi preferisce il rosso: acidità e frutto che non coprono il piatto."
+          }
         ]
       },
       {
-        name: "Mezzelune Ricotta e Rucola",
-        photo: "assets/img/piatto-ravioli-fiori.jpg",
-        desc: "Ravioli ripieni di ricotta fresca e rucola, burro alle erbe, salvia croccante.",
-        wines: [
-          { name: "Alta Langa Brut Blanc de Blancs — Giulio Cocchi", tag: "Bollicine italiane", desc: "Bollicine fini e agrumi che esaltano il burro alle erbe." },
-          { name: "Chianti Classico", tag: "Rosso versatile", desc: "Acidità fresca che bilancia la ricchezza del ripieno di ricotta." },
-          { name: "Franciacorta Pas Opéré — Bellavista", tag: "Bollicine secche", desc: "Eleganza e mineralità per una pasta ripiena precisa." }
+        "name": "Paccheri alla Norma",
+        "desc": "Paccheri alla norma con scaglie di ricotta salata.",
+        "wines": [
+          {
+            "name": "TONÍ Montepulciano d'Abruzzo",
+            "tag": "Rosso morbido",
+            "desc": "Struttura e frutto che dialogano con la melanzana fritta e il pomodoro."
+          },
+          {
+            "name": "Primitivo di Manduria",
+            "tag": "Rosso pieno",
+            "desc": "Il Primitivo pugliese ha la stessa mediterraneità della Norma siciliana."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Acidità vivace che bilancia la ricotta salata."
+          }
         ]
       },
       {
-        name: "L'Orecchietta",
-        desc: "Orecchiette con ragù bolognese.",
-        wines: [
-          { name: "Malandrino Montepulciano d'Abruzzo", tag: "Rosso rustico", desc: "Frutto pieno e tannino gentile per il ragù: l'abbinamento contadino che funziona sempre." },
-          { name: "Chianti Classico", tag: "Rosso versatile", desc: "Acidità e tannino equilibrati: il classico per qualunque ragù di carne." },
-          { name: "Brunello di Montalcino", tag: "Rosso classico", desc: "Per un ragù cotto a lungo, il Brunello è la risposta definitiva." }
+        "name": "Gnocchi al Ragù",
+        "desc": "Gnocchi con ragù alla bolognese.",
+        "wines": [
+          {
+            "name": "Malandrino Montepulciano d'Abruzzo",
+            "tag": "Rosso rustico",
+            "desc": "Frutto pieno e tannino gentile per il ragù: l'abbinamento contadino che funziona sempre."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Acidità e tannino equilibrati: il classico per qualunque ragù di carne."
+          },
+          {
+            "name": "Brunello di Montalcino",
+            "tag": "Rosso classico",
+            "desc": "Per un ragù cotto a lungo, il Brunello è la risposta definitiva."
+          }
         ]
       },
       {
-        name: "Troccoli alla Norma",
-        desc: "Pasta con pomodoro, melanzane fritte, ricotta salata.",
-        wines: [
-          { name: "TONÍ Montepulciano d'Abruzzo", tag: "Rosso morbido", desc: "Struttura e frutto che dialogano con la melanzana fritta e il pomodoro." },
-          { name: "Primitivo di Manduria", tag: "Rosso pieno", desc: "Il Primitivo pugliese ha la stessa mediterraneità della Norma siciliana." },
-          { name: "Chianti Classico", tag: "Rosso versatile", desc: "Acidità vivace che bilancia la ricotta salata." }
+        "name": "Pizzoccheri",
+        "desc": "Pizzoccheri di grano saraceno con verze, coste, patate e formaggi.",
+        "wines": [
+          {
+            "name": "Malandrino Montepulciano d'Abruzzo",
+            "tag": "Rosso rustico",
+            "desc": "Corpo e frutto per un piatto ricco e di montagna, tra formaggi e verze."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Acidità vivace che alleggerisce i formaggi fusi."
+          },
+          {
+            "name": "Rosso di Montalcino — Banfi",
+            "tag": "Rosso elegante",
+            "desc": "Sangiovese più fine, regge la ricchezza senza appesantire."
+          }
+        ]
+      },
+      {
+        "name": "Risotto ai Porcini",
+        "desc": "Riso Acquerello risottato con funghi porcini.",
+        "photo": "assets/img/piatto-risotto-funghi.jpg",
+        "wines": [
+          {
+            "name": "Brunello di Montalcino",
+            "tag": "Rosso classico",
+            "desc": "Struttura ed eleganza: sposa il profumo di sottobosco dei porcini."
+          },
+          {
+            "name": "Rosso di Montalcino — Banfi",
+            "tag": "Rosso elegante",
+            "desc": "Più agile del Brunello, tiene testa alla cremosità del risotto."
+          },
+          {
+            "name": "Barolo Della Marmora 2021",
+            "tag": "Rosso strutturato",
+            "desc": "Nebbiolo e porcini: un classico per chi vuole un abbinamento importante."
+          }
+        ]
+      },
+      {
+        "name": "Ravioli di Zucca",
+        "desc": "Ravioli di zucca, crema di gorgonzola e speck croccante.",
+        "wines": [
+          {
+            "name": "Alta Langa Brut Blanc de Blancs — Giulio Cocchi",
+            "tag": "Bollicine italiane",
+            "desc": "Bolla fine e agrumi: ripuliscono la dolcezza della zucca e la sapidità del gorgonzola."
+          },
+          {
+            "name": "Franciacorta Pas Opéré — Bellavista",
+            "tag": "Bollicine secche",
+            "desc": "Eleganza e mineralità per bilanciare la cremosità della crema."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Acidità fresca che regge gorgonzola e speck croccante."
+          }
         ]
       }
     ],
-    secondi: [
+    "secondi": [
       {
-        name: "Picanha",
-        photo: "assets/img/piatto-costata-manzo.jpg",
-        desc: "Taglio brasiliano alla griglia, succoso e saporito.",
-        wines: [
-          { name: "Primitivo di Manduria", tag: "Rosso pieno", desc: "Calore e frutta matura per un taglio dal carattere deciso." },
-          { name: "Il Bruciato — Antinori", tag: "Rosso elegante", desc: "Frutto succoso e tannino morbido, sulla stessa lunghezza d'onda della picanha." },
-          { name: "Sassicaia", tag: "Rosso importante", desc: "Tannino elegante e lunghezza che accompagnano ogni boccone." }
+        "name": "Ribs",
+        "desc": "Costine di maiale alla brace.",
+        "wines": [
+          {
+            "name": "Primitivo di Manduria",
+            "tag": "Rosso pieno",
+            "desc": "Caldo e fruttato: nato per le carni di maiale alla brace."
+          },
+          {
+            "name": "Aglianico del Vulture — Teodosio Basilisco",
+            "tag": "Rosso del sud",
+            "desc": "Tannino fitto e mineralità per la grassezza delle costine."
+          },
+          {
+            "name": "Malandrino Montepulciano d'Abruzzo",
+            "tag": "Rosso rustico",
+            "desc": "Frutto e morbidezza che accompagnano la carne affumicata."
+          }
         ]
       },
       {
-        name: "Costata",
-        photo: "assets/img/piatto-costata-manzo.jpg",
-        desc: "Costata di manzo alla griglia su brace viva.",
-        wines: [
-          { name: "Barolo Della Marmora 2021", tag: "Rosso strutturato", desc: "Il tannino del Nebbiolo taglia la marezzatura e accompagna la crosta della brace." },
-          { name: "Il Bruciato — Antinori", tag: "Rosso elegante", desc: "Super Tuscan che accompagna la brace con tannini vellutati." },
-          { name: "Brunello di Montalcino", tag: "Rosso classico", desc: "Struttura e longevità per un taglio che merita rispetto." }
+        "name": "Bombette",
+        "desc": "Bombette di salamella avvolte nel bacon e cotte alla brace.",
+        "wines": [
+          {
+            "name": "Primitivo di Manduria",
+            "tag": "Rosso pieno",
+            "desc": "Frutto maturo e calore per salamella e bacon."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "L’acidità del Sangiovese ripulisce il palato dalla grassezza."
+          },
+          {
+            "name": "Malandrino Montepulciano d'Abruzzo",
+            "tag": "Rosso rustico",
+            "desc": "Un rosso di carattere, semplice e pieno, per un piatto goloso."
+          }
         ]
       },
       {
-        name: "Filetto di Manzo",
-        desc: "Taglio magro e pregiato, alla griglia o in padella.",
-        wines: [
-          { name: "Malandrino Montepulciano d'Abruzzo", tag: "Rosso rustico", desc: "Frutto e morbidezza senza coprire la delicatezza del filetto." },
-          { name: "Il Bruciato — Antinori", tag: "Rosso elegante", desc: "Bolgheri agile e fruttato, non copre la delicatezza del filetto." },
-          { name: "Tignanello", tag: "Rosso importante", desc: "Eleganza e profondità per un taglio altrettanto raffinato." }
+        "name": "Tagliata di Picanha",
+        "photo": "assets/img/piatto-costata-manzo.jpg",
+        "desc": "Picanha di Black Angus tagliata e cotta alla brace.",
+        "wines": [
+          {
+            "name": "Primitivo di Manduria",
+            "tag": "Rosso pieno",
+            "desc": "Calore e frutta matura per un taglio dal carattere deciso."
+          },
+          {
+            "name": "Il Bruciato — Antinori",
+            "tag": "Rosso elegante",
+            "desc": "Frutto succoso e tannino morbido, sulla stessa lunghezza d'onda della picanha."
+          },
+          {
+            "name": "Sassicaia",
+            "tag": "Rosso importante",
+            "desc": "Tannino elegante e lunghezza che accompagnano ogni boccone."
+          }
         ]
       },
       {
-        name: "Costolette di Agnello",
-        desc: "Costolette di agnello cotte alla griglia.",
-        wines: [
-          { name: "Primitivo di Manduria", tag: "Rosso pieno", desc: "Calore e frutto con la nota selvatica dell'agnello." },
-          { name: "Aglianico del Vulture — Teodosio Basilisco", tag: "Rosso del sud", desc: "Tannino fitto e speziatura che accompagnano la sapidità della griglia." },
-          { name: "Amarone della Valpolicella", tag: "Rosso intenso", desc: "Concentrazione di frutta matura che regge bene la nota selvatica dell'agnello." }
+        "name": "Filetto",
+        "desc": "Filetto di manzo alla brace, maionese al tartufo e petali di rosa.",
+        "wines": [
+          {
+            "name": "Malandrino Montepulciano d'Abruzzo",
+            "tag": "Rosso rustico",
+            "desc": "Frutto e morbidezza senza coprire la delicatezza del filetto."
+          },
+          {
+            "name": "Il Bruciato — Antinori",
+            "tag": "Rosso elegante",
+            "desc": "Bolgheri agile e fruttato, non copre la delicatezza del filetto."
+          },
+          {
+            "name": "Tignanello",
+            "tag": "Rosso importante",
+            "desc": "Eleganza e profondità per un taglio altrettanto raffinato."
+          }
         ]
       },
       {
-        name: "Cotoletta Milanese XXL",
-        desc: "La grande cotoletta alla milanese, impanata e fritta.",
-        wines: [
-          { name: "Valdobbiadene Prosecco Spago — Mionetto", tag: "Bollicine fresche", desc: "Le bollicine sgrassano la panatura fritta alla perfezione — l'abbinamento milanese per eccellenza." },
-          { name: "Franciacorta Pas Opéré — Bellavista", tag: "Bollicine secche", desc: "Metodo classico elegante che tiene testa alla cotoletta XXL." },
-          { name: "Chianti Classico", tag: "Rosso versatile", desc: "Per chi preferisce il rosso: Sangiovese che bilancia la panatura senza coprire la carne." }
+        "name": "Costata",
+        "photo": "assets/img/piatto-costata-manzo.jpg",
+        "desc": "Costata di manzo alla brace.",
+        "wines": [
+          {
+            "name": "Barolo Della Marmora 2021",
+            "tag": "Rosso strutturato",
+            "desc": "Il tannino del Nebbiolo taglia la marezzatura e accompagna la crosta della brace."
+          },
+          {
+            "name": "Il Bruciato — Antinori",
+            "tag": "Rosso elegante",
+            "desc": "Super Tuscan che accompagna la brace con tannini vellutati."
+          },
+          {
+            "name": "Brunello di Montalcino",
+            "tag": "Rosso classico",
+            "desc": "Struttura e longevità per un taglio che merita rispetto."
+          }
         ]
       },
       {
-        name: "Fiorentina",
-        desc: "Il taglio simbolo della tradizione toscana, alla griglia.",
-        wines: [
-          { name: "Barolo Della Marmora 2021", tag: "Rosso strutturato", desc: "Il Re dei vini italiani per la Regina della griglia toscana." },
-          { name: "Chianti Classico", tag: "Rosso versatile", desc: "Sangiovese toscano per un taglio toscano: l'abbinamento territoriale più classico." },
-          { name: "Brunello di Montalcino", tag: "Rosso classico", desc: "Sangiovese in purezza, struttura toscana: il massimo per una Fiorentina." }
+        "name": "Agnello Scottadito",
+        "desc": "Costolette di agnello alla brace.",
+        "wines": [
+          {
+            "name": "Primitivo di Manduria",
+            "tag": "Rosso pieno",
+            "desc": "Calore e frutto con la nota selvatica dell'agnello."
+          },
+          {
+            "name": "Aglianico del Vulture — Teodosio Basilisco",
+            "tag": "Rosso del sud",
+            "desc": "Tannino fitto e speziatura che accompagnano la sapidità della griglia."
+          },
+          {
+            "name": "Amarone della Valpolicella",
+            "tag": "Rosso intenso",
+            "desc": "Concentrazione di frutta matura che regge bene la nota selvatica dell'agnello."
+          }
         ]
       },
       {
-        name: "Grigliata Mista",
-        photo: "assets/img/piatto-grigliata-mista.jpg",
-        desc: "Pollo, würstel, salsiccia, costolette di agnello, picanha, costine di maiale — tutto sulla brace.",
-        wines: [
-          { name: "Primitivo di Manduria", tag: "Rosso pieno", desc: "Caldo, fruttato e generoso — nato per accompagnare la grigliata." },
-          { name: "Aglianico del Vulture — Teodosio Basilisco", tag: "Rosso del sud", desc: "Potenza e mineralità per reggere la complessità della grigliata mista." },
-          { name: "Amarone della Valpolicella", tag: "Rosso intenso", desc: "Un Amarone con la grigliata mista: l'abbinamento coraggioso che non si dimentica." }
+        "name": "La Fiorentina",
+        "desc": "Bistecca di manzo con filetto e controfiletto alla brace.",
+        "wines": [
+          {
+            "name": "Barolo Della Marmora 2021",
+            "tag": "Rosso strutturato",
+            "desc": "Il Re dei vini italiani per la Regina della griglia toscana."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Sangiovese toscano per un taglio toscano: l'abbinamento territoriale più classico."
+          },
+          {
+            "name": "Brunello di Montalcino",
+            "tag": "Rosso classico",
+            "desc": "Sangiovese in purezza, struttura toscana: il massimo per una Fiorentina."
+          }
+        ]
+      },
+      {
+        "name": "Il Galletto",
+        "desc": "Galletto alla brace e patate arrosto.",
+        "wines": [
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Sangiovese fresco e sapido: la scelta più naturale per il galletto alla brace."
+          },
+          {
+            "name": "Franciacorta Pas Opéré — Bellavista",
+            "tag": "Bollicine secche",
+            "desc": "Per chi vuole una bolla: pulisce la pelle croccante e le patate."
+          },
+          {
+            "name": "Cerasuolo d'Abruzzo",
+            "tag": "Rosato fresco",
+            "desc": "Freschezza e struttura per un piatto semplice e saporito."
+          }
+        ]
+      },
+      {
+        "name": "Hedoné Burger",
+        "photo": "assets/img/piatto-burger.jpg",
+        "desc": "Pane al latte con sesamo, hamburger alla brace, lattuga, pomodoro, cetriolini, cheddar e bacon. Servito con patatine.",
+        "wines": [
+          {
+            "name": "Malandrino Montepulciano d'Abruzzo",
+            "tag": "Rosso rustico",
+            "desc": "Frutto pieno e tannino morbido per un burger goloso."
+          },
+          {
+            "name": "Primitivo di Manduria",
+            "tag": "Rosso pieno",
+            "desc": "Caldo e generoso: tiene testa a cheddar e bacon."
+          },
+          {
+            "name": "Valdobbiadene Prosecco Spago — Mionetto",
+            "tag": "Bollicine fresche",
+            "desc": "La bolla sgrassa il palato tra un morso e l’altro."
+          }
+        ]
+      },
+      {
+        "name": "Würstel e Patatine",
+        "desc": "Würstel alla griglia e patatine fritte.",
+        "wines": [
+          {
+            "name": "Valdobbiadene Prosecco Spago — Mionetto",
+            "tag": "Bollicine fresche",
+            "desc": "Bollicine leggere che bilanciano würstel e fritto."
+          },
+          {
+            "name": "Cerasuolo d'Abruzzo",
+            "tag": "Rosato fresco",
+            "desc": "Freschezza e sapidità per un piatto semplice."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Per chi preferisce il rosso: acidità che ripulisce il palato."
+          }
+        ]
+      },
+      {
+        "name": "La Milanese",
+        "desc": "Cotoletta di vitello con osso battuta alla milanese.",
+        "wines": [
+          {
+            "name": "Valdobbiadene Prosecco Spago — Mionetto",
+            "tag": "Bollicine fresche",
+            "desc": "Le bollicine sgrassano la panatura fritta alla perfezione — l'abbinamento milanese per eccellenza."
+          },
+          {
+            "name": "Franciacorta Pas Opéré — Bellavista",
+            "tag": "Bollicine secche",
+            "desc": "Metodo classico elegante che tiene testa alla cotoletta XXL."
+          },
+          {
+            "name": "Chianti Classico",
+            "tag": "Rosso versatile",
+            "desc": "Per chi preferisce il rosso: Sangiovese che bilancia la panatura senza coprire la carne."
+          }
         ]
       }
     ],
-    dolci: [
+    "dolci": [
       {
-        name: "Semifreddi ai Frutti",
-        desc: "Dolci a forma di frutta, fatti a mano.",
-        wines: [
-          { name: "Prosecco Gold — Bottega", tag: "Bollicine fruttate", desc: "Leggero e immediato, accompagna senza appesantire dopo un pasto completo." },
-          { name: "Franciacorta Rosé — Bellavista", tag: "Bollicine rosé", desc: "Frutto rosso e bolla elegante che rispecchiano la natura del semifreddo." },
-          { name: "Dom Pérignon Rosé", tag: "Champagne rosé", desc: "Per chiudere la cena in un momento da ricordare." }
+        "name": "Semifreddi",
+        "desc": "Selezione di semifreddi dalla vetrina.",
+        "wines": [
+          {
+            "name": "Prosecco Gold — Bottega",
+            "tag": "Bollicine fruttate",
+            "desc": "Leggero e immediato, accompagna senza appesantire dopo un pasto completo."
+          },
+          {
+            "name": "Franciacorta Rosé — Bellavista",
+            "tag": "Bollicine rosé",
+            "desc": "Frutto rosso e bolla elegante che rispecchiano la natura del semifreddo."
+          },
+          {
+            "name": "Dom Pérignon Rosé",
+            "tag": "Champagne rosé",
+            "desc": "Per chiudere la cena in un momento da ricordare."
+          }
         ]
       },
       {
-        name: "Tiramisù della Casa",
-        desc: "La ricetta classica, fatta in casa.",
-        wines: [
-          { name: "Valdobbiadene Prosecco Spago — Mionetto", tag: "Bollicine fresche", desc: "Bollicine leggere che puliscono il palato tra un cucchiaio e l'altro." },
-          { name: "Franciacorta Rosé — Bellavista", tag: "Bollicine rosé", desc: "Corpo e frutto rosso che dialogano con la nota di cacao e caffè." },
-          { name: "Dom Pérignon", tag: "Champagne", desc: "Per i momenti che meritano una bottiglia importante, anche a fine pasto." }
+        "name": "Tiramisù della Casa",
+        "desc": "Crema al mascarpone, savoiardi al caffè e cacao.",
+        "wines": [
+          {
+            "name": "Valdobbiadene Prosecco Spago — Mionetto",
+            "tag": "Bollicine fresche",
+            "desc": "Bollicine leggere che puliscono il palato tra un cucchiaio e l'altro."
+          },
+          {
+            "name": "Franciacorta Rosé — Bellavista",
+            "tag": "Bollicine rosé",
+            "desc": "Corpo e frutto rosso che dialogano con la nota di cacao e caffè."
+          },
+          {
+            "name": "Dom Pérignon",
+            "tag": "Champagne",
+            "desc": "Per i momenti che meritano una bottiglia importante, anche a fine pasto."
+          }
         ]
       },
       {
-        name: "Torroncino al Pistacchio",
-        desc: "Dolce, croccante, al pistacchio.",
-        wines: [
-          { name: "Prosecco Gold — Bottega", tag: "Bollicine fruttate", desc: "Leggerezza e riconoscibilità: accompagna il torroncino senza impegno." },
-          { name: "Alta Langa Brut Blanc de Blancs — Giulio Cocchi", tag: "Bollicine italiane", desc: "Metodo classico piemontese con il pistacchio — un viaggio nell'Italia." },
-          { name: "Dom Pérignon Rosé", tag: "Champagne rosé", desc: "Per un dolce che merita un calice all'altezza." }
+        "name": "Torroncino",
+        "desc": "Torroncino al pistacchio o alla nocciola, affogato.",
+        "wines": [
+          {
+            "name": "Prosecco Gold — Bottega",
+            "tag": "Bollicine fruttate",
+            "desc": "Leggerezza e riconoscibilità: accompagna il torroncino senza impegno."
+          },
+          {
+            "name": "Alta Langa Brut Blanc de Blancs — Giulio Cocchi",
+            "tag": "Bollicine italiane",
+            "desc": "Metodo classico piemontese con il pistacchio — un viaggio nell'Italia."
+          },
+          {
+            "name": "Dom Pérignon Rosé",
+            "tag": "Champagne rosé",
+            "desc": "Per un dolce che merita un calice all'altezza."
+          }
         ]
       }
     ]
@@ -666,32 +1032,32 @@
       name: "La Tartare",
       desc: "Fassona piemontese battuta a coltello con capperi di Pantelleria IGP, senape in grani e gocce di Taleggio. Una firma di cucina che racconta identità e precisione.",
       imgs: ["assets/img/piatto-tartare-manzo.jpg", "assets/img/piatto-tartare.png"],
-      ingredients: ["Fassona piemontese", "Capperi di Pantelleria IGP", "Senape in grani", "Taleggio"],
+      ingredients: ["Fassona piemontese", "Capperi", "Senape in grani"],
       wines: [
         { name: "Franciacorta Rosé — Bellavista", desc: "L'abbinamento da manuale: bollicine e acidità che esaltano la carne cruda." },
         { name: "Cerasuolo d'Abruzzo", desc: "Alternativa fresca, bilancia la sapidità dei capperi di Pantelleria." }
       ]
     },
-    trofiette: {
-      kicker: "Primi",
-      name: "Trofiette Verdi",
-      desc: "Trofiette al pesto alla genovese, cuore di stracciatella fresca e granella di pistacchio tostato. Una pasta che racconta il profumo del Mediterraneo.",
-      imgs: ["assets/img/piatto-trofie-pesto-burrata.jpg", "assets/img/food-gal-02.jpg"],
-      ingredients: ["Trofiette verdi (grano, spinaci)", "Pesto alla genovese", "Stracciatella", "Granella di pistacchio"],
+    burger: {
+      kicker: "Le specialità",
+      name: "Hedoné Burger",
+      desc: "Pane al latte con sesamo, hamburger alla brace, lattuga, pomodoro, cetriolini, cheddar e bacon. Servito con patatine.",
+      imgs: ["assets/img/piatto-burger.jpg"],
+      ingredients: ["Pane al latte con sesamo", "Hamburger alla brace", "Lattuga e pomodoro", "Cetriolini", "Cheddar", "Bacon", "Patatine"],
       wines: [
-        { name: "Franciacorta Pas Operé — Bellavista", desc: "Zero dosage che taglia la cremosità della stracciatella ed esalta il pesto." },
-        { name: "Alta Langa Bianc 'd Bianc — Giulio Cocchi", desc: "Mineralità e finezza, elegante con le note erbacee del pesto genovese." }
+        { name: "Malandrino Montepulciano d'Abruzzo", desc: "Frutto pieno e tannino morbido per un burger goloso." },
+        { name: "Primitivo di Manduria", desc: "Caldo e generoso: tiene testa a cheddar e bacon." }
       ]
     },
-    mezzelune: {
-      kicker: "Primi",
-      name: "Mezzelune di Ricotta e Rucola",
-      desc: "Ravioli ripieni di ricotta fresca e rucola, mantecati in burro alle erbe con foglie di salvia croccanti. Una pasta che unisce semplicità e tecnica.",
-      imgs: ["assets/img/piatto-ravioli-fiori.jpg", "assets/img/food-gal-01.jpg"],
-      ingredients: ["Pasta fresca all'uovo", "Ricotta", "Rucola", "Burro alle erbe", "Salvia croccante"],
+    milanese: {
+      kicker: "Le specialità",
+      name: "La Milanese",
+      desc: "Cotoletta di vitello con osso battuta alla milanese, dorata e croccante fuori, tenera dentro.",
+      imgs: ["assets/img/piatto-cotoletta.jpg"],
+      ingredients: ["Cotoletta di vitello con osso", "Panatura alla milanese"],
       wines: [
-        { name: "Alta Langa Bianc 'd Bianc — Giulio Cocchi", desc: "Bollicine fini e agrumi che esaltano il burro alle erbe." },
-        { name: "Chianti Classico", desc: "Acidità fresca che bilancia la ricchezza del ripieno di ricotta." }
+        { name: "Valdobbiadene Prosecco Spago — Mionetto", desc: "Le bollicine sgrassano il palato e tengono fresca la croccantezza." },
+        { name: "Chianti Classico", desc: "Per chi preferisce il rosso: Sangiovese fresco e sapido." }
       ]
     },
     costata: {
@@ -705,15 +1071,15 @@
         { name: "Il Bruciato — Antinori", desc: "Super Tuscan elegante, tannini vellutati sulla marezzatura." }
       ]
     },
-    grigliata: {
-      kicker: "Secondi alla griglia",
-      name: "Grigliata Mista",
-      desc: "Filetto di pollo, würstel, salsiccia, costolette di agnello, picanha e costine di maiale — tutto sulla brace. Una festa del gusto per chi vuole assaggiare il meglio della griglia di Hedoné.",
-      imgs: ["assets/img/piatto-grigliata-mista.jpg", "assets/img/piatto-grigliata-03.jpg", "assets/img/piatto-grigliata-05.jpg"],
-      ingredients: ["Filetto di pollo", "Würstel artigianale", "Salsiccia", "Costolette di agnello", "Picanha", "Costine di maiale"],
+    fiorentina: {
+      kicker: "Dalla brace",
+      name: "La Fiorentina",
+      desc: "Bistecca di manzo con filetto e controfiletto alla brace: un taglio importante, da condividere.",
+      imgs: ["assets/img/piatto-fiorentina.jpg"],
+      ingredients: ["Bistecca di manzo con filetto e controfiletto", "Brace"],
       wines: [
-        { name: "Primitivo di Manduria", desc: "Caldo, fruttato e generoso — nato per accompagnare la griglia." },
-        { name: "Aglianico del Vulture", desc: "Potenza e mineralità per reggere la complessità della grigliata mista." }
+        { name: "Barolo Della Marmora 2021", desc: "Il Re dei vini italiani per un taglio che merita rispetto." },
+        { name: "Chianti Classico", desc: "Sangiovese toscano per un taglio toscano." }
       ]
     }
   };
@@ -985,8 +1351,8 @@
   var barmanCats = {
     antipasti: { label: "Antipasti", speech: "Ottima scelta. Quale antipasto stai ordinando?" },
     primi:     { label: "Primi",     speech: "Perfetto. Quale primo piatto?" },
-    secondi:   { label: "Secondi",   speech: "Ottima scelta. Quale secondo stai scegliendo — grigliata, Fiorentina, Filetto?" },
-    dolci:     { label: "Dolci",     speech: "Ah, si finisce in dolcezza. Quale dolce?" }
+    secondi:   { label: "Brace e specialità",   speech: "Ottima scelta. Quale piatto stai scegliendo — Fiorentina, Filetto, Hedoné Burger?" },
+    dolci:     { label: "Dessert",     speech: "Ah, si finisce in dolcezza. Quale dolce?" }
   };
 
   var barmanPref = null;
