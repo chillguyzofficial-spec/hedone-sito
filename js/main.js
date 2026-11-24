@@ -784,7 +784,7 @@
           {
             "name": "Franciacorta Pas Opéré — Bellavista",
             "tag": "Bollicine secche",
-            "desc": "Metodo classico elegante che tiene testa alla cotoletta XXL."
+            "desc": "Metodo classico elegante che tiene testa alla cotoletta."
           },
           {
             "name": "Chianti Classico",
@@ -1020,7 +1020,7 @@
       kicker: "Antipasti",
       name: "Tagliere di Salumi & Gnocco Fritto",
       desc: "Crudo di Parma, Pancetta, Salame Felino IGP e Prosciutto cotto affettati al momento, serviti con gnocco fritto caldo. Il modo migliore per iniziare la serata da Hedoné.",
-      imgs: ["assets/img/piatto-tagliere-affettati.jpg", "assets/img/piatto-tagliere-salumi.jpg", "assets/img/piatto-tagliere-misto.jpg"],
+      imgs: ["assets/img/piatto-tagliere-affettati.jpg"],
       ingredients: ["Crudo di Parma", "Pancetta", "Salame Felino IGP", "Prosciutto cotto", "Gnocco fritto"],
       wines: [
         { name: "Cerasuolo d'Abruzzo", desc: "Freschezza e frutta croccante sgrassano la sapidità dei salumi e la frittura del gnocco." },
@@ -1031,7 +1031,7 @@
       kicker: "Antipasti",
       name: "La Tartare",
       desc: "Fassona piemontese battuta a coltello con capperi di Pantelleria IGP, senape in grani e gocce di Taleggio. Una firma di cucina che racconta identità e precisione.",
-      imgs: ["assets/img/piatto-tartare-manzo.jpg", "assets/img/piatto-tartare.png"],
+      imgs: ["assets/img/piatto-tartare-manzo.jpg"],
       ingredients: ["Fassona piemontese", "Capperi", "Senape in grani"],
       wines: [
         { name: "Franciacorta Rosé — Bellavista", desc: "L'abbinamento da manuale: bollicine e acidità che esaltano la carne cruda." },
