@@ -417,6 +417,16 @@
   .mn-vigilia-box[open] { border-color: rgba(212,175,106,0.6); }
   .mn-vigilia-segno { background: rgba(179,32,43,0.28); }
 
+
+  /* ancora più sobrio: ghirlanda sottile e dorata, pulsante oro scuro, niente rosso acceso */
+  .mn-vigilia-box::before { height: 2px; background: linear-gradient(90deg, transparent, rgba(212,175,106,0.8), transparent); }
+  .mn-vigilia-sum { padding-top: 1.15rem; }
+  .mn-vigilia-segno { background: transparent; border-color: rgba(212,175,106,0.55); }
+  .mn-vigilia-fiocco { color: #d4af6a; }
+  .mn-vigilia-corpo .btn-primary { background: transparent; color: #f3d9a0; border: 1px solid rgba(212,175,106,0.7); box-shadow: none; }
+  .mn-vigilia-corpo .btn-primary:hover { background: rgba(212,175,106,0.12); }
+  .mn-vigilia-note { background: transparent; border-color: rgba(212,175,106,0.3); }
+
   /* ── BAR BANNER (divisore Vini & Drink) ── */
   .mn-bar-banner {
     position: relative;
