@@ -344,6 +344,33 @@
     .mn-vigilia-course { grid-template-columns: 1fr; }
   }
 
+
+  /* tema natalizio */
+  .mn-vigilia-box {
+    position: relative;
+    border-color: rgba(222,184,110,0.6);
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.10) 0 1.5px, transparent 2.5px) 0 0 / 46px 46px,
+      radial-gradient(circle at 70% 62%, rgba(255,255,255,0.07) 0 1px, transparent 2px) 0 0 / 61px 61px,
+      linear-gradient(135deg, #3a0b10 0%, #1d0b0c 48%, #0b1d14 100%);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.4), 0 18px 50px -28px rgba(160,30,40,0.7);
+  }
+  .mn-vigilia-box::before {
+    content: ''; position: absolute; left: 0; right: 0; top: 0; height: 5px; z-index: 1; pointer-events: none;
+    background: repeating-linear-gradient(90deg, #b3202b 0 18px, #d4af6a 18px 24px, #1f6b43 24px 42px, #d4af6a 42px 48px);
+  }
+  .mn-vigilia-sum { padding-top: 1.35rem; }
+  .mn-vigilia-fiocco { width: 1.05em; height: 1.05em; margin-right: 0.45rem; vertical-align: -0.12em; color: #f3d9a0; }
+  .mn-vigilia-tit { color: #fff6e4; }
+  .mn-vigilia-sub { color: #e8c682; }
+  .mn-vigilia-prezzo { color: #f3d9a0; }
+  .mn-vigilia-segno { border-color: rgba(243,217,160,0.7); background: rgba(179,32,43,0.35); }
+  .mn-vigilia-corpo { border-top-color: rgba(222,184,110,0.35); }
+  .mn-vigilia-course h3 { color: #f3d9a0; }
+  .mn-vigilia-course { border-bottom-color: rgba(222,184,110,0.18); }
+  .mn-vigilia-note { color: #e8c682; }
+  .mn-vigilia-corpo .btn-primary { background: linear-gradient(135deg, #c42a35, #8f1822); color: #fff6e4; border-color: rgba(243,217,160,0.6); }
+
   /* ── BAR BANNER (divisore Vini & Drink) ── */
   .mn-bar-banner {
     position: relative;
@@ -483,7 +510,7 @@
         <details class="mn-vigilia-box">
           <summary class="mn-vigilia-sum">
             <span>
-              <span class="mn-vigilia-tit">Menù della Vigilia di Natale</span>
+              <span class="mn-vigilia-tit"><svg class="mn-vigilia-fiocco" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M4.2 6.5l15.6 11M19.8 6.5L4.2 17.5M9.5 3.5L12 6l2.5-2.5M9.5 20.5L12 18l2.5 2.5M3 9.8l3.3.3-.3 3.3M21 9.8l-3.3.3.3 3.3"/></svg>Menù della Vigilia di Natale</span>
               <span class="mn-vigilia-sub">24 Dicembre 2026 · Solo su prenotazione</span>
             </span>
             <span class="mn-vigilia-prezzo">€ 65</span>
