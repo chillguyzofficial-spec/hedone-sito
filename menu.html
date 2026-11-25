@@ -309,27 +309,40 @@
   .mn-chapter-dolci { background-image: linear-gradient(to bottom, #0c0803 0%, rgba(8,5,2,0.5) 16%, rgba(8,5,2,0.7) 62%, #080502 100%), url('assets/img/menu-inv-dessert.jpg'); background-size: cover; background-position: center 55%; }
 
 
-  /* ── MENÙ DELLA VIGILIA ── */
-  .mn-vigilia-card {
-    max-width: 640px; margin: 0 auto; text-align: center;
-    padding: clamp(1.8rem, 4vw, 2.8rem) clamp(1.4rem, 4vw, 2.6rem);
-    border: 1px solid rgba(212,175,106,0.3);
-    border-top: 2px solid rgba(212,175,106,0.6);
-    border-radius: 18px;
-    background: linear-gradient(160deg, rgba(255,235,200,0.07) 0%, rgba(201,168,76,0.03) 100%);
+  /* ── MENÙ DELLA VIGILIA (a scomparsa) ── */
+  .mn-vigilia { max-width: 760px; margin: 0 auto; }
+  .mn-vigilia-box {
+    border: 1px solid rgba(212,175,106,0.32); border-radius: 18px; overflow: hidden;
+    background: linear-gradient(135deg, rgba(120,24,28,0.28) 0%, rgba(255,235,200,0.05) 55%, rgba(201,168,76,0.05) 100%);
+    transition: border-color .3s ease, box-shadow .3s ease;
   }
-  .mn-vigilia-date { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 1.4rem; }
-  .mn-vigilia-course { margin: 0 0 1.5rem; }
-  .mn-vigilia-course h3 {
-    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;
-    font-size: 1.55rem; color: var(--gold); margin: 0 0 0.6rem;
+  .mn-vigilia-box[open] { border-color: rgba(212,175,106,0.55); box-shadow: 0 24px 60px -30px rgba(0,0,0,0.8); }
+  .mn-vigilia-sum {
+    list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 1rem;
+    padding: 1.15rem clamp(1.1rem, 3vw, 1.7rem);
   }
-  .mn-vigilia-course p { margin: 0 0 0.55rem; color: var(--ink); font-size: 1rem; line-height: 1.5; }
-  .mn-vigilia-price {
-    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
-    font-size: clamp(2.6rem, 6vw, 3.4rem); color: var(--gold); line-height: 1; margin: 1.8rem 0 0.4rem;
+  .mn-vigilia-sum::-webkit-details-marker { display: none; }
+  .mn-vigilia-sum:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 18px; }
+  .mn-vigilia-tit { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: clamp(1.35rem, 3.4vw, 1.75rem); color: var(--ink); line-height: 1.15; }
+  .mn-vigilia-sub { display: block; margin-top: 0.3rem; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .mn-vigilia-prezzo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.2rem); color: var(--gold); line-height: 1; }
+  .mn-vigilia-segno { position: relative; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(212,175,106,0.5); flex: none; }
+  .mn-vigilia-segno::before, .mn-vigilia-segno::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: var(--gold); transform: translate(-50%, -50%); transition: transform .3s ease; }
+  .mn-vigilia-segno::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .mn-vigilia-box[open] .mn-vigilia-segno::after { transform: translate(-50%, -50%) rotate(0deg); }
+  .mn-vigilia-corpo { padding: 0.4rem clamp(1.1rem, 3vw, 1.7rem) clamp(1.3rem, 3vw, 1.8rem); border-top: 1px solid rgba(212,175,106,0.18); }
+  .mn-vigilia-course { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.4rem 1.4rem; padding: 1.05rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .mn-vigilia-course h3 { margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 1.35rem; color: var(--gold); line-height: 1.2; }
+  .mn-vigilia-course p { margin: 0 0 0.45rem; color: var(--ink); font-size: 0.97rem; line-height: 1.5; }
+  .mn-vigilia-course p:last-child { margin-bottom: 0; }
+  .mn-vigilia-note { margin: 1.1rem 0 1.2rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-dim); text-align: center; }
+  .mn-vigilia-corpo .mn-hero-btns { justify-content: center; }
+  @media (max-width: 600px) {
+    .mn-vigilia-sum { grid-template-columns: 1fr auto; row-gap: 0.4rem; }
+    .mn-vigilia-prezzo { grid-column: 1; grid-row: 2; }
+    .mn-vigilia-segno { grid-column: 2; grid-row: 1 / span 2; }
+    .mn-vigilia-course { grid-template-columns: 1fr; }
   }
-  .mn-vigilia-note { font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-dim); margin: 0 0 1.6rem; }
 
   /* ── BAR BANNER (divisore Vini & Drink) ── */
   .mn-bar-banner {
@@ -464,45 +477,59 @@
   </nav>
 
   <!-- MENÙ DELLA VIGILIA DI NATALE -->
-  <section class="mn-section" id="mn-vigilia">
-    <div class="mn-section-glow" aria-hidden="true"></div>
+  <section class="mn-section" id="mn-vigilia" style="padding-top: 1.6rem; padding-bottom: 1.2rem;">
     <div class="mn-section-inner">
-      <div class="mn-section-head" data-reveal>
-        <span class="section-kicker">Natale 2026</span>
-        <h2>Menù della Vigilia di Natale</h2>
-        <p>Una cena speciale, solo per la sera della Vigilia. Posti limitati: prenota per tempo.</p>
-      </div>
-      <div class="mn-vigilia-card" data-reveal>
-        <p class="mn-vigilia-date">24 Dicembre 2026</p>
-        <div class="mn-vigilia-course">
-          <h3>Antipasti</h3>
-          <p>Tartare di salmone e melograno</p>
-          <p>Crostino con stracciatella e alici di Cetara, dalla Costiera Amalfitana</p>
-          <p>Gamberi gratinati in conchiglia su una fetta d’arancia</p>
-          <p>Crocchetta di baccalà in tempura con crema all’aglio</p>
-        </div>
-        <div class="mn-vigilia-course">
-          <h3>Primo</h3>
-          <p>Paccheri alla pescatora</p>
-        </div>
-        <div class="mn-vigilia-course">
-          <h3>Secondo</h3>
-          <p>Tonno in crosta di pistacchio all’olio tartufato, con riduzione di aceto balsamico e carpaccio di finocchi</p>
-        </div>
-        <div class="mn-vigilia-course">
-          <h3>Contorno</h3>
-          <p>Patate al forno</p>
-        </div>
-        <div class="mn-vigilia-course">
-          <h3>Dolce</h3>
-          <p>Panettone con mascarpone</p>
-        </div>
-        <p class="mn-vigilia-price">€ 65</p>
-        <p class="mn-vigilia-note">Acqua, coperto e caffè inclusi</p>
-        <div class="mn-hero-btns">
-          <a href="https://wa.me/393336476506?text=Ciao%2C%20vorrei%20prenotare%20per%20la%20Vigilia%20di%20Natale" class="btn btn-primary" target="_blank" rel="noopener">Prenota su WhatsApp</a>
-          <a href="tel:+393336476506" class="btn btn-ghost">Chiama il +39 333 647 6506</a>
-        </div>
+      <div class="mn-vigilia" data-reveal>
+        <details class="mn-vigilia-box">
+          <summary class="mn-vigilia-sum">
+            <span>
+              <span class="mn-vigilia-tit">Menù della Vigilia di Natale</span>
+              <span class="mn-vigilia-sub">24 Dicembre 2026 · Solo su prenotazione</span>
+            </span>
+            <span class="mn-vigilia-prezzo">€ 65</span>
+            <span class="mn-vigilia-segno" aria-hidden="true"></span>
+          </summary>
+          <div class="mn-vigilia-corpo">
+            <div class="mn-vigilia-course">
+              <h3>Antipasti</h3>
+              <div>
+                <p>Tartare di salmone e melograno</p>
+                <p>Crostino con stracciatella e alici di Cetara, dalla Costiera Amalfitana</p>
+                <p>Gamberi gratinati in conchiglia su una fetta d’arancia</p>
+                <p>Crocchetta di baccalà in tempura con crema all’aglio</p>
+              </div>
+            </div>
+            <div class="mn-vigilia-course">
+              <h3>Primo</h3>
+              <div>
+                <p>Paccheri alla pescatora</p>
+              </div>
+            </div>
+            <div class="mn-vigilia-course">
+              <h3>Secondo</h3>
+              <div>
+                <p>Tonno in crosta di pistacchio all’olio tartufato, con riduzione di aceto balsamico e carpaccio di finocchi</p>
+              </div>
+            </div>
+            <div class="mn-vigilia-course">
+              <h3>Contorno</h3>
+              <div>
+                <p>Patate al forno</p>
+              </div>
+            </div>
+            <div class="mn-vigilia-course">
+              <h3>Dolce</h3>
+              <div>
+                <p>Panettone con mascarpone</p>
+              </div>
+            </div>
+            <p class="mn-vigilia-note">Acqua, coperto e caffè inclusi</p>
+            <div class="mn-hero-btns">
+              <a href="https://wa.me/393336476506?text=Ciao%2C%20vorrei%20prenotare%20per%20la%20Vigilia%20di%20Natale" class="btn btn-primary" target="_blank" rel="noopener">Prenota su WhatsApp</a>
+              <a href="tel:+393336476506" class="btn btn-ghost">Chiama il +39 333 647 6506</a>
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -1221,5 +1248,13 @@
 }());
 </script>
 <script src="js/cookie-notice.js"></script>
+<script>
+(function () {
+  var box = document.querySelector(".mn-vigilia-box"); if (!box) return;
+  function apri() { if (location.hash === "#mn-vigilia") box.open = true; }
+  document.querySelectorAll("a[href=\"#mn-vigilia\"]").forEach(function (a) { a.addEventListener("click", function () { box.open = true; }); });
+  window.addEventListener("hashchange", apri); apri();
+})();
+</script>
 </body>
 </html>
