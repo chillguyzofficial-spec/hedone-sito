@@ -371,6 +371,24 @@
   .mn-vigilia-note { color: #e8c682; }
   .mn-vigilia-corpo .btn-primary { background: linear-gradient(135deg, #c42a35, #8f1822); color: #fff6e4; border-color: rgba(243,217,160,0.6); }
 
+
+  /* indicatore di apertura: freccia con anello che pulsa (niente testo) */
+  .mn-vigilia-segno::before, .mn-vigilia-segno::after { content: none; }
+  .mn-vigilia-segno { display: grid; place-items: center; }
+  .mn-vigilia-segno i {
+    display: block; width: 9px; height: 9px; margin-top: -3px;
+    border-right: 2px solid #f3d9a0; border-bottom: 2px solid #f3d9a0;
+    transform: rotate(45deg); transition: transform .35s ease, margin .35s ease;
+  }
+  .mn-vigilia-box[open] .mn-vigilia-segno i { transform: rotate(-135deg); margin-top: 3px; }
+  .mn-vigilia-segno b {
+    position: absolute; inset: -1px; border-radius: 50%; border: 1.5px solid rgba(243,217,160,0.85);
+    animation: mnVigPulsa 2.4s ease-out infinite; pointer-events: none;
+  }
+  .mn-vigilia-box[open] .mn-vigilia-segno b { display: none; }
+  @keyframes mnVigPulsa { 0% { transform: scale(1); opacity: .9; } 70%, 100% { transform: scale(1.7); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .mn-vigilia-segno b { animation: none; display: none; } }
+
   /* ── BAR BANNER (divisore Vini & Drink) ── */
   .mn-bar-banner {
     position: relative;
@@ -514,7 +532,7 @@
               <span class="mn-vigilia-sub">24 Dicembre 2026 · Solo su prenotazione</span>
             </span>
             <span class="mn-vigilia-prezzo">€ 65</span>
-            <span class="mn-vigilia-segno" aria-hidden="true"></span>
+            <span class="mn-vigilia-segno" aria-hidden="true"><i></i><b></b></span>
           </summary>
           <div class="mn-vigilia-corpo">
             <div class="mn-vigilia-course">
