@@ -83,6 +83,8 @@
     padding: 0.85rem clamp(1.25rem, 5vw, 3rem);
     width: max-content;
   }
+  .mn-subnav-inner { padding-left: 7.5rem; }
+  @media (max-width: 700px) { .mn-subnav-inner { padding-left: 4.6rem; } }
   .mn-pill {
     flex-shrink: 0;
     padding: 0.48rem 1.05rem;
@@ -307,6 +309,114 @@
   .mn-chapter-contorni { background-image: linear-gradient(to bottom, #080502 0%, rgba(8,5,2,0.5) 16%, rgba(8,5,2,0.7) 62%, #0c0803 100%), url('assets/img/menu-inv-contorni.jpg'); background-position: center 50%; }
   .mn-chapter-dolci { background-image: linear-gradient(to bottom, #0c0803 0%, rgba(8,5,2,0.5) 16%, rgba(8,5,2,0.7) 62%, #080502 100%), url('assets/img/menu-inv-dessert.jpg'); background-size: cover; background-position: center 55%; }
 
+
+  /* ── MENÙ DELLA VIGILIA (a scomparsa) ── */
+  .mn-vigilia { max-width: 760px; margin: 0 auto; }
+  .mn-vigilia-box {
+    border: 1px solid rgba(212,175,106,0.32); border-radius: 18px; overflow: hidden;
+    background: linear-gradient(135deg, rgba(120,24,28,0.28) 0%, rgba(255,235,200,0.05) 55%, rgba(201,168,76,0.05) 100%);
+    transition: border-color .3s ease, box-shadow .3s ease;
+  }
+  .mn-vigilia-box[open] { border-color: rgba(212,175,106,0.55); box-shadow: 0 24px 60px -30px rgba(0,0,0,0.8); }
+  .mn-vigilia-sum {
+    list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 1rem;
+    padding: 1.15rem clamp(1.1rem, 3vw, 1.7rem);
+  }
+  .mn-vigilia-sum::-webkit-details-marker { display: none; }
+  .mn-vigilia-sum:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 18px; }
+  .mn-vigilia-tit { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: clamp(1.35rem, 3.4vw, 1.75rem); color: var(--ink); line-height: 1.15; }
+  .mn-vigilia-sub { display: block; margin-top: 0.3rem; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .mn-vigilia-prezzo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.2rem); color: var(--gold); line-height: 1; }
+  .mn-vigilia-segno { position: relative; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(212,175,106,0.5); flex: none; }
+  .mn-vigilia-segno::before, .mn-vigilia-segno::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: var(--gold); transform: translate(-50%, -50%); transition: transform .3s ease; }
+  .mn-vigilia-segno::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .mn-vigilia-box[open] .mn-vigilia-segno::after { transform: translate(-50%, -50%) rotate(0deg); }
+  .mn-vigilia-corpo { padding: 0.4rem clamp(1.1rem, 3vw, 1.7rem) clamp(1.3rem, 3vw, 1.8rem); border-top: 1px solid rgba(212,175,106,0.18); }
+  .mn-vigilia-course { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.4rem 1.4rem; padding: 1.05rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .mn-vigilia-course h3 { margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 1.35rem; color: var(--gold); line-height: 1.2; }
+  .mn-vigilia-course p { margin: 0 0 0.45rem; color: var(--ink); font-size: 0.97rem; line-height: 1.5; }
+  .mn-vigilia-course p:last-child { margin-bottom: 0; }
+  .mn-vigilia-note { margin: 1.1rem 0 1.2rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-dim); text-align: center; }
+  .mn-vigilia-corpo .mn-hero-btns { justify-content: center; }
+  @media (max-width: 600px) {
+    .mn-vigilia-sum { grid-template-columns: 1fr auto; row-gap: 0.4rem; }
+    .mn-vigilia-prezzo { grid-column: 1; grid-row: 2; }
+    .mn-vigilia-segno { grid-column: 2; grid-row: 1 / span 2; }
+    .mn-vigilia-course { grid-template-columns: 1fr; }
+  }
+
+
+  /* tema natalizio */
+  .mn-vigilia-box {
+    position: relative;
+    border-color: rgba(222,184,110,0.6);
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.10) 0 1.5px, transparent 2.5px) 0 0 / 46px 46px,
+      radial-gradient(circle at 70% 62%, rgba(255,255,255,0.07) 0 1px, transparent 2px) 0 0 / 61px 61px,
+      linear-gradient(135deg, #3a0b10 0%, #1d0b0c 48%, #0b1d14 100%);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.4), 0 18px 50px -28px rgba(160,30,40,0.7);
+  }
+  .mn-vigilia-box::before {
+    content: ''; position: absolute; left: 0; right: 0; top: 0; height: 5px; z-index: 1; pointer-events: none;
+    background: repeating-linear-gradient(90deg, #b3202b 0 18px, #d4af6a 18px 24px, #1f6b43 24px 42px, #d4af6a 42px 48px);
+  }
+  .mn-vigilia-sum { padding-top: 1.35rem; }
+  .mn-vigilia-fiocco { width: 1.05em; height: 1.05em; margin-right: 0.45rem; vertical-align: -0.12em; color: #f3d9a0; }
+  .mn-vigilia-tit { color: #fff6e4; }
+  .mn-vigilia-sub { color: #e8c682; }
+  .mn-vigilia-prezzo { color: #f3d9a0; }
+  .mn-vigilia-segno { border-color: rgba(243,217,160,0.7); background: rgba(179,32,43,0.35); }
+  .mn-vigilia-corpo { border-top-color: rgba(222,184,110,0.35); }
+  .mn-vigilia-course h3 { color: #f3d9a0; }
+  .mn-vigilia-course { border-bottom-color: rgba(222,184,110,0.18); }
+  .mn-vigilia-note { color: #e8c682; }
+  .mn-vigilia-corpo .btn-primary { background: linear-gradient(135deg, #c42a35, #8f1822); color: #fff6e4; border-color: rgba(243,217,160,0.6); }
+
+
+  /* indicatore di apertura: freccia con anello che pulsa (niente testo) */
+  .mn-vigilia-segno::before, .mn-vigilia-segno::after { content: none; }
+  .mn-vigilia-segno { display: grid; place-items: center; }
+  .mn-vigilia-segno i {
+    display: block; width: 9px; height: 9px; margin-top: -3px;
+    border-right: 2px solid #f3d9a0; border-bottom: 2px solid #f3d9a0;
+    transform: rotate(45deg); transition: transform .35s ease, margin .35s ease;
+  }
+  .mn-vigilia-box[open] .mn-vigilia-segno i { transform: rotate(-135deg); margin-top: 3px; }
+  .mn-vigilia-segno b {
+    position: absolute; inset: -1px; border-radius: 50%; border: 1.5px solid rgba(243,217,160,0.85);
+    animation: mnVigPulsa 2.4s ease-out infinite; pointer-events: none;
+  }
+  .mn-vigilia-box[open] .mn-vigilia-segno b { display: none; }
+  @keyframes mnVigPulsa { 0% { transform: scale(1); opacity: .9; } 70%, 100% { transform: scale(1.7); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .mn-vigilia-segno b { animation: none; display: none; } }
+
+
+  /* apertura: impaginazione centrata come la locandina */
+  .mn-vigilia-corpo { padding: 0.6rem clamp(1.2rem, 4vw, 3rem) clamp(1.6rem, 3vw, 2.2rem); text-align: center; }
+  .mn-vigilia-course { display: block; padding: 1.35rem 0 0.2rem; border-bottom: 0; }
+  .mn-vigilia-course h3 {
+    display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 0 0 0.7rem;
+    font-size: clamp(1.45rem, 3vw, 1.8rem); color: #f3d9a0;
+  }
+  .mn-vigilia-course h3::before, .mn-vigilia-course h3::after {
+    content: ''; flex: 0 1 90px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(222,184,110,0.7));
+  }
+  .mn-vigilia-course h3::after { transform: scaleX(-1); }
+  .mn-vigilia-course p { margin: 0 auto 0.5rem; max-width: 34rem; font-size: 1.02rem; line-height: 1.5; color: #fff6e4; text-wrap: balance; }
+  .mn-vigilia-note {
+    display: inline-block; margin: 1.8rem 0 1.3rem; padding: 0.7rem 1.4rem;
+    border: 1px solid rgba(222,184,110,0.5); border-radius: 999px; background: rgba(0,0,0,0.25);
+    font-size: 0.74rem; letter-spacing: 0.16em; color: #f3d9a0;
+  }
+  .mn-vigilia-corpo .mn-hero-btns { justify-content: center; }
+
+
+  /* sfondo sobrio: nero caldo uniforme, senza puntini né sfumature colorate */
+  .mn-vigilia-box { background: #0d0907; box-shadow: 0 18px 50px -30px rgba(0,0,0,0.9); border-color: rgba(212,175,106,0.45); }
+  .mn-vigilia-box[open] { border-color: rgba(212,175,106,0.6); }
+  .mn-vigilia-segno { background: rgba(179,32,43,0.28); }
+
   /* ── BAR BANNER (divisore Vini & Drink) ── */
   .mn-bar-banner {
     position: relative;
@@ -426,6 +536,7 @@
   <!-- STICKY CATEGORY NAV -->
   <nav class="mn-subnav" aria-label="Categorie del menù">
     <div class="mn-subnav-inner" id="mnSubnavInner">
+      <a class="mn-pill" href="#mn-vigilia">Vigilia</a>
       <a class="mn-pill" href="#mn-percorsi">Menù fissi</a>
       <a class="mn-pill" href="#mn-antipasti">Antipasti</a>
       <a class="mn-pill" href="#mn-primi">Primi</a>
@@ -437,6 +548,63 @@
       <a class="mn-pill" href="#mn-distillati">Distillati</a>
     </div>
   </nav>
+
+  <!-- MENÙ DELLA VIGILIA DI NATALE -->
+  <section class="mn-section" id="mn-vigilia" style="padding-top: 1.6rem; padding-bottom: 1.2rem;">
+    <div class="mn-section-inner">
+      <div class="mn-vigilia" data-reveal>
+        <details class="mn-vigilia-box">
+          <summary class="mn-vigilia-sum">
+            <span>
+              <span class="mn-vigilia-tit"><svg class="mn-vigilia-fiocco" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M4.2 6.5l15.6 11M19.8 6.5L4.2 17.5M9.5 3.5L12 6l2.5-2.5M9.5 20.5L12 18l2.5 2.5M3 9.8l3.3.3-.3 3.3M21 9.8l-3.3.3.3 3.3"/></svg>Menù della Vigilia di Natale</span>
+              <span class="mn-vigilia-sub">24 Dicembre 2026 · Solo su prenotazione</span>
+            </span>
+            <span class="mn-vigilia-prezzo">€ 65</span>
+            <span class="mn-vigilia-segno" aria-hidden="true"><i></i><b></b></span>
+          </summary>
+          <div class="mn-vigilia-corpo">
+            <div class="mn-vigilia-course">
+              <h3>Antipasti</h3>
+              <div>
+                <p>Tartare di salmone e melograno</p>
+                <p>Crostino con stracciatella e alici di Cetara, dalla Costiera Amalfitana</p>
+                <p>Gamberi gratinati in conchiglia su una fetta d’arancia</p>
+                <p>Crocchetta di baccalà in tempura con crema all’aglio</p>
+              </div>
+            </div>
+            <div class="mn-vigilia-course">
+              <h3>Primo</h3>
+              <div>
+                <p>Paccheri alla pescatora</p>
+              </div>
+            </div>
+            <div class="mn-vigilia-course">
+              <h3>Secondo</h3>
+              <div>
+                <p>Tonno in crosta di pistacchio all’olio tartufato, con riduzione di aceto balsamico e carpaccio di finocchi</p>
+              </div>
+            </div>
+            <div class="mn-vigilia-course">
+              <h3>Contorno</h3>
+              <div>
+                <p>Patate al forno</p>
+              </div>
+            </div>
+            <div class="mn-vigilia-course">
+              <h3>Dolce</h3>
+              <div>
+                <p>Panettone con mascarpone</p>
+              </div>
+            </div>
+            <p class="mn-vigilia-note">Acqua, coperto e caffè inclusi</p>
+            <div class="mn-hero-btns">
+              <a href="tel:+393336476506" class="btn btn-primary">Chiama per prenotare · +39 333 647 6506</a>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
 
   <!-- PERCORSI DEGUSTAZIONE -->
   <section class="mn-section" id="mn-percorsi">
@@ -1152,5 +1320,13 @@
 }());
 </script>
 <script src="js/cookie-notice.js"></script>
+<script>
+(function () {
+  var box = document.querySelector(".mn-vigilia-box"); if (!box) return;
+  function apri() { if (location.hash === "#mn-vigilia") box.open = true; }
+  document.querySelectorAll("a[href=\"#mn-vigilia\"]").forEach(function (a) { a.addEventListener("click", function () { box.open = true; }); });
+  window.addEventListener("hashchange", apri); apri();
+})();
+</script>
 </body>
 </html>
